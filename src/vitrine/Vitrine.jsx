@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import couplePortrait from "../assets/couple-portrait.jpg";
 import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
@@ -305,6 +305,53 @@ function Colors() {
   );
 }
 
+const fmtEur = (n) => new Intl.NumberFormat("fr-FR").format(Math.round(n));
+
+/* Aperçu interactif de la cagnotte (sur la vitrine) : jauge animée à
+   l'apparition + jalons + montants cliquables. */
+function CagnottePreview() {
+  const ref = useRef(null);
+  const [anim, setAnim] = useState(0);
+  const [preset, setPreset] = useState(50);
+  const objectif = 4500, collecte = 3240;
+  const pct = (collecte / objectif) * 100;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf, start = null, done = false;
+    const tick = (t) => {
+      if (start == null) start = t;
+      const p = Math.min(1, (t - start) / 1500);
+      setAnim(1 - Math.pow(1 - p, 3));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    if (!("IntersectionObserver" in window)) { setAnim(1); return; }
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting && !done) { done = true; raf = requestAnimationFrame(tick); io.disconnect(); }
+    }), { threshold: 0.4 });
+    io.observe(el);
+    return () => { io.disconnect(); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  const shownPct = pct * anim;
+  return (
+    <div className="vt-cagp" ref={ref}>
+      <p className="vt-cagp-titre">Notre voyage de noces</p>
+      <div className="vt-cagp-amt">{fmtEur(collecte * anim)} €<span> / {fmtEur(objectif)} €</span></div>
+      <div className="vt-cagp-bar">
+        <span className="fill" style={{ width: shownPct + "%" }}><span className="bub">{Math.round(shownPct)}%</span></span>
+        {[25, 50, 75, 100].map((m) => <i key={m} className={"ms" + (shownPct >= m - 0.5 ? " on" : "")} style={{ left: m + "%" }} />)}
+      </div>
+      <p className="vt-cagp-sub">18 participants · plus que {fmtEur(objectif - collecte)} € 🤍</p>
+      <div className="vt-cagp-presets">
+        {[20, 50, 100].map((a) => (
+          <button key={a} type="button" className={"chip" + (preset === a ? " on" : "")} onClick={() => setPreset(a)}>{a} €</button>
+        ))}
+      </div>
+      <button type="button" className="vt-cagp-cta">💝 Participer — {preset} €</button>
+    </div>
+  );
+}
+
 function Highlights() {
   return (
     <section className="vt-section">
@@ -339,13 +386,7 @@ function Highlights() {
               <li>{I.check()} Ou une liste de cadeaux « à réserver »</li>
             </ul>
           </div>
-          <div className="vt-split-media">
-            <div className="vt-cag-mock">
-              <div className="amt">3 240 €</div>
-              <div className="bar"><span /></div>
-              <div className="sub">72 % de notre voyage de noces · 18 participants 🤍</div>
-            </div>
-          </div>
+          <div className="vt-split-media"><CagnottePreview /></div>
         </div>
       </div>
     </section>
