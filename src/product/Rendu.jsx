@@ -7,7 +7,6 @@ import Cagnotte from "./Cagnotte.jsx";
 import ListeCadeaux from "./ListeCadeaux.jsx";
 import { pushSupporte, estAbonne, abonner } from "./pushFpv.js";
 import { themeToHex, paletteFromAccent } from "./theme.js";
-import ambianceVid from "../assets/ambiance-vegetal.mp4";
 
 /* Rendu public d'une invitation « Faire-part Vivant » (multi-thèmes),
    piloté 100 % par la donnée (table fpv_invitations, lue par slug). */
@@ -117,7 +116,6 @@ export default function Rendu({ slug }) {
   return (
     <div className="fpv-render" style={paletteFromAccent(themeToHex(inv.theme))}>
       <header className="fpv-hero">
-        <video className="fpv-hero-vid" src={ambianceVid} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
         <p className="fpv-eyebrow">Nous nous marions</p>
         <h1 className="fpv-couple">
           {prenom1}
