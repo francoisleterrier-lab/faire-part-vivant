@@ -1,5 +1,9 @@
-import { useState, useEffect, useRef } from "react";
-import ambianceVid from "../assets/ambiance-vegetal.mp4";
+import { useState, useEffect } from "react";
+import couplePortrait from "../assets/couple-portrait.jpg";
+import coupleGolden from "../assets/couple-golden.jpg";
+import detailsAlliances from "../assets/details-alliances.jpg";
+import tableDressee from "../assets/table-dressee.jpg";
+import chaisesForever from "../assets/chaises-forever.jpg";
 
 /* ============================================================
    Faire-part Vivant — Vitrine (direction « eucalyptus »)
@@ -124,7 +128,7 @@ function PhoneMock() {
           <div className="sc-top"><span className="cpl">Émilie &amp; Julien</span><span className="bg"><i /><i /><i /></span></div>
           <span className="sc-live">En direct</span>
           <div className="sc-media">
-            <video src={ambianceVid} autoPlay muted loop playsInline preload="metadata" />
+            <img src={couplePortrait} alt="Couple de mariés au coucher du soleil" />
           </div>
           <div className="sc-body">
             <p className="sc-eyebrow">Nous nous marions</p>
@@ -316,10 +320,10 @@ function Highlights() {
               <li>{I.check()} Aucune application à installer pour eux</li>
             </ul>
           </div>
-          <div className="vt-split-media">
+          <div className="vt-split-media photos">
             <div className="vt-album-mock">
-              {["#7c9a76", "#b79b63", "#a9c0a2", "#c9a56f", "#8fae88", "#d8c48f", "#6f8a6b", "#c8ba72", "#9db894"].map((c, i) => (
-                <i key={i} style={{ background: `linear-gradient(150deg, ${c}, rgba(63,78,58,.25))` }} />
+              {[detailsAlliances, tableDressee, couplePortrait, chaisesForever, coupleGolden, detailsAlliances, tableDressee, chaisesForever, couplePortrait].map((src, i) => (
+                <i key={i} style={{ backgroundImage: `url(${src})` }} />
               ))}
             </div>
           </div>
@@ -455,9 +459,23 @@ function Faq() {
   );
 }
 
+function PhotoBand() {
+  return (
+    <section className="vt-band" style={{ backgroundImage: `url(${coupleGolden})` }}>
+      <div className="vt-band-veil" />
+      <div className="vt-wrap vt-band-inner reveal">
+        <div className="vt-flourish on-dark" />
+        <p className="vt-band-quote">« Le plus beau des faire-part,<br />c'est celui qu'on n'oublie pas. »</p>
+        <p className="vt-band-sub">Une invitation à votre image — vivante, élégante, partagée.</p>
+      </div>
+    </section>
+  );
+}
+
 function FinalCta() {
   return (
-    <section className="vt-cta">
+    <section className="vt-cta" style={{ backgroundImage: `url(${chaisesForever})` }}>
+      <div className="vt-cta-veil" />
       <Sprig className="c-l" /><Sprig className="c-r" />
       <div className="vt-wrap reveal">
         <span className="vt-eyebrow on-dark">Votre grand jour mérite mieux qu'un carton</span>
@@ -511,6 +529,7 @@ export default function Vitrine() {
       <main>
         <Hero />
         <Trust />
+        <PhotoBand />
         <Compare />
         <Features />
         <Steps />
