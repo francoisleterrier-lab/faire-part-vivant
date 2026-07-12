@@ -46,6 +46,8 @@ export default defineConfig({
       input: {
         // Vitrine commerciale (page d'accueil publique et indexable)
         main: new URL("./index.html", import.meta.url).pathname,
+        // Page « Fonctionnalités » détaillée
+        fonctionnalites: new URL("./fonctionnalites.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },
