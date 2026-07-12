@@ -55,6 +55,16 @@ label.fpv-l { display: flex; flex-direction: column; gap: .35rem; font-size: .84
 .fpv-theme.on { border-color: var(--admin-accent); }
 .fpv-theme .sw { height: 54px; }
 .fpv-theme .nm { padding: .4rem .55rem; font-size: .8rem; font-weight: 600; }
+/* Sélecteur de couleur libre */
+.fpv-colorpick { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.1rem; }
+.fpv-colorwell { position: relative; width: 66px; height: 66px; border-radius: 16px; border: 1px solid var(--admin-line); box-shadow: 0 10px 22px -14px rgba(20,32,24,.5); cursor: pointer; overflow: hidden; flex: none; }
+.fpv-colorwell input[type="color"] { position: absolute; inset: -6px; width: calc(100% + 12px); height: calc(100% + 12px); border: none; padding: 0; margin: 0; background: none; cursor: pointer; opacity: 0; }
+.fpv-colorval { display: flex; flex-direction: column; gap: .25rem; }
+.fpv-colorhex { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; color: var(--admin-ink); }
+.fpv-swatches { display: flex; flex-wrap: wrap; gap: .55rem; }
+.fpv-sw { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 5px 12px -5px rgba(20,32,24,.5); cursor: pointer; padding: 0; transition: transform .12s ease; }
+.fpv-sw:hover { transform: scale(1.12); }
+.fpv-sw.on { outline: 2px solid var(--admin-accent); outline-offset: 2px; }
 .fpv-list { display: flex; flex-direction: column; gap: .6rem; }
 .fpv-item { display: flex; align-items: center; gap: .8rem; padding: .8rem 1rem; border: 1px solid var(--admin-line); border-radius: 11px; background: #fff; }
 .fpv-item .grow { flex: 1; min-width: 0; }
@@ -75,7 +85,11 @@ label.fpv-l { display: flex; flex-direction: column; gap: .35rem; font-size: .84
 }
 .fpv-render[data-t="sceau"] { --bg:#241016; --bg2:#3a1c22; --surface:#2c161b; --text:#f4e9e6; --muted:#d9b3ad; --accent:#d79055; --line:rgba(255,255,255,.14); }
 .fpv-render[data-t="brume"] { --bg:#161f27; --bg2:#26343f; --surface:#1c2731; --text:#eaf0f4; --muted:#a9bcc9; --accent:#bcae7a; --line:rgba(255,255,255,.14); }
-.fpv-hero { min-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1.2rem; position: relative; }
+.fpv-hero { min-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1.2rem; position: relative; overflow: hidden; }
+.fpv-hero > * { position: relative; z-index: 1; }
+.fpv-hero-vid { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .18; filter: saturate(.55); pointer-events: none; }
+.fpv-hero::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(120% 78% at 50% 8%, transparent, var(--bg) 76%); }
 .fpv-eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin: 0 0 1.4rem; }
 .fpv-couple { font-family: var(--serif); font-weight: 600; font-size: clamp(2.6rem, 9vw, 5.4rem); line-height: 1.02; margin: 0; text-wrap: balance; }
 .fpv-couple .amp { color: var(--accent); font-style: italic; font-weight: 500; display: inline-block; margin: 0 .1em; }

@@ -2,23 +2,18 @@ import { useEffect, useState, useCallback } from "react";
 import { sb, messageAuth, versSlug } from "./supabaseFpv.js";
 import CadeauxEditeur from "./CadeauxEditeur.jsx";
 import Partage from "./Partage.jsx";
+import { PRESETS, themeToHex } from "./theme.js";
 
 /* Éditeur self-service « Faire-part Vivant » :
    le couple se connecte, crée/édite son invitation, choisit un thème,
    publie, partage le lien, et lit les réponses RSVP. */
-
-const THEMES = [
-  { id: "canopee", nom: "Canopée", bg: "linear-gradient(135deg,#12201a,#4d6b3f)" },
-  { id: "sceau", nom: "Le Sceau", bg: "linear-gradient(135deg,#3a1c22,#9c5a44)" },
-  { id: "brume", nom: "La Brume", bg: "linear-gradient(135deg,#26343f,#6f8aa0)" },
-];
 
 const VIDE = {
   couple: "",
   slug: "",
   date_event: "",
   lieu_teaser: "",
-  theme: "canopee",
+  theme: "#6f8a6b",
   intro: "",
   sections: { compte: true, infos: false, infosTexte: "", rsvp: true },
   rsvp_ouvert: true,
@@ -184,13 +179,30 @@ function Editer({ invite, onRetour }) {
       </div>
 
       <div className="fpv-card">
-        <h2>L'univers</h2>
-        <div className="fpv-themepick">
-          {THEMES.map((t) => (
-            <button key={t.id} type="button" className={"fpv-theme" + (v.theme === t.id ? " on" : "")} onClick={() => maj("theme", t.id)}>
-              <div className="sw" style={{ background: t.bg }} />
-              <div className="nm">{t.nom}</div>
-            </button>
+        <h2>La couleur de votre mariage</h2>
+        <p className="fpv-hint" style={{ marginTop: "-.6rem", marginBottom: "1.1rem" }}>
+          Choisissez votre teinte exacte — sans limite. Tout le faire-part s'harmonise automatiquement autour d'elle.
+        </p>
+        <div className="fpv-colorpick">
+          <label className="fpv-colorwell" style={{ background: themeToHex(v.theme) }}>
+            <input type="color" value={themeToHex(v.theme)} onChange={(e) => maj("theme", e.target.value)} aria-label="Choisir la couleur" />
+          </label>
+          <div className="fpv-colorval">
+            <span className="fpv-colorhex">{themeToHex(v.theme).toUpperCase()}</span>
+            <span className="fpv-hint">Cliquez la pastille pour ouvrir la palette complète</span>
+          </div>
+        </div>
+        <div className="fpv-swatches">
+          {PRESETS.map((p) => (
+            <button
+              key={p.hex}
+              type="button"
+              title={p.nom}
+              aria-label={p.nom}
+              className={"fpv-sw" + (themeToHex(v.theme).toLowerCase() === p.hex ? " on" : "")}
+              style={{ background: p.hex }}
+              onClick={() => maj("theme", p.hex)}
+            />
           ))}
         </div>
       </div>
