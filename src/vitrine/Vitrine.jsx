@@ -4,7 +4,7 @@ import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
 import tableDressee from "../assets/table-dressee.jpg";
 import chaisesForever from "../assets/chaises-forever.jpg";
-import { I, Sprig, Ornement, useReveal, Nav, Footer, Contact, Lumiere, DEMO } from "./shared.jsx";
+import { I, Sprig, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 
 /* ============================================================
@@ -15,7 +15,7 @@ import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 const NAV = [
   ["fonctionnalites.html", "Fonctionnalités"],
   ["#univers", "Univers"],
-  ["#demarche", "Comment ça marche"],
+  ["#formules", "Tarifs"],
   ["#faq", "FAQ"],
 ];
 
@@ -324,6 +324,7 @@ export default function Vitrine() {
         <UniversApercu />
         <Highlights />
         <Demarche />
+        <Packs />
         <Temoignages />
         <Faq />
         <Contact />

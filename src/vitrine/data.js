@@ -164,3 +164,48 @@ export const FAQS = [
   ["Dois-je m'y connaître en informatique ?", "Pas du tout. Je vous accompagne à chaque étape et l'éditeur est sans code. Vous vous concentrez sur votre histoire ; je m'occupe du reste."],
   ["Quand le mettre en place et le partager ?", "Dès le save-the-date, et jusqu'aux souvenirs d'après la fête. On installe tout au rythme qui vous convient, sans précipitation."],
 ];
+
+/* Les 3 packs (regroupent les 8 univers). Tarifs « à partir de »,
+   devis personnalisé — vente en direct, sans self-service. */
+export const PACKS = [
+  {
+    nom: "Essentiel",
+    tagline: "L'invitation qui vit",
+    prix: 290,
+    pitch: "Inviter, informer et recueillir les réponses — avec élégance.",
+    inclus: [
+      "Site-invitation privé, installable comme une app",
+      "Notifications, compte à rebours, thèmes & multilingue",
+      "RSVP en ligne + tableau de bord (comptage juste par foyer)",
+      "Pages d'accueil personnalisées par foyer",
+      "Diffusion WhatsApp / SMS / e-mail",
+    ],
+  },
+  {
+    nom: "Vivant",
+    tagline: "L'expérience complète",
+    prix: 490,
+    populaire: true,
+    pitch: "Faire vivre votre mariage à vos invités — avant, pendant et après.",
+    inclus: [
+      "Tout l'Essentiel, plus :",
+      "Le jour J orchestré : lieu révélé, itinéraire, timeline, agenda",
+      "Plan de table interactif + diaporama live grand écran",
+      "Album photo & vidéo, livre d'or vidéo, playlist, jeux",
+      "« Une lumière par invité » (arbre de vie / constellation)",
+    ],
+  },
+  {
+    nom: "Signature",
+    tagline: "Sur mesure, sans limite",
+    prix: 790,
+    pitch: "Créé de A à Z avec vous, chaque détail à votre image.",
+    inclus: [
+      "Tout le Vivant, plus :",
+      "Cagnotte & liste de cadeaux avec réservation",
+      "Logistique invités : covoiturage & hébergements",
+      "Conception du thème 100 % sur mesure",
+      "Accompagnement premium & mise en place clé en main",
+    ],
+  },
+];

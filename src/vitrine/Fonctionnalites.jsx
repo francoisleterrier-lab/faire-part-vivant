@@ -1,4 +1,4 @@
-import { I, Sprig, useReveal, Nav, Footer, Contact, Lumiere, DEMO } from "./shared.jsx";
+import { I, Sprig, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
 import { UNIVERS } from "./data.js";
 
 /* ============================================================
@@ -8,7 +8,7 @@ import { UNIVERS } from "./data.js";
 const NAV = [
   ["index.html", "Accueil"],
   ["#invitation", "Le faire-part"],
-  ["#souvenirs", "Souvenirs"],
+  ["#formules", "Tarifs"],
   ["index.html#faq", "FAQ"],
 ];
 
@@ -62,6 +62,7 @@ export default function Fonctionnalites() {
         <Hero />
         {UNIVERS.map((u, i) => <Univers key={u.id} u={u} i={i} />)}
         <Lumiere />
+        <Packs />
         <Contact />
       </main>
       <Footer />

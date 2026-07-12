@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { MARQUE, SIGNATURE, REGION, EMAIL } from "./data.js";
+import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS } from "./data.js";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -124,6 +124,36 @@ export function Lumiere() {
           </svg>
           <p className="vt-lumiere-compte">15 lumières allumées · 15 « oui » 💛</p>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Les packs (tarifs « à partir de », devis personnalisé) ---------- */
+export function Packs() {
+  return (
+    <section className="vt-section tint" id="formules">
+      <div className="vt-wrap">
+        <div className="vt-head reveal">
+          <span className="vt-eyebrow">Nos formules</span>
+          <div className="vt-flourish" />
+          <h2 className="vt-h2">Trois packs, un accompagnement.</h2>
+          <p>Chaque faire-part est créé sur mesure, avec vous. Ces packs donnent le cap — votre devis, lui, reste personnalisé.</p>
+        </div>
+        <div className="vt-plans">
+          {PACKS.map((p) => (
+            <div className={"vt-plan reveal" + (p.populaire ? " feat" : "")} key={p.nom}>
+              {p.populaire && <span className="badge">Le plus choisi</span>}
+              <div className="vt-plan-name">{p.nom}</div>
+              <div className="vt-plan-tag">{p.tagline}</div>
+              <div className="vt-price"><span className="apd">à partir de&nbsp;</span><span className="cur">{p.prix} €</span></div>
+              <div className="vt-plan-once">{p.pitch}</div>
+              <ul>{p.inclus.map((f) => <li key={f}>{I.check()}<span>{f}</span></li>)}</ul>
+              <a className={"vt-btn " + (p.populaire ? "gold" : "ghost")} href={DEMO}>Demander une démo</a>
+            </div>
+          ))}
+        </div>
+        <p className="vt-plans-note">Tarifs indicatifs « à partir de » · devis personnalisé selon vos envies · vente en direct, sans abonnement.</p>
       </div>
     </section>
   );
