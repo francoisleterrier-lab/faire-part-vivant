@@ -7,18 +7,25 @@
     <title>Faire-part Vivant — le faire-part de mariage qui vit</title>
     <meta name="description" content="Le faire-part qui vit : un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné — demandez une démo." />
 
-    <!-- Cette page-ci est publique et indexable (contrairement aux faire-part privés) -->
+    <!-- Page publique et indexable -->
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://francoisleterrier-lab.github.io/faire-part-vivant/" />
 
     <!-- Aperçu de lien (réseaux, WhatsApp, SMS) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Faire-part Vivant · François Leterrier" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://francoisleterrier-lab.github.io/faire-part-vivant/" />
     <meta property="og:title" content="Faire-part Vivant — l'invitation de mariage qui vit" />
     <meta property="og:description" content="Un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné." />
+    <meta property="og:image" content="https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg" />
+    <meta property="og:image:width" content="1800" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="Faire-part Vivant — faire-part de mariage numérique, installable comme une app." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Faire-part Vivant — l'invitation de mariage qui vit" />
-    <meta name="twitter:description" content="Un faire-part numérique élégant qui notifie vos invités, recueille les RSVP et rassemble leurs photos. À partir de 149 €, paiement unique." />
+    <meta name="twitter:description" content="Un site-invitation privé, installable comme une app, du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné." />
+    <meta name="twitter:image" content="https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +33,49 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Données structurées (Service + FAQ) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Faire-part Vivant",
+            "serviceType": "Faire-part de mariage numérique sur mesure",
+            "description": "Un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête.",
+            "url": "https://francoisleterrier-lab.github.io/faire-part-vivant/",
+            "image": "https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg",
+            "areaServed": "France",
+            "provider": { "@type": "Person", "name": "François Leterrier" },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "EUR",
+              "lowPrice": "290",
+              "offerCount": "3",
+              "offers": [
+                { "@type": "Offer", "name": "Essentiel", "price": "290", "priceCurrency": "EUR" },
+                { "@type": "Offer", "name": "Vivant", "price": "490", "priceCurrency": "EUR" },
+                { "@type": "Offer", "name": "Signature", "price": "790", "priceCurrency": "EUR" }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Faut-il télécharger une application ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, jamais. Vos invités ouvrent un simple lien. S'ils le souhaitent, ils l'ajoutent à leur écran d'accueil en un geste et il s'ouvre comme une app — mais il n'y a rien à installer depuis un store." } },
+              { "@type": "Question", "name": "Le faire-part et les données de mes invités sont-ils protégés ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Votre faire-part est privé et jamais référencé par les moteurs de recherche. Chaque invité ne voit que ce qui le concerne, et le contenu sensible reste masqué côté serveur jusqu'au bon moment." } },
+              { "@type": "Question", "name": "Et si le lieu n'est pas encore connu, ou si tout n'est pas prêt ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucun souci : vous ouvrez les sections au fil du temps. Le lieu — et d'autres surprises — se révèle à la date que vous choisissez, sans rien dévoiler avant l'heure." } },
+              { "@type": "Question", "name": "Est-ce disponible en anglais ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui : français et anglais, avec détection automatique de la langue et bascule manuelle. Idéal pour les invités venus d'ailleurs." } },
+              { "@type": "Question", "name": "Comment fonctionnent la cagnotte et la liste de cadeaux ?", "acceptedAnswer": { "@type": "Answer", "text": "Vous reliez votre cagnotte existante (Leetchi, Lydia, PayPal, RIB…) et/ou proposez une liste de cadeaux où chaque présent ne peut être réservé qu'une seule fois — sans doublon." } },
+              { "@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque faire-part est unique et réalisé sur mesure, avec un accompagnement humain de bout en bout. Les packs démarrent à 290 € ; le tarif final dépend de vos envies — demandez une démo et je vous fais une proposition claire." } },
+              { "@type": "Question", "name": "Dois-je m'y connaître en informatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. Je vous accompagne à chaque étape et l'éditeur est sans code. Vous vous concentrez sur votre histoire ; je m'occupe du reste." } },
+              { "@type": "Question", "name": "Quand le mettre en place et le partager ?", "acceptedAnswer": { "@type": "Answer", "text": "Dès le save-the-date, et jusqu'aux souvenirs d'après la fête. On installe tout au rythme qui vous convient, sans précipitation." } }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="vitrine-root"></div>

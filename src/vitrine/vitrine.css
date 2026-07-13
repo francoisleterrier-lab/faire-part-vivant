@@ -112,7 +112,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
 .vt-nav-cta { display: flex; align-items: center; gap: 0.9rem; }
 .vt-burger { display: none; background: none; border: none; padding: 0.4rem; color: var(--forest); }
 .vt-mobile { display: none; }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .vt-nav-links, .vt-nav-cta .vt-btn { display: none; }
   .vt-burger { display: inline-flex; }
   .vt-mobile { display: block; border-top: 1px solid var(--line); background: var(--iv); padding: 1rem 0 1.4rem; }
@@ -280,8 +280,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
 .vt-split-media { border-radius: var(--radius); min-height: 300px; padding: 2rem; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #e9efe1, #d3e0cb); box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
 .vt-split-media.photos { padding: 12px; background: var(--paper); }
 
-.vt-album-mock { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
-.vt-album-mock i { display: block; border-radius: 10px; aspect-ratio: 1; box-shadow: var(--shadow-sm); background-size: cover; background-position: center; }
+.vt-album-mock { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.vt-album-mock i { display: block; min-width: 0; border-radius: 10px; aspect-ratio: 1; box-shadow: var(--shadow-sm); background-size: cover; background-position: center; }
 .vt-album-mock i:nth-child(3n) { aspect-ratio: 1 / 1.3; }
 /* Aperçu interactif de la cagnotte (vitrine) */
 .vt-cagp { width: 100%; max-width: 360px; background: var(--paper); border-radius: 16px; padding: 1.6rem 1.5rem 1.5rem; box-shadow: var(--shadow); text-align: center; }
@@ -456,6 +456,17 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
 .vt-contact-form textarea { resize: vertical; }
 .vt-contact-form .vt-btn { width: 100%; justify-content: center; margin-top: .4rem; }
 .vt-contact-note { font-size: .74rem; color: var(--muted); text-align: center; }
+.vt-contact-ok { text-align: center; align-items: center; justify-content: center; min-height: 320px; }
+.vt-contact-ok .ok-ic { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--gold-2), var(--gold)); margin-bottom: .4rem; }
+.vt-contact-ok h3 { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); margin: 0; }
+.vt-contact-ok p { color: var(--ink-soft); margin: .3rem 0 0; }
+
+/* Le mot de François (engagement honnête) */
+.vt-engage { max-width: 760px; margin: 0 auto; text-align: center; }
+.vt-engage .vt-eyebrow { display: block; margin-bottom: 1rem; }
+.vt-engage-txt { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.4; color: var(--ink); margin: 0 auto 1.4rem; max-width: 30ch; text-wrap: balance; }
+.vt-engage-txt em { color: var(--gold); font-style: italic; }
+.vt-engage-sig { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 1.8rem; }
 
 @media (max-width: 940px) {
   .vt-univers { grid-template-columns: 1fr 1fr; }

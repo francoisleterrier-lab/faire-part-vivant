@@ -259,29 +259,20 @@ function Demarche() {
   );
 }
 
-const QUOTES = [
-  { q: "Nos invités nous ont dit que c'était le plus beau faire-part qu'ils aient jamais reçu — et l'arbre qui s'illuminait à chaque réponse, ils ont adoré.", n: "Léa & Thomas", m: "Mariés en juin 2025", av: "L" },
-  { q: "Fini les relances : les réponses arrivaient toutes seules. Et le mur photo après la fête valait de l'or.", n: "Sarah & Malik", m: "Mariés en septembre 2025", av: "S" },
-  { q: "François nous a tout créé sur mesure. On n'a eu qu'à profiter — nos proches ont vécu le mariage avant, pendant et après.", n: "Clara & Antoine", m: "Mariés en mai 2026", av: "C" },
-];
-function Temoignages() {
+function Engagement() {
   return (
     <section className="vt-section">
-      <div className="vt-wrap">
-        <div className="vt-head reveal">
-          <span className="vt-eyebrow">Ils ont dit oui</span>
-          <div className="vt-flourish" />
-          <h2 className="vt-h2">Des mariés conquis.</h2>
-        </div>
-        <div className="vt-quotes">
-          {QUOTES.map((c) => (
-            <figure className="vt-quote reveal" key={c.n}>
-              <div className="stars">★★★★★</div>
-              <blockquote><p>« {c.q} »</p></blockquote>
-              <figcaption className="who"><span className="av">{c.av}</span><span><span className="nm">{c.n}</span><br /><span className="mt">{c.m}</span></span></figcaption>
-            </figure>
-          ))}
-        </div>
+      <div className="vt-wrap vt-engage reveal">
+        <div className="vt-flourish" style={{ justifyContent: "center", marginBottom: "1.2rem" }} />
+        <span className="vt-eyebrow">Le mot de François</span>
+        <p className="vt-engage-txt">
+          «&nbsp;Je ne vends pas un logiciel : je crée avec vous, à la main, un faire-part unique.
+          Pas de modèle industriel, pas de formule toute faite — on avance à votre rythme, et tant
+          que ce n'est pas parfaitement <em>vous</em>, on ajuste. Faire-part Vivant est jeune :
+          vous serez parmi les premiers couples, avec toute l'attention que ça mérite.&nbsp;»
+        </p>
+        <p className="vt-engage-sig">François Leterrier · {"Faire-part Vivant"}</p>
+        <a className="vt-btn gold lg" href={DEMO}>Demander une démo {I.arrow()}</a>
       </div>
     </section>
   );
@@ -325,7 +316,7 @@ export default function Vitrine() {
         <Highlights />
         <Demarche />
         <Packs />
-        <Temoignages />
+        <Engagement />
         <Faq />
         <Contact />
       </main>

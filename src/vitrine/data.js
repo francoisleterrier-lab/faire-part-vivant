@@ -8,7 +8,11 @@
 export const MARQUE = "Faire-part Vivant";
 export const SIGNATURE = "par François Leterrier";
 export const REGION = "Sites de mariage sur-mesure · Sud-Toulousain";
-export const EMAIL = "francois.leterrier@gmail.com";
+export const EMAIL = "francois.leterrier.cmw@gmail.com";
+
+/* Clé Web3Forms pour le formulaire de contact (comme le site principal).
+   Vide → le formulaire retombe proprement sur un e-mail pré-rempli (mailto). */
+export const WEB3FORMS_KEY = "";
 
 export const ACCROCHE =
   "Le faire-part qui vit : un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date jusqu'aux souvenirs d'après la fête.";

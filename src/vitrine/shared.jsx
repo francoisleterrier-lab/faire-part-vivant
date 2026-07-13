@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS } from "./data.js";
+import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY } from "./data.js";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -143,7 +143,7 @@ export function Packs() {
         <div className="vt-plans">
           {PACKS.map((p) => (
             <div className={"vt-plan reveal" + (p.populaire ? " feat" : "")} key={p.nom}>
-              {p.populaire && <span className="badge">Le plus choisi</span>}
+              {p.populaire && <span className="badge">Formule phare</span>}
               <div className="vt-plan-name">{p.nom}</div>
               <div className="vt-plan-tag">{p.tagline}</div>
               <div className="vt-price"><span className="apd">à partir de&nbsp;</span><span className="cur">{p.prix} €</span></div>
@@ -162,9 +162,10 @@ export function Packs() {
 /* ---------- Section « Demander une démo » (contact) ---------- */
 export function Contact() {
   const [f, setF] = useState({ noms: "", email: "", date: "", message: "" });
+  const [etat, setEtat] = useState("idle"); // idle | envoi | ok | err
   const set = (k) => (e) => setF((s) => ({ ...s, [k]: e.target.value }));
-  function envoyer(e) {
-    e.preventDefault();
+
+  function versMailto() {
     const sujet = encodeURIComponent(`Demande de démo — Faire-part Vivant${f.noms ? " · " + f.noms : ""}`);
     const corps = encodeURIComponent(
       `Bonjour François,\n\nNous aimerions une démo de Faire-part Vivant.\n\n` +
@@ -172,6 +173,31 @@ export function Contact() {
       `${f.message || ""}\n\nÀ bientôt !`
     );
     window.location.href = `mailto:${EMAIL}?subject=${sujet}&body=${corps}`;
+  }
+
+  async function envoyer(e) {
+    e.preventDefault();
+    if (!WEB3FORMS_KEY) { versMailto(); return; }
+    setEtat("envoi");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Demande de démo — Faire-part Vivant${f.noms ? " · " + f.noms : ""}`,
+          from_name: f.noms || "Prospect — Faire-part Vivant",
+          email: f.email,
+          "Prénoms": f.noms,
+          "Date du mariage": f.date,
+          message: f.message,
+        }),
+      });
+      const j = await res.json();
+      setEtat(j.success ? "ok" : "err");
+    } catch {
+      setEtat("err");
+    }
   }
   return (
     <section className="vt-contact" id="contact">
@@ -191,22 +217,33 @@ export function Contact() {
           </ul>
           <p className="vt-contact-mail">Ou écrivez-moi directement : <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
         </div>
-        <form className="vt-contact-form" onSubmit={envoyer}>
-          <label>Vos prénoms
-            <input value={f.noms} onChange={set("noms")} placeholder="Camille & Alex" />
-          </label>
-          <label>Votre e-mail
-            <input type="email" required value={f.email} onChange={set("email")} placeholder="vous@exemple.fr" />
-          </label>
-          <label>Date (approximative) du mariage
-            <input value={f.date} onChange={set("date")} placeholder="Été 2026" />
-          </label>
-          <label>Votre message
-            <textarea rows={3} value={f.message} onChange={set("message")} placeholder="Parlez-moi de votre projet…" />
-          </label>
-          <button className="vt-btn gold lg" type="submit">Demander une démo {I.arrow()}</button>
-          <span className="vt-contact-note">En cliquant, votre messagerie s'ouvre avec le message pré-rempli.</span>
-        </form>
+        {etat === "ok" ? (
+          <div className="vt-contact-form vt-contact-ok">
+            <div className="ok-ic">{I.heart()}</div>
+            <h3>Merci, c'est envoyé&nbsp;!</h3>
+            <p>Je vous réponds sous 48&nbsp;h pour convenir d'un moment ensemble. À très vite. 🤍</p>
+          </div>
+        ) : (
+          <form className="vt-contact-form" onSubmit={envoyer}>
+            <label>Vos prénoms
+              <input value={f.noms} onChange={set("noms")} placeholder="Camille & Alex" />
+            </label>
+            <label>Votre e-mail
+              <input type="email" required value={f.email} onChange={set("email")} placeholder="vous@exemple.fr" />
+            </label>
+            <label>Date (approximative) du mariage
+              <input value={f.date} onChange={set("date")} placeholder="Été 2026" />
+            </label>
+            <label>Votre message
+              <textarea rows={3} value={f.message} onChange={set("message")} placeholder="Parlez-moi de votre projet…" />
+            </label>
+            <button className="vt-btn gold lg" type="submit" disabled={etat === "envoi"}>
+              {etat === "envoi" ? "Envoi…" : <>Demander une démo {I.arrow()}</>}
+            </button>
+            {etat === "err" && <span className="vt-contact-note" style={{ color: "#e0b48a" }}>Un souci d'envoi — réessayez, ou écrivez-moi à {EMAIL}.</span>}
+            <span className="vt-contact-note">{WEB3FORMS_KEY ? "Réponse sous 48 h · sans engagement." : "En cliquant, votre messagerie s'ouvre avec le message pré-rempli."}</span>
+          </form>
+        )}
       </div>
     </section>
   );
