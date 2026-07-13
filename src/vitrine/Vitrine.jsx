@@ -73,8 +73,9 @@ function Hero() {
           <div className="vt-flourish" />
           <h1 className="vt-display">Le faire-part<br />qui <span className="vt-amp">vit</span>.</h1>
           <p className="vt-lead">
-            Un site-invitation privé, installable comme une app, qui accompagne vos invités
-            du save-the-date jusqu'aux souvenirs d'après la fête.
+            Un faire-part de mariage numérique et vivant : un site-invitation privé, installable
+            comme une app, qui accompagne vos invités du save-the-date jusqu'aux souvenirs d'après
+            la fête. Sur mesure et accompagné, partout en France.
           </p>
           <div className="vt-hero-actions">
             <a className="vt-btn gold lg" href={DEMO}>Demander une démo {I.arrow()}</a>
@@ -104,10 +105,10 @@ function Benefices() {
     <section className="vt-section">
       <div className="vt-wrap">
         <div className="vt-head reveal">
-          <span className="vt-eyebrow">Pourquoi c'est différent</span>
+          <span className="vt-eyebrow">Le faire-part de mariage nouvelle génération</span>
           <div className="vt-flourish" />
-          <h2 className="vt-h2">Bien plus qu'un carton d'invitation.</h2>
-          <p>Une expérience qui commence au save-the-date et se prolonge longtemps après le dernier verre.</p>
+          <h2 className="vt-h2">Bien plus qu'un carton : un faire-part de mariage numérique et vivant.</h2>
+          <p>Un faire-part digital, interactif et privé, qui commence au save-the-date et se prolonge longtemps après le dernier verre — installable comme une app, partout en France.</p>
         </div>
         <div className="vt-feats">
           {BENEFICES.map((b) => (
