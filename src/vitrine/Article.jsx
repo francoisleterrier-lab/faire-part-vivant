@@ -1,4 +1,4 @@
-import { I, useReveal, Nav, Footer, Contact, DEMO } from "./shared.jsx";
+import { I, useReveal, useStoredAccent, Nav, Footer, Contact, DEMO } from "./shared.jsx";
 import { ARTICLES, getArticle } from "./blog.js";
 
 /* Article de blog (une page/URL par article). */
@@ -23,6 +23,7 @@ function Carte({ a }) {
 
 export default function Article({ slug }) {
   useReveal();
+  useStoredAccent();
   const a = getArticle(slug);
   if (!a) {
     return (

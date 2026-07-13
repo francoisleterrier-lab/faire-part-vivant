@@ -7,6 +7,36 @@ import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY, SITE_PRINCIPAL,
 
 export const DEMO = "#contact"; // CTA « Demander une démo » → section contact
 
+/* ---------- Thème couleur : l'accent choisi retinte TOUT le site ----------
+   On surcharge la famille « or » (--gold / --gold-2 / --gold-soft) et l'accent
+   de l'aperçu (--sc-accent) sur <html>. La base ivoire + eucalyptus ne bouge
+   pas : seule la couleur d'accent change, de façon harmonieuse, sur toutes les
+   pages (mémorisée d'une page à l'autre via localStorage). */
+const ACCENT_KEY = "fpv-accent";
+export const DEFAULT_ACCENT = "#ac8c4a"; // or doux (teinte native du site)
+
+function mixWhite(hex, t) {
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+  const m = (c) => Math.round(c + (255 - c) * t).toString(16).padStart(2, "0");
+  return `#${m(r)}${m(g)}${m(b)}`;
+}
+export function applyAccent(hex) {
+  if (typeof document === "undefined" || !hex) return;
+  const s = document.documentElement.style;
+  s.setProperty("--gold", hex);
+  s.setProperty("--gold-2", mixWhite(hex, 0.22));
+  s.setProperty("--gold-soft", mixWhite(hex, 0.55));
+  s.setProperty("--sc-accent", hex);
+}
+export function readAccent() { try { return localStorage.getItem(ACCENT_KEY) || ""; } catch { return ""; } }
+export function saveAccent(hex) { try { localStorage.setItem(ACCENT_KEY, hex); } catch { /* stockage indispo */ } }
+/* À appeler sur les pages sans sélecteur (Fonctionnalités, Journal, Article) :
+   applique l'accent mémorisé au chargement. */
+export function useStoredAccent() {
+  useEffect(() => { const a = readAccent(); if (a) applyAccent(a); }, []);
+}
+
 /* ---------- Icônes (SVG trait fin) ---------- */
 export const I = {
   phone: (p) => (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...p}><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>),

@@ -1,4 +1,4 @@
-import { I, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
+import { I, useReveal, useStoredAccent, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
 import { UNIVERS } from "./data.js";
 
 /* ============================================================
@@ -54,6 +54,7 @@ function Univers({ u, i }) {
 
 export default function Fonctionnalites() {
   useReveal();
+  useStoredAccent();
   return (
     <>
       <Nav links={NAV} />

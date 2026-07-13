@@ -1,4 +1,4 @@
-import { I, useReveal, Nav, Footer, Contact } from "./shared.jsx";
+import { I, useReveal, useStoredAccent, Nav, Footer, Contact } from "./shared.jsx";
 import { ARTICLES } from "./blog.js";
 
 /* Journal — index des articles (contenu SEO). */
@@ -23,6 +23,7 @@ function Carte({ a }) {
 
 export default function Blog() {
   useReveal();
+  useStoredAccent();
   return (
     <>
       <Nav links={NAV} />

@@ -4,7 +4,7 @@ import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
 import tableDressee from "../assets/table-dressee.jpg";
 import chaisesForever from "../assets/chaises-forever.jpg";
-import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
+import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO, applyAccent, readAccent, saveAccent, DEFAULT_ACCENT } from "./shared.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 
 /* ============================================================
@@ -20,7 +20,7 @@ const NAV = [
 ];
 
 const ACCENTS = [
-  { id: "sauge", c: "#6f8a6b" }, { id: "or", c: "#b3924f" }, { id: "terracotta", c: "#c07a54" },
+  { id: "or", c: DEFAULT_ACCENT }, { id: "sauge", c: "#6f8a6b" }, { id: "terracotta", c: "#c07a54" },
   { id: "ardoise", c: "#6f8aa0" }, { id: "rose", c: "#c78ba1" }, { id: "prune", c: "#8a6b86" },
 ];
 
@@ -33,8 +33,7 @@ const LeafRow = (p) => (
   </svg>
 );
 
-function PhoneMock() {
-  const [accent, setAccent] = useState(ACCENTS[0].c);
+function PhoneMock({ accent, onAccent }) {
   return (
     <div className="vt-phone-wrap">
       <div className="vt-phone reveal">
@@ -56,14 +55,14 @@ function PhoneMock() {
       <div className="vt-swatches reveal">
         <span className="lbl">Votre couleur :</span>
         {ACCENTS.map((a) => (
-          <button key={a.id} className={"vt-swatch" + (accent === a.c ? " on" : "")} style={{ background: a.c }} aria-label={a.id} onClick={() => setAccent(a.c)} />
+          <button key={a.id} className={"vt-swatch" + (accent === a.c ? " on" : "")} style={{ background: a.c }} aria-label={a.id} onClick={() => onAccent(a.c)} />
         ))}
       </div>
     </div>
   );
 }
 
-function Hero() {
+function Hero({ accent, onAccent }) {
   return (
     <section className="vt-hero" id="top">
       <div className="vt-wrap vt-hero-grid">
@@ -82,7 +81,7 @@ function Hero() {
           </div>
           <p className="vt-hero-note">{I.heart()} Sur mesure · accompagné · sans app store</p>
         </div>
-        <div className="vt-hero-media"><PhoneMock /></div>
+        <div className="vt-hero-media"><PhoneMock accent={accent} onAccent={onAccent} /></div>
       </div>
     </section>
   );
@@ -303,11 +302,14 @@ function Faq() {
 
 export default function Vitrine() {
   useReveal();
+  const [accent, setAccent] = useState(() => readAccent() || DEFAULT_ACCENT);
+  useEffect(() => { applyAccent(accent); }, [accent]);
+  const chooseAccent = (c) => { setAccent(c); saveAccent(c); };
   return (
     <>
       <Nav links={NAV} />
       <main>
-        <Hero />
+        <Hero accent={accent} onAccent={chooseAccent} />
         <Bandeau />
         <Benefices />
         <Lumiere />
