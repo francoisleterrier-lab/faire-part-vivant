@@ -18,7 +18,7 @@ export default defineConfig({
       filename: "sw.js",
       registerType: "autoUpdate",
       injectManifest: {
-        globPatterns: ["**/*.{js,css,html,woff2}"],
+        globPatterns: ["**/*.{js,css,html,woff2,webp}"],
         globIgnores: ["**/icon-*.png"],
         maximumFileSizeToCacheInBytes: 3_000_000,
       },

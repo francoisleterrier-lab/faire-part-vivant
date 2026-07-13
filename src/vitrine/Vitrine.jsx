@@ -4,7 +4,7 @@ import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
 import tableDressee from "../assets/table-dressee.jpg";
 import chaisesForever from "../assets/chaises-forever.jpg";
-import { I, Sprig, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
+import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO } from "./shared.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 
 /* ============================================================
@@ -66,7 +66,6 @@ function PhoneMock() {
 function Hero() {
   return (
     <section className="vt-hero" id="top">
-      <Sprig className="h-tl vt-sway" /><Sprig className="h-br vt-sway" />
       <div className="vt-wrap vt-hero-grid">
         <div className="vt-hero-copy">
           <span className="vt-eyebrow">Sites de mariage sur-mesure · Sud-Toulousain</span>

@@ -1,4 +1,4 @@
-import { I, Sprig, useReveal, Nav, Footer, Contact, DEMO } from "./shared.jsx";
+import { I, useReveal, Nav, Footer, Contact, DEMO } from "./shared.jsx";
 import { ARTICLES, getArticle } from "./blog.js";
 
 /* Article de blog (une page/URL par article). */

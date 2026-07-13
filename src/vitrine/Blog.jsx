@@ -1,4 +1,4 @@
-import { I, Sprig, useReveal, Nav, Footer, Contact } from "./shared.jsx";
+import { I, useReveal, Nav, Footer, Contact } from "./shared.jsx";
 import { ARTICLES } from "./blog.js";
 
 /* Journal — index des articles (contenu SEO). */
@@ -28,7 +28,6 @@ export default function Blog() {
       <Nav links={NAV} />
       <main>
         <section className="vt-fhero" id="top">
-          <Sprig className="h-tl vt-sway" /><Sprig className="h-br vt-sway" />
           <div className="vt-wrap reveal" style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
             <span className="vt-eyebrow">Le journal</span>
             <div className="vt-flourish" style={{ justifyContent: "center", margin: "1rem auto 1.2rem" }} />

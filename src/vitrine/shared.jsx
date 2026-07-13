@@ -25,23 +25,6 @@ export const I = {
   heart: (p) => (<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" {...p}><path d="M12 21s-7.2-4.35-9.6-8.4C.9 9.9 2 6.5 5 6c2-.3 3.4.9 4 2 .6-1.1 2-2.3 4-2 3 .5 4.1 3.9 2.6 6.6C19.2 16.65 12 21 12 21Z"/></svg>),
 };
 
-/* ---------- Décor botanique ---------- */
-export function Sprig({ className = "", stems = 7 }) {
-  const leaves = [];
-  for (let i = 1; i <= stems; i++) {
-    const y = 90 - i * 11, s = 0.7 + (i / stems) * 0.6;
-    leaves.push(<ellipse key={"l" + i} cx={50 - 15 * s} cy={y} rx={11 * s} ry={6.5 * s} fill="currentColor" opacity="0.85" transform={`rotate(-32 ${50 - 15 * s} ${y})`} />);
-    leaves.push(<ellipse key={"r" + i} cx={50 + 15 * s} cy={y - 5} rx={11 * s} ry={6.5 * s} fill="currentColor" opacity="0.7" transform={`rotate(32 ${50 + 15 * s} ${y - 5})`} />);
-  }
-  return (
-    <svg className={"vt-sprig " + className} viewBox="0 0 100 100" width="100" aria-hidden="true">
-      <path d="M50 96 C50 70 50 45 50 8" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" opacity="0.6" />
-      {leaves}
-      <circle cx="50" cy="8" r="3.2" fill="currentColor" opacity="0.6" />
-    </svg>
-  );
-}
-
 export const Ornement = (p) => (
   <svg viewBox="0 0 120 14" width="86" fill="currentColor" {...p}>
     <path d="M60 2c-3 3-3 7 0 10 3-3 3-7 0-10Z" opacity=".9" />
@@ -202,7 +185,6 @@ export function Contact() {
   }
   return (
     <section className="vt-contact" id="contact">
-      <Sprig className="ct-l" /><Sprig className="ct-r" />
       <div className="vt-wrap vt-contact-in reveal">
         <div className="vt-contact-copy">
           <span className="vt-eyebrow on-dark">Sur mesure & accompagné</span>
