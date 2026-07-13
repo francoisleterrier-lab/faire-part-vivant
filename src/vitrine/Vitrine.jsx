@@ -14,8 +14,8 @@ import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 
 const NAV = [
   ["fonctionnalites.html", "Fonctionnalités"],
-  ["#univers", "Univers"],
   ["#formules", "Tarifs"],
+  ["blog.html", "Journal"],
   ["#faq", "FAQ"],
 ];
 

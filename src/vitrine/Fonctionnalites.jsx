@@ -7,8 +7,8 @@ import { UNIVERS } from "./data.js";
 
 const NAV = [
   ["index.html", "Accueil"],
-  ["#invitation", "Le faire-part"],
   ["#formules", "Tarifs"],
+  ["blog.html", "Journal"],
   ["index.html#faq", "FAQ"],
 ];
 

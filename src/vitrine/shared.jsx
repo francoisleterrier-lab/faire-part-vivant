@@ -264,6 +264,7 @@ export function Footer() {
             <h4>Découvrir</h4>
             <a href="index.html">Accueil</a>
             <a href="fonctionnalites.html">Fonctionnalités</a>
+            <a href="blog.html">Journal</a>
             <a href="index.html#formules">Tarifs</a>
             <a href="index.html#faq">FAQ</a>
           </div>

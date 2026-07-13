@@ -48,6 +48,11 @@ export default defineConfig({
         main: new URL("./index.html", import.meta.url).pathname,
         // Page « Fonctionnalités » détaillée
         fonctionnalites: new URL("./fonctionnalites.html", import.meta.url).pathname,
+        // Journal (blog SEO) : index + articles
+        blog: new URL("./blog.html", import.meta.url).pathname,
+        artGuide: new URL("./blog-guide-faire-part-mariage-numerique.html", import.meta.url).pathname,
+        artPapier: new URL("./blog-faire-part-papier-ou-digital.html", import.meta.url).pathname,
+        artRsvp: new URL("./blog-gerer-rsvp-mariage.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },
