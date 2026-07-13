@@ -137,9 +137,20 @@ body::before {
   background-position: center;
   background-size: cover;
 }
-/* Sur mobile : on montre le cadre entier (bandes crème identiques au fond). */
+/* Sur mobile (écran vertical), l'image paysage ne peut pas encadrer les 4 bords.
+   On la peint donc en DEUX bandes — feuillage en haut ET en bas — pour que le
+   végétal habille tout l'écran, du haut jusqu'en bas. */
 @media (max-width: 760px) {
-  body::before { background-size: cover, contain; }
+  body::before {
+    background-color: var(--iv);
+    background-image:
+      linear-gradient(rgba(244, 240, 231, 0.10), rgba(244, 240, 231, 0.24)),
+      url(../assets/cadre-vegetal.webp),
+      url(../assets/cadre-vegetal.webp);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, center top, center bottom;
+    background-size: cover, 168% auto, 168% auto;
+  }
 }
 
 /* ---------- Hero ---------- */
