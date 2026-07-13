@@ -31,6 +31,7 @@
 html { scroll-behavior: smooth; }
 html, body { margin: 0; }
 body {
+  position: relative;
   font-family: var(--sans);
   font-weight: 300;
   background: var(--iv);
@@ -120,36 +121,32 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
   .vt-mobile .vt-btn { display: inline-flex; margin-top: 0.7rem; }
 }
 
-/* ---------- Fond botanique pleine page (aquarelle eucalyptus) ---------- */
-/* L'image encadre tout le site : son centre crème se fond avec --iv, ses
-   feuillages habillent les bords. Calque fixe, derrière tout le contenu. */
+/* ---------- Fond botanique (aquarelle eucalyptus) ---------- */
+/* Calque ABSOLU (pas fixed) : il fait la hauteur du document et défile donc
+   avec la page. Le cadre se répète verticalement pour habiller toute la
+   hauteur ; son centre crème se fond avec --iv, ses feuillages bordent la page. */
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -10;
   pointer-events: none;
   background-color: var(--iv);
   background-image:
-    linear-gradient(rgba(244, 240, 231, 0.12), rgba(244, 240, 231, 0.30)),
+    linear-gradient(rgba(244, 240, 231, 0.20), rgba(244, 240, 231, 0.20)),
     url(../assets/cadre-vegetal.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-repeat: repeat, repeat-y;
+  background-position: top center, top center;
+  background-size: auto, 100% auto;
 }
-/* Sur mobile (écran vertical), l'image paysage ne peut pas encadrer les 4 bords.
-   On la peint donc en DEUX bandes — feuillage en haut ET en bas — pour que le
-   végétal habille tout l'écran, du haut jusqu'en bas. */
+/* Sur mobile (écran vertical), on agrandit le motif pour que le feuillage
+   déborde sur les côtés et habille tout l'écran. */
 @media (max-width: 760px) {
   body::before {
-    background-color: var(--iv);
     background-image:
-      linear-gradient(rgba(244, 240, 231, 0.10), rgba(244, 240, 231, 0.24)),
-      url(../assets/cadre-vegetal.webp),
+      linear-gradient(rgba(244, 240, 231, 0.16), rgba(244, 240, 231, 0.16)),
       url(../assets/cadre-vegetal.webp);
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: center, center top, center bottom;
-    background-size: cover, 168% auto, 168% auto;
+    background-size: auto, 168% auto;
   }
 }
 
