@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY } from "./data.js";
+import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY, SITE_PRINCIPAL, OFFRE_URL, TEL, TEL_INTL } from "./data.js";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -76,7 +76,7 @@ export function Nav({ links }) {
   return (
     <header className={"vt-nav" + (scrolled ? " scrolled" : "")}>
       <div className="vt-wrap vt-nav-in">
-        <a href="index.html" className="vt-logo"><span className="nm">{MARQUE}</span><span className="by">{SIGNATURE}</span></a>
+        <div className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></div>
         <nav className="vt-nav-links">{links.map(([h, t]) => <a key={h + t} href={h}>{t}</a>)}</nav>
         <div className="vt-nav-cta">
           <a className="vt-btn gold" href={DEMO}>Demander une démo</a>
@@ -154,6 +154,7 @@ export function Packs() {
           ))}
         </div>
         <p className="vt-plans-note">Tarifs indicatifs « à partir de » · devis personnalisé selon vos envies · vente en direct, sans abonnement.</p>
+        <p className="vt-plans-lien"><a href={OFFRE_URL}>En savoir plus sur l'offre et les tarifs {I.arrow()}</a></p>
       </div>
     </section>
   );
@@ -215,7 +216,7 @@ export function Contact() {
             <li>{I.check()} Un accompagnement humain de bout en bout</li>
             <li>{I.check()} Réponse sous 48 h</li>
           </ul>
-          <p className="vt-contact-mail">Ou écrivez-moi directement : <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+          <p className="vt-contact-mail">Ou directement : <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={`tel:${TEL_INTL}`}>{TEL}</a></p>
         </div>
         {etat === "ok" ? (
           <div className="vt-contact-form vt-contact-ok">
@@ -255,26 +256,28 @@ export function Footer() {
     <footer className="vt-footer">
       <div className="vt-wrap vt-footer-in">
         <div>
-          <span className="vt-logo"><span className="nm">{MARQUE}</span><span className="by">{SIGNATURE}</span></span>
-          <p className="tag">Le faire-part qui vit — un site-invitation privé, installable, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête. {REGION}.</p>
+          <span className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></span>
+          <p className="tag">Un service de <a href={SITE_PRINCIPAL}>François Leterrier</a> — Community Manager &amp; création de sites, Sud-Toulousain.</p>
         </div>
         <nav>
           <div>
             <h4>Découvrir</h4>
             <a href="index.html">Accueil</a>
             <a href="fonctionnalites.html">Fonctionnalités</a>
-            <a href="index.html#lumiere">Une lumière par invité</a>
+            <a href="index.html#formules">Tarifs</a>
             <a href="index.html#faq">FAQ</a>
           </div>
           <div>
-            <h4>Parler du projet</h4>
-            <a href="#contact">Demander une démo</a>
-            <a href={`mailto:${EMAIL}`}>Nous écrire</a>
+            <h4>François Leterrier</h4>
+            <a href={SITE_PRINCIPAL}>Site principal</a>
+            <a href={OFFRE_URL}>L'offre faire-part</a>
+            <a href={`tel:${TEL_INTL}`}>{TEL}</a>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>
         </nav>
       </div>
       <div className="vt-wrap vt-footer-bottom">
-        <span>© {"2026"} {MARQUE} · François Leterrier — Fait avec 🤍</span>
+        <span>© {"2026"} {MARQUE} · François Leterrier — Community Manager &amp; création de sites · Sud-Toulousain</span>
         <span>Sur mesure · vente en direct · sur devis</span>
       </div>
     </footer>

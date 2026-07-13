@@ -9,30 +9,26 @@
 
     <!-- Page publique et indexable -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://francoisleterrier-lab.github.io/faire-part-vivant/" />
+    <link rel="canonical" href="https://francoisleterrier.fr/faire-part-vivant/" />
 
     <!-- Aperçu de lien (réseaux, WhatsApp, SMS) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Faire-part Vivant · François Leterrier" />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:url" content="https://francoisleterrier-lab.github.io/faire-part-vivant/" />
+    <meta property="og:url" content="https://francoisleterrier.fr/faire-part-vivant/" />
     <meta property="og:title" content="Faire-part Vivant — l'invitation de mariage qui vit" />
     <meta property="og:description" content="Un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné." />
-    <meta property="og:image" content="https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg" />
-    <meta property="og:image:width" content="1800" />
-    <meta property="og:image:height" content="1200" />
+    <meta property="og:image" content="https://francoisleterrier.fr/faire-part-vivant/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Faire-part Vivant — faire-part de mariage numérique, installable comme une app." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Faire-part Vivant — l'invitation de mariage qui vit" />
     <meta name="twitter:description" content="Un site-invitation privé, installable comme une app, du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné." />
-    <meta name="twitter:image" content="https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg" />
+    <meta name="twitter:image" content="https://francoisleterrier.fr/faire-part-vivant/og.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Polices auto-hébergées (RGPD : aucun appel à un tiers) -->
+    <link rel="stylesheet" href="fonts.css" />
 
     <!-- Données structurées (Service + FAQ) -->
     <script type="application/ld+json">
@@ -44,19 +40,26 @@
             "name": "Faire-part Vivant",
             "serviceType": "Faire-part de mariage numérique sur mesure",
             "description": "Un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête.",
-            "url": "https://francoisleterrier-lab.github.io/faire-part-vivant/",
-            "image": "https://francoisleterrier-lab.github.io/faire-part-vivant/og.jpg",
+            "url": "https://francoisleterrier.fr/faire-part-vivant/",
+            "image": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
             "areaServed": "France",
-            "provider": { "@type": "Person", "name": "François Leterrier" },
+            "provider": {
+              "@type": "Person",
+              "name": "François Leterrier",
+              "url": "https://francoisleterrier.fr",
+              "email": "francois.leterrier.cmw@gmail.com",
+              "telephone": "+33698200208"
+            },
             "offers": {
               "@type": "AggregateOffer",
               "priceCurrency": "EUR",
               "lowPrice": "290",
+              "highPrice": "790",
               "offerCount": "3",
               "offers": [
-                { "@type": "Offer", "name": "Essentiel", "price": "290", "priceCurrency": "EUR" },
-                { "@type": "Offer", "name": "Vivant", "price": "490", "priceCurrency": "EUR" },
-                { "@type": "Offer", "name": "Signature", "price": "790", "priceCurrency": "EUR" }
+                { "@type": "Offer", "name": "Essentiel", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "290", "priceCurrency": "EUR" } },
+                { "@type": "Offer", "name": "Vivant", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "490", "priceCurrency": "EUR" } },
+                { "@type": "Offer", "name": "Signature", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "790", "priceCurrency": "EUR" } }
               ]
             }
           },
@@ -71,6 +74,13 @@
               { "@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque faire-part est unique et réalisé sur mesure, avec un accompagnement humain de bout en bout. Les packs démarrent à 290 € ; le tarif final dépend de vos envies — demandez une démo et je vous fais une proposition claire." } },
               { "@type": "Question", "name": "Dois-je m'y connaître en informatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. Je vous accompagne à chaque étape et l'éditeur est sans code. Vous vous concentrez sur votre histoire ; je m'occupe du reste." } },
               { "@type": "Question", "name": "Quand le mettre en place et le partager ?", "acceptedAnswer": { "@type": "Answer", "text": "Dès le save-the-date, et jusqu'aux souvenirs d'après la fête. On installe tout au rythme qui vous convient, sans précipitation." } }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://francoisleterrier.fr/faire-part-vivant/" },
+              { "@type": "ListItem", "position": 2, "name": "Fonctionnalités", "item": "https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html" }
             ]
           }
         ]

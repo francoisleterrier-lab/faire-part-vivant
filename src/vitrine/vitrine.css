@@ -322,6 +322,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
 .vt-plan.feat li svg { color: var(--gold-soft); }
 .vt-plan .vt-btn { width: 100%; justify-content: center; }
 .vt-plans-note { text-align: center; margin-top: 1.8rem; color: var(--muted); font-size: 0.9rem; }
+.vt-plans-lien { text-align: center; margin: .5rem 0 0; }
+.vt-plans-lien a { color: var(--gold); font-weight: 500; font-size: 0.92rem; display: inline-flex; align-items: center; gap: .35rem; }
+.vt-plans-lien a:hover { color: var(--gold-2); }
 
 /* Bannière sur-mesure */
 .vt-bespoke { display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; flex-wrap: wrap; margin-top: 1.4rem; padding: clamp(1.6rem, 4vw, 2.3rem); border-radius: var(--radius); color: #eef1e9; box-shadow: var(--shadow); background: radial-gradient(130% 150% at 100% 0%, #4a5b43, var(--forest)); }
@@ -380,6 +383,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
 .vt-footer .vt-logo .nm { color: #f4f2ea; }
 .vt-footer .vt-logo .by { color: var(--gold-soft); }
 .vt-footer .tag { color: #9db09a; font-size: 0.9rem; max-width: 34ch; margin-top: 0.8rem; }
+.vt-footer .tag a { color: var(--gold-soft); }
+.vt-footer .vt-logo .nm, .vt-footer .vt-logo .by { display: block; }
 .vt-footer nav { display: flex; gap: 3rem; flex-wrap: wrap; }
 .vt-footer nav div h4 { font-family: var(--sans); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 0.9rem; }
 .vt-footer nav a { display: block; padding: 0.3rem 0; color: #cfd9c8; font-size: 0.92rem; }

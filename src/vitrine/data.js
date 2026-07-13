@@ -12,7 +12,15 @@ export const EMAIL = "francois.leterrier.cmw@gmail.com";
 
 /* Clé Web3Forms pour le formulaire de contact (comme le site principal).
    Vide → le formulaire retombe proprement sur un e-mail pré-rempli (mailto). */
-export const WEB3FORMS_KEY = "";
+export const WEB3FORMS_KEY = "65a34e63-ed73-4214-a9b4-bc144d952cd5";
+
+/* Domaine & maillage avec le site principal de François Leterrier. */
+export const SITE_URL = "https://francoisleterrier.fr/faire-part-vivant/";
+export const FEATS_URL = "https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html";
+export const SITE_PRINCIPAL = "https://francoisleterrier.fr";
+export const OFFRE_URL = "https://francoisleterrier.fr/faire-part-digital.html";
+export const TEL = "06 98 20 02 08";
+export const TEL_INTL = "+33698200208";
 
 export const ACCROCHE =
   "Le faire-part qui vit : un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date jusqu'aux souvenirs d'après la fête.";
