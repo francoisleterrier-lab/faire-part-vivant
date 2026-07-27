@@ -4,6 +4,9 @@ import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
 import tableDressee from "../assets/table-dressee.jpg";
 import chaisesForever from "../assets/chaises-forever.jpg";
+import mockupInvitation from "../assets/mockup-invitation.webp";
+import mockupInstallable from "../assets/mockup-installable.webp";
+import mockupRsvpAlbum from "../assets/mockup-rsvp-album.webp";
 import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO, applyAccent, readAccent, saveAccent, DEFAULT_ACCENT } from "./shared.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
 
@@ -69,7 +72,12 @@ function Hero({ accent, onAccent }) {
         <div className="vt-hero-copy">
           <span className="vt-eyebrow">Sites de mariage sur-mesure · Sud-Toulousain</span>
           <div className="vt-flourish" />
-          <h1 className="vt-display">Le faire-part<br />qui <span className="vt-amp">vit</span>.</h1>
+          {/* Retour à la ligne géré en CSS (spans en display:block), pas par un
+              <br> : le texte réel reste « Le faire-part qui vit. » (espace inclus). */}
+          <h1 className="vt-display">
+            <span className="vt-h1-line">Le faire-part</span>{" "}
+            <span className="vt-h1-line">qui <span className="vt-amp">vit</span>.</span>
+          </h1>
           <p className="vt-lead">
             Un faire-part de mariage numérique et vivant : un site-invitation privé, installable
             comme une app, qui accompagne vos invités du save-the-date jusqu'aux souvenirs d'après
@@ -115,6 +123,37 @@ function Benefices() {
               <h3>{b.t}</h3>
               <p>{b.d}</p>
             </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Apercu() {
+  const SHOTS = [
+    { src: mockupInvitation, cap: "L'invitation, à votre image",
+      alt: "Aperçu d'un faire-part de mariage numérique : prénoms des mariés, date du mariage et bouton pour confirmer sa présence (RSVP)." },
+    { src: mockupInstallable, cap: "Installable comme une app",
+      alt: "Le faire-part s'ajoute à l'écran d'accueil du téléphone et s'ouvre comme une application, sans passer par un store." },
+    { src: mockupRsvpAlbum, cap: "RSVP & album partagé",
+      alt: "Écran de confirmation de présence (RSVP) et album photo alimenté en direct par les invités du mariage." },
+  ];
+  return (
+    <section className="vt-section" id="apercu">
+      <div className="vt-wrap">
+        <div className="vt-head reveal">
+          <span className="vt-eyebrow">En images</span>
+          <div className="vt-flourish" />
+          <h2 className="vt-h2">À quoi ressemble un faire-part vivant.</h2>
+          <p>De l'invitation installable au mur photo des invités : un aperçu de l'expérience, côté mariés comme côté invités.</p>
+        </div>
+        <div className="vt-shots">
+          {SHOTS.map((s) => (
+            <figure className="vt-shot reveal" key={s.cap}>
+              <img src={s.src} width="640" height="1324" loading="lazy" decoding="async" alt={s.alt} />
+              <figcaption>{s.cap}</figcaption>
+            </figure>
           ))}
         </div>
       </div>
@@ -312,6 +351,7 @@ export default function Vitrine() {
         <Hero accent={accent} onAccent={chooseAccent} />
         <Bandeau />
         <Benefices />
+        <Apercu />
         <Lumiere />
         <PhotoBand />
         <UniversApercu />

@@ -60,6 +60,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; marg
   font-size: clamp(2.2rem, 5.2vw, 3.9rem); line-height: 1.06;
   letter-spacing: 0.01em; text-wrap: balance;
 }
+/* Chaque partie du titre sur sa ligne, sans <br> ni mots collés (l'espace
+   reste dans le textContent — bon pour l'accessibilité et le SEO). */
+.vt-display .vt-h1-line { display: block; }
 .vt-h2 { font-size: clamp(1.8rem, 3.8vw, 2.8rem); text-wrap: balance; }
 .vt-lead { font-size: clamp(1.05rem, 1.5vw, 1.22rem); color: var(--ink-soft); max-width: 60ch; }
 
@@ -149,6 +152,26 @@ body::before {
       url(../assets/cadre-vegetal-strip.jpg);
     background-size: auto, 170% auto;
   }
+}
+
+/* ---------- Aperçu en images (mockups produit) ---------- */
+.vt-shots {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.8rem); align-items: start;
+  margin-top: clamp(1.8rem, 4vw, 2.8rem);
+}
+.vt-shot { margin: 0; text-align: center; }
+.vt-shot img {
+  width: 100%; height: auto; max-width: 288px; display: block; margin: 0 auto;
+  filter: drop-shadow(0 30px 46px rgba(63, 78, 58, 0.22));
+}
+.vt-shot figcaption {
+  margin-top: 1.1rem; font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--forest);
+}
+@media (max-width: 760px) {
+  .vt-shots { grid-template-columns: 1fr; gap: 2.6rem; }
+  .vt-shot img { max-width: 250px; }
 }
 
 /* ---------- Hero ---------- */
