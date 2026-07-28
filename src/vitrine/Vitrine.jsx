@@ -39,7 +39,7 @@ const LeafRow = (p) => (
 function PhoneMock({ accent, onAccent }) {
   return (
     <div className="vt-phone-wrap">
-      <div className="vt-phone reveal">
+      <div className="vt-phone">
         <div className="vt-screen" style={{ "--sc-accent": accent }}>
           <div className="sc-top"><span className="cpl">Émilie &amp; Julien</span><span className="bg"><i /><i /><i /></span></div>
           <span className="sc-live">En direct</span>
@@ -55,7 +55,7 @@ function PhoneMock({ accent, onAccent }) {
           </div>
         </div>
       </div>
-      <div className="vt-swatches reveal">
+      <div className="vt-swatches">
         <span className="lbl">Votre couleur :</span>
         {ACCENTS.map((a) => (
           <button key={a.id} className={"vt-swatch" + (accent === a.c ? " on" : "")} style={{ background: a.c }} aria-label={a.id} onClick={() => onAccent(a.c)} />
@@ -68,6 +68,9 @@ function PhoneMock({ accent, onAccent }) {
 function Hero({ accent, onAccent }) {
   return (
     <section className="vt-hero" id="top">
+      <div className="vt-hero-motes" aria-hidden="true">
+        <span className="m0" /><span className="m1" /><span className="m2" /><span className="m3" /><span className="m4" /><span className="m5" />
+      </div>
       <div className="vt-wrap vt-hero-grid">
         <div className="vt-hero-copy">
           <span className="vt-eyebrow">Sites de mariage sur-mesure · Sud-Toulousain</span>
@@ -91,6 +94,10 @@ function Hero({ accent, onAccent }) {
         </div>
         <div className="vt-hero-media"><PhoneMock accent={accent} onAccent={onAccent} /></div>
       </div>
+      <a className="vt-hero-scroll" href="#decouvrir" aria-label="Découvrir la suite">
+        <span>Découvrir</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+      </a>
     </section>
   );
 }
@@ -108,7 +115,7 @@ function Bandeau() {
 
 function Benefices() {
   return (
-    <section className="vt-section">
+    <section className="vt-section" id="decouvrir">
       <div className="vt-wrap">
         <div className="vt-head reveal">
           <span className="vt-eyebrow">Le faire-part de mariage nouvelle génération</span>
