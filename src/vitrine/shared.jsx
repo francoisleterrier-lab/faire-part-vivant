@@ -87,6 +87,8 @@ export function Nav({ links }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
+    <>
+    <div className="vt-progress" aria-hidden="true" />
     <header className={"vt-nav" + (scrolled ? " scrolled" : "")}>
       <div className="vt-wrap vt-nav-in">
         <div className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></div>
@@ -103,6 +105,7 @@ export function Nav({ links }) {
         </div>
       )}
     </header>
+    </>
   );
 }
 

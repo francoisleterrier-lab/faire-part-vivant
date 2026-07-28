@@ -655,6 +655,86 @@ body::before {
   .vt-compare, .vt-feats, .vt-steps, .vt-quotes, .vt-plans { grid-template-columns: 1fr; }
   .vt-footer-in { flex-direction: column; }
 }
+/* ============================================================
+   Raffinements « éditorial luxe » — texture, index de sections,
+   révélations et micro-interactions soignées.
+   ============================================================ */
+
+/* Ligatures & crénage sur les titres sérif (finition typographique) */
+h1, h2, h3, .vt-display, .vt-h2, .vt-screen .sc-couple {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Grain de papier : très fine texture sur tout le site (chaleur, tactile) */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+  opacity: 0.045; mix-blend-mode: multiply; background-size: 150px 150px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Numérotation éditoriale des sections (chapitres) */
+body { counter-reset: sect; }
+.vt-head { counter-increment: sect; }
+.vt-head .vt-eyebrow::before {
+  content: counter(sect, decimal-leading-zero) "  —  ";
+  color: var(--gold); font-variant-numeric: tabular-nums;
+}
+
+/* Barre de progression de lecture (fin filet doré, tied au scroll) */
+.vt-progress {
+  position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 200;
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+  background: linear-gradient(90deg, var(--gold-2), var(--gold));
+}
+@supports (animation-timeline: scroll()) {
+  .vt-progress { animation: vtProgress linear both; animation-timeline: scroll(root); }
+  @keyframes vtProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* Liens de navigation : soulignement doré qui se dessine */
+.vt-nav-links a { position: relative; }
+.vt-nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: right;
+  transition: transform 0.4s cubic-bezier(.7,0,.2,1);
+}
+.vt-nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Boutons : reflet qui balaie + flèche qui glisse */
+.vt-btn { position: relative; overflow: hidden; }
+.vt-btn svg { transition: transform 0.28s cubic-bezier(.5,0,.2,1); }
+.vt-btn:hover svg { transform: translateX(4px); }
+.vt-btn.gold::after {
+  content: ""; position: absolute; top: 0; left: -40%; width: 35%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-18deg); opacity: 0; pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .vt-btn.gold:hover::after { animation: vtSheen 0.85s ease; }
+}
+@keyframes vtSheen {
+  0% { left: -40%; opacity: 0; } 18% { opacity: 0.9; } 100% { left: 130%; opacity: 0; }
+}
+
+/* Cartes : survol plus soigné + pastille d'icône qui s'anime */
+.vt-feat, .vt-univ { transition: transform 0.32s cubic-bezier(.2,.7,.2,1), box-shadow 0.32s ease, border-color 0.32s ease; }
+.vt-feat:hover, .vt-univ:hover { transform: translateY(-6px); border-color: var(--gold-soft); }
+.vt-feat .ic, .vt-univ-top .ic { transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background 0.35s ease; }
+.vt-feat:hover .ic, .vt-univ:hover .ic { transform: scale(1.1) rotate(-4deg); }
+
+/* Mockups : lévitation au survol (desktop) */
+.vt-shot img { transition: transform 0.45s cubic-bezier(.2,.7,.2,1), filter 0.45s ease; }
+.vt-shot:hover img { transform: translateY(-10px) scale(1.015); filter: drop-shadow(0 42px 60px rgba(63, 78, 58, 0.3)); }
+
+/* Titres de section : révélation en « essuyage » (wipe) à l'entrée */
+@media (prefers-reduced-motion: no-preference) {
+  .vt-head.reveal .vt-h2 { clip-path: inset(-0.12em 100% -0.12em -0.05em); }
+  .vt-head.reveal.in .vt-h2 {
+    clip-path: inset(-0.12em -0.05em -0.12em -0.05em);
+    transition: clip-path 1s cubic-bezier(.66,0,.2,1) 0.12s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
