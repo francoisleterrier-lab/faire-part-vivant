@@ -9,6 +9,99 @@
 
 export const ARTICLES = [
   {
+    slug: "quand-envoyer-faire-part-mariage",
+    date: "2026-08-03",
+    maj: "2026-08-03",
+    lecture: "6 min",
+    categorie: "Organisation",
+    titreSeo: "Quand envoyer les faire-part de mariage ? Le calendrier 2026 — Faire-part Vivant",
+    h1: "Quand envoyer les faire-part de mariage ? Le rétroplanning complet",
+    desc: "Save-the-date, faire-part, date limite de RSVP : le calendrier complet pour envoyer vos faire-part de mariage au bon moment, sans stress ni oubli.",
+    chapo:
+      "Trop tôt, on est oublié ; trop tard, les invités ont déjà d'autres plans. Voici le calendrier complet — save-the-date, faire-part et date limite de réponse — pour prévenir vos invités au bon moment, sans rien laisser au hasard.",
+    tldr: [
+      "Faire-part officiel : envoyez-le environ 3 mois avant le mariage (10 à 12 semaines).",
+      "Save-the-date : 6 à 12 mois avant — jusqu'à 12-18 mois pour un mariage à l'étranger ou en haute saison.",
+      "Date limite de réponse (RSVP) : fixez-la 4 à 6 semaines avant le jour J.",
+      "Avec un faire-part numérique, un seul lien couvre tout : save-the-date, invitation puis rappels — sans réimpression ni frais postaux.",
+    ],
+    sections: [
+      {
+        h2: "Quand envoyer les faire-part de mariage ?",
+        p: [
+          "La règle simple : envoyez vos faire-part de mariage environ trois mois avant le jour J, soit dix à douze semaines. C'est le délai idéal — assez tôt pour que vos invités s'organisent (congés, trajet, hébergement), assez tard pour que la date reste bien présente à leur esprit.",
+          "Ce délai vaut pour un mariage « classique », en France, avec des invités qui n'ont pas à traverser le pays. Pour les cas particuliers (haute saison, étranger, invités éloignés), on envoie plus tôt — nous y revenons plus bas.",
+        ],
+      },
+      {
+        h2: "Qu'est-ce qu'un save-the-date et quand l'envoyer ?",
+        p: [
+          "Le save-the-date (« réservez la date ») est un petit message envoyé bien avant le faire-part, pour que vos proches bloquent la date sans attendre l'invitation officielle. Il annonce simplement : « on se marie, ce sera ce jour-là, les détails suivront ».",
+          "On l'envoie en général 6 à 12 mois avant le mariage. Il ne remplace pas le faire-part : il le précède et le prépare. Beaucoup de couples abandonnent le carton papier pour le save-the-date et envoient un simple message ou un lien numérique.",
+        ],
+      },
+      {
+        h2: "Faut-il envoyer un save-the-date ET un faire-part ?",
+        p: [
+          "Les deux ont des rôles différents : le save-the-date bloque la date très en amont, le faire-part apporte ensuite toutes les informations (lieu, horaires, RSVP, plan d'accès). Envoyer les deux évite les mauvaises surprises, surtout si votre mariage tombe en pleine saison ou un week-end prisé.",
+          "Si votre budget ou votre temps sont comptés, c'est justement là que le numérique change tout : le même lien sert d'abord de save-the-date, puis devient le faire-part complet quand les informations sont prêtes — sans rien réimprimer.",
+        ],
+      },
+      {
+        h2: "Le rétroplanning complet d'envoi",
+        p: ["Voici, échéance par échéance, quand faire quoi pour ne rien oublier :"],
+        table: {
+          caption: "Rétroplanning d'envoi des faire-part de mariage",
+          head: ["Échéance", "Action", "Pourquoi"],
+          rows: [
+            ["12–18 mois avant", "Save-the-date (étranger, haute saison, invités éloignés)", "Laisser le temps de poser des congés et de réserver"],
+            ["6–12 mois avant", "Save-the-date (cas général)", "Bloquer la date auprès de vos proches"],
+            ["3 mois avant (10–12 sem.)", "Faire-part officiel + ouverture des RSVP", "Donner toutes les infos au bon moment"],
+            ["4–6 semaines avant", "Date limite de réponse + relance", "Obtenir un comptage fiable pour le traiteur"],
+            ["2–3 semaines avant", "Comptage final, plan de table, infos pratiques", "Derniers ajustements sereins"],
+          ],
+        },
+      },
+      {
+        h2: "Quand fixer la date limite de réponse (RSVP) ?",
+        p: [
+          "Fixez la date limite de RSVP 4 à 6 semaines avant le mariage. C'est ce qui vous donne un nombre de couverts fiable à transmettre au traiteur et un plan de table réaliste.",
+          "Une date limite claire, indiquée dès le faire-part, réduit énormément les relances. Et avec un RSVP en ligne, le comptage se met à jour tout seul — nous détaillons la méthode dans notre guide dédié à la gestion des RSVP.",
+        ],
+      },
+      {
+        h2: "Cas particuliers : étranger, haute saison, petit comité",
+        p: ["Le calendrier de base s'adapte selon votre mariage :"],
+        points: [
+          "Mariage à l'étranger (destination wedding) : save-the-date 12 mois ou plus, faire-part 4 à 6 mois avant, pour laisser le temps de réserver vols et hôtels.",
+          "Haute saison (juin à septembre) ou week-end prolongé : anticipez d'un à deux mois, les agendas se remplissent vite.",
+          "Beaucoup d'invités venus de loin : privilégiez un save-the-date tôt et un faire-part numérique, plus rapide à diffuser.",
+          "Petit comité ou mariage intime : vous pouvez raccourcir, mais gardez au moins 6 à 8 semaines pour le faire-part.",
+        ],
+      },
+      {
+        h2: "Papier ou numérique : est-ce que ça change le calendrier ?",
+        p: [
+          "Le calendrier reste le même, mais le numérique vous fait gagner du temps à chaque étape : pas d'impression ni d'affranchissement, un envoi instantané par WhatsApp, SMS ou e-mail, et la possibilité de mettre à jour une information après l'envoi (un horaire, un lieu révélé plus tard).",
+          "C'est aussi ce qui permet d'assumer un save-the-date très en amont sans double coût : vous ouvrez simplement les sections du faire-part au fil des mois. Pour peser le pour et le contre, voyez notre comparatif papier ou digital.",
+        ],
+      },
+      {
+        h2: "Que faire si vous êtes en retard ?",
+        p: [
+          "Pas de panique : mieux vaut un faire-part envoyé tard qu'un invité oublié. Si vous êtes à moins de six semaines, passez au numérique — l'envoi est immédiat —, prévenez d'abord par un message personnel les invités clés, et fixez une date limite de réponse courte mais nette.",
+          "L'essentiel est que chacun ait l'information à temps pour dire oui et s'organiser. Un lien partagé aujourd'hui vaut mieux qu'un carton parfait posté trop tard.",
+        ],
+      },
+    ],
+    faq: [
+      ["Combien de temps avant le mariage faut-il envoyer les faire-part ?", "Environ 3 mois avant, soit 10 à 12 semaines. Pour un mariage à l'étranger ou en haute saison, envoyez plus tôt (4 à 6 mois), précédé d'un save-the-date."],
+      ["Le save-the-date remplace-t-il le faire-part ?", "Non. Le save-the-date bloque la date 6 à 12 mois avant ; le faire-part, envoyé environ 3 mois avant, apporte ensuite toutes les informations et ouvre les réponses (RSVP)."],
+      ["Quand envoyer les faire-part pour un mariage à l'étranger ?", "Plus tôt que pour un mariage local : un save-the-date 12 mois ou plus à l'avance, puis le faire-part 4 à 6 mois avant, pour laisser à vos invités le temps de réserver."],
+      ["Peut-on envoyer les faire-part par SMS ou WhatsApp ?", "Oui, avec un faire-part numérique : vous partagez un simple lien par WhatsApp, SMS ou e-mail. C'est instantané, sans frais postaux, et vos invités peuvent répondre directement en ligne."],
+    ],
+  },
+  {
     slug: "guide-faire-part-mariage-numerique",
     date: "2026-07-13",
     maj: "2026-08-03",
