@@ -44,6 +44,8 @@ try {
   const { default: Article } = await vite.ssrLoadModule("/src/vitrine/Article.jsx");
   const { default: Blog } = await vite.ssrLoadModule("/src/vitrine/Blog.jsx");
   const { default: Fonctionnalites } = await vite.ssrLoadModule("/src/vitrine/Fonctionnalites.jsx");
+  const { default: LocalMuret } = await vite.ssrLoadModule("/src/vitrine/LocalMuret.jsx");
+  const { default: APropos } = await vite.ssrLoadModule("/src/vitrine/APropos.jsx");
   const { ARTICLES } = await vite.ssrLoadModule("/src/vitrine/blog.js");
   const h = React.createElement;
 
@@ -55,6 +57,8 @@ try {
   const pages = [
     { file: "blog.html", markup: () => render(h(Blog)) },
     { file: "fonctionnalites.html", markup: () => render(h(Fonctionnalites)) },
+    { file: "faire-part-mariage-muret.html", markup: () => render(h(LocalMuret)) },
+    { file: "a-propos.html", markup: () => render(h(APropos)) },
     ...ARTICLES.map((a) => ({
       file: `blog-${a.slug}.html`,
       markup: () => render(h(Article, { slug: a.slug })),
