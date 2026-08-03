@@ -81,6 +81,18 @@ export const ARTICLES = [
           "Le papier a un coût qui grimpe vite : impression, enveloppes, timbres, et souvent une réimpression pour les oublis. Comptez fréquemment 250 à 600 € pour une centaine d'invités.",
           "Le digital supprime l'impression et l'envoi postal : le coût est fixe, quel que soit le nombre d'invités.",
         ],
+        table: {
+          caption: "Faire-part papier vs numérique statique vs faire-part vivant",
+          head: ["Critère", "Papier", "Numérique statique", "Faire-part vivant"],
+          rows: [
+            ["Prix indicatif", "2–5 € / invité", "Gratuit – 50 €", "À partir de 290 €"],
+            ["RSVP en ligne", "Non", "Parfois", "Oui, en temps réel"],
+            ["Mise à jour après envoi", "Impossible", "Limitée", "Oui, en direct"],
+            ["Album & souvenirs partagés", "Non", "Non", "Oui"],
+            ["Installable comme une app", "Non", "Non", "Oui (PWA)"],
+            ["Accompagnement humain", "—", "Rare", "Oui, de bout en bout"],
+          ],
+        },
       },
       {
         h2: "L'écologie",

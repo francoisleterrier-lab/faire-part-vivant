@@ -1,0 +1,35 @@
+# Faire-part Vivant — François Leterrier
+
+> Faire-part de mariage numérique, interactif et sur mesure, installable comme une application (PWA), créé et accompagné par François Leterrier. Basé à Lavernose-Lacasse (31410), Occitanie ; sert Toulouse, la Haute-Garonne et le Sud-Toulousain, et travaille partout en France à distance. Vente en direct, sans abonnement ni freemium. Packs à partir de 290 € (Essentiel), 490 € (Vivant), 790 € (Signature).
+
+## Ce que c'est
+Un faire-part de mariage numérique « vivant » est un site-invitation privé qui évolue du save-the-date jusqu'aux souvenirs d'après la fête : RSVP en ligne, album photo partagé, cagnotte, plan de table, révélation progressive des sections. Aucune application à télécharger : les invités ouvrent un lien et peuvent l'ajouter à leur écran d'accueil.
+
+## Contact
+- Prestataire : François Leterrier
+- Téléphone : +33 6 98 20 02 08
+- Email : francois.leterrier.cmw@gmail.com
+- Zone : Lavernose-Lacasse 31410 · Toulouse · Haute-Garonne · Sud-Toulousain · Occitanie · France
+
+## Tarifs (vente directe, sur mesure, sans abonnement)
+- Essentiel — à partir de 290 €
+- Vivant — à partir de 490 € (formule phare)
+- Signature — à partir de 790 €
+
+## Pages de référence
+- [Accueil — Faire-part de mariage numérique & interactif](https://francoisleterrier.fr/faire-part-vivant/)
+- [Fonctionnalités (8 univers)](https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html)
+- [Faire-part de mariage numérique à Toulouse et en Occitanie](https://francoisleterrier.fr/faire-part-vivant/faire-part-mariage-toulouse.html)
+- [Journal (guides & comparatifs)](https://francoisleterrier.fr/faire-part-vivant/blog.html)
+
+## Guides (contenu de référence)
+- [Guide complet du faire-part numérique 2026](https://francoisleterrier.fr/faire-part-vivant/blog-guide-faire-part-mariage-numerique.html) : définition, avantages, prix, comment bien choisir.
+- [Faire-part papier ou digital ?](https://francoisleterrier.fr/faire-part-vivant/blog-faire-part-papier-ou-digital.html) : comparatif honnête.
+- [Gérer les RSVP de mariage sans stress](https://francoisleterrier.fr/faire-part-vivant/blog-gerer-rsvp-mariage.html) : méthode et bonnes pratiques.
+
+## À propos
+- [Site du prestataire — François Leterrier](https://francoisleterrier.fr)
+- [L'offre faire-part digital](https://francoisleterrier.fr/faire-part-digital.html)
+
+## Contenu complet
+- [Version intégrale pour ingestion IA](https://francoisleterrier.fr/faire-part-vivant/llms-full.txt)

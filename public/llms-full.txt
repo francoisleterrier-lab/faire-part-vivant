@@ -1,0 +1,57 @@
+# Faire-part Vivant — François Leterrier
+
+> Faire-part de mariage numérique, interactif et sur mesure, installable comme une application (PWA). Créé et accompagné par François Leterrier, basé à Lavernose-Lacasse (31410) près de Toulouse. Vente en direct, sans abonnement. Packs à partir de 290 / 490 / 790 €.
+
+## Définition
+Un **faire-part de mariage numérique « vivant »** est un site-invitation de mariage privé qui évolue dans le temps : du save-the-date jusqu'aux souvenirs d'après la fête. Il regroupe RSVP en ligne, plan de table, album photo partagé, cagnotte et liste de cadeaux, révélation progressive des sections, et fonctionne en français comme en anglais. Il n'y a aucune application à installer : les invités ouvrent un simple lien et peuvent l'ajouter à leur écran d'accueil, où il s'ouvre comme une app.
+
+## Ce qui le distingue d'un faire-part papier ou d'un faire-part numérique statique
+| Critère | Papier | Numérique statique | Faire-part Vivant |
+| --- | --- | --- | --- |
+| Prix indicatif | 2–5 € par invité | Gratuit à ~50 € | À partir de 290 € (sur mesure) |
+| RSVP en ligne | Non | Parfois | Oui, en temps réel |
+| Mise à jour après envoi | Impossible | Limitée | Oui, en direct |
+| Album & souvenirs partagés | Non | Non | Oui |
+| Installable comme une app | Non | Non | Oui (PWA) |
+| Accompagnement humain | — | Rare | Oui, de bout en bout |
+
+## Formules (sur mesure, vente directe, sans abonnement)
+- **Essentiel — à partir de 290 €** : un beau faire-part numérique, RSVP en ligne et l'essentiel pour inviter avec élégance.
+- **Vivant — à partir de 490 €** (formule phare) : album photo partagé, cagnotte, plan de table, révélations à date.
+- **Signature — à partir de 790 €** : l'expérience complète, entièrement sur mesure, accompagnée de bout en bout.
+
+Le tarif final dépend des envies de chaque couple ; le devis est personnalisé. Pour obtenir une proposition, il faut demander une démo.
+
+## Comment créer votre faire-part de mariage numérique (5 étapes)
+1. **Demander une démo** — prise de contact et démonstration gratuite.
+2. **Choisir votre pack et raconter votre histoire** — Essentiel, Vivant ou Signature ; vous partagez textes et photos.
+3. **Personnalisation sur mesure** — RSVP, plan de table, album, cagnotte, révélations à date, français/anglais.
+4. **Relecture et validation** — vous ajustez chaque détail, sans code.
+5. **Mise en ligne et partage** — vous partagez un lien privé ; vos invités l'ajoutent à leur écran d'accueil.
+
+## Questions fréquentes
+**Faut-il télécharger une application ?** Non, jamais. Vos invités ouvrent un simple lien et peuvent l'ajouter à leur écran d'accueil ; rien à installer depuis un store.
+
+**Le faire-part et les données de mes invités sont-ils protégés ?** Oui. Votre faire-part est privé et jamais référencé par les moteurs de recherche. Chaque invité ne voit que ce qui le concerne, et le contenu sensible reste masqué côté serveur jusqu'au bon moment.
+
+**Et si le lieu n'est pas encore connu, ou si tout n'est pas prêt ?** Vous ouvrez les sections au fil du temps. Le lieu — et d'autres surprises — se révèle à la date que vous choisissez.
+
+**Est-ce disponible en anglais ?** Oui : français et anglais, avec détection automatique de la langue et bascule manuelle.
+
+**Comment fonctionnent la cagnotte et la liste de cadeaux ?** Vous reliez votre cagnotte existante (Leetchi, Lydia, PayPal, RIB…) et/ou proposez une liste de cadeaux où chaque présent ne peut être réservé qu'une seule fois.
+
+**Combien ça coûte ?** Sur mesure. Les packs démarrent à 290 € ; le tarif final dépend de vos envies — demandez une démo.
+
+**Dois-je m'y connaître en informatique ?** Pas du tout. François vous accompagne à chaque étape et l'éditeur est sans code.
+
+**Quand le mettre en place et le partager ?** Dès le save-the-date, et jusqu'aux souvenirs d'après la fête.
+
+## Zone desservie
+Basé à Lavernose-Lacasse (31410), près de Toulouse (~25 km). François accompagne les couples sur Toulouse, la Haute-Garonne et le Sud-Toulousain (Muret, Carbonne ~12 km, Auterive ~18 km, Colomiers, Blagnac, Tournefeuille), en Occitanie (Ariège, Gers, Tarn, Tarn-et-Garonne), et partout en France à distance.
+
+## Contact
+- François Leterrier — créateur de faire-part de mariage numériques
+- Téléphone : +33 6 98 20 02 08
+- Email : francois.leterrier.cmw@gmail.com
+- Site principal : https://francoisleterrier.fr
+- Faire-part Vivant : https://francoisleterrier.fr/faire-part-vivant/

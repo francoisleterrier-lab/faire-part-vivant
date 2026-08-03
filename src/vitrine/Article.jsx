@@ -1,5 +1,6 @@
 import { I, useReveal, useStoredAccent, Nav, Footer, Contact, DEMO } from "./shared.jsx";
 import { ARTICLES, getArticle } from "./blog.js";
+import { OFFRE_URL, SITE_PRINCIPAL } from "./data.js";
 
 /* Article de blog (une page/URL par article). */
 
@@ -59,6 +60,19 @@ export default function Article({ slug }) {
                     {s.points.map((pt, k) => <li key={k}>{I.check()}<span>{pt}</span></li>)}
                   </ul>
                 )}
+                {s.table && (
+                  <div className="vt-table-wrap">
+                    <table className="vt-table">
+                      {s.table.caption && <caption>{s.table.caption}</caption>}
+                      <thead><tr>{s.table.head.map((h, k) => <th key={k} scope="col">{h}</th>)}</tr></thead>
+                      <tbody>
+                        {s.table.rows.map((row, r) => (
+                          <tr key={r}>{row.map((cell, c) => (c === 0 ? <th key={c} scope="row">{cell}</th> : <td key={c}>{cell}</td>))}</tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
             ))}
             {a.faq && (
@@ -69,9 +83,24 @@ export default function Article({ slug }) {
                 ))}
               </section>
             )}
+            <section className="reveal vt-article-more">
+              <h2>Pour aller plus loin</h2>
+              <ul className="vt-article-ul">
+                <li>{I.check()}<span><a href="fonctionnalites.html#rsvp">Le RSVP en ligne et le plan de table</a> — comment vos invités confirment leur présence.</span></li>
+                <li>{I.check()}<span><a href="fonctionnalites.html#cadeaux">La cagnotte et la liste de cadeaux</a> — un fonds commun qui prend vie.</span></li>
+                <li>{I.check()}<span><a href="fonctionnalites.html#souvenirs">L'album photo partagé</a> — tous les souvenirs au même endroit.</span></li>
+                <li>{I.check()}<span><a href="faire-part-mariage-toulouse.html">Faire-part de mariage numérique à Toulouse</a> — pour un mariage en Occitanie.</span></li>
+                <li>{I.check()}<span><a href={OFFRE_URL}>L'offre faire-part digital de François Leterrier</a> — tarifs et détails.</span></li>
+              </ul>
+            </section>
+            <section className="reveal vt-article-author">
+              <h2>À propos de l'auteur</h2>
+              <p><strong>François Leterrier</strong> crée des faire-part de mariage numériques et interactifs, sur mesure et accompagnés de bout en bout, depuis Lavernose-Lacasse près de Toulouse. Community Manager et créateur de sites dans le Sud-Toulousain, il conçoit chaque faire-part vivant à la main, du save-the-date aux souvenirs d'après la fête. <a href={SITE_PRINCIPAL}>En savoir plus</a>.</p>
+            </section>
             <div className="vt-article-cta reveal">
               <p>Envie d'un faire-part comme celui-là, créé sur mesure et accompagné ?</p>
               <a className="vt-btn gold lg" href={DEMO}>Demander une démo {I.arrow()}</a>
+              <p className="vt-article-cta-sub"><a href={OFFRE_URL}>Voir l'offre et les tarifs {I.arrow()}</a></p>
             </div>
           </div>
         </article>

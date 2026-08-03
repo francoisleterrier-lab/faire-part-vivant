@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#f4f0e7" />
     <title>Faire-part de mariage numérique & interactif — Faire-part Vivant</title>
     <meta name="description" content="Faire-part de mariage numérique, vivant et installable comme une app. Demandez une démo : RSVP, album, cagnotte, sur mesure — partout en France." />
-    <meta name="keywords" content="faire-part de mariage numérique, faire-part mariage digital, faire-part interactif, site de mariage, invitation mariage en ligne, faire-part vivant, RSVP en ligne" />
+    <meta name="keywords" content="faire-part de mariage numérique, faire-part mariage digital, faire-part interactif, site de mariage, invitation mariage en ligne, faire-part vivant, RSVP en ligne, faire-part mariage Toulouse" />
 
     <!-- Page publique et indexable -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://francoisleterrier.fr/faire-part-vivant/" />
 
     <!-- Aperçu de lien (réseaux, WhatsApp, SMS) -->
@@ -28,97 +28,272 @@
     <meta name="twitter:description" content="Un site-invitation privé, installable comme une app, du save-the-date aux souvenirs d'après la fête. Sur mesure & accompagné." />
     <meta name="twitter:image" content="https://francoisleterrier.fr/faire-part-vivant/og.jpg" />
 
-    <!-- Polices auto-hébergées (RGPD : aucun appel à un tiers) -->
+    <!-- Polices auto-hébergées (RGPD : aucun appel à un tiers) + preload des graisses au-dessus de la ligne de flottaison -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-600.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jost-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jost-300.woff2" crossorigin />
     <link rel="stylesheet" href="fonts.css" />
 
-    <!-- Données structurées (Service + FAQ) -->
+    <!-- Données structurées (@graph : entité locale, service, offres, FAQ, HowTo, définition) -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "ProfessionalService",
-            "@id": "https://francoisleterrier.fr/faire-part-vivant/#business",
-            "name": "Faire-part Vivant — François Leterrier",
-            "description": "Création de faire-part de mariage numériques et interactifs, sur mesure et accompagnés, partout en France.",
-            "url": "https://francoisleterrier.fr/faire-part-vivant/",
-            "image": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
-            "telephone": "+33698200208",
-            "email": "francois.leterrier.cmw@gmail.com",
-            "priceRange": "290€–790€",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Lavernose-Lacasse",
-              "postalCode": "31410",
-              "addressRegion": "Occitanie",
-              "addressCountry": "FR"
-            },
-            "areaServed": { "@type": "Country", "name": "France" },
-            "founder": { "@type": "Person", "name": "François Leterrier" },
-            "sameAs": ["https://francoisleterrier.fr", "https://francoisleterrier.fr/faire-part-digital.html"]
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://francoisleterrier.fr/faire-part-vivant/#website",
-            "name": "Faire-part Vivant",
-            "url": "https://francoisleterrier.fr/faire-part-vivant/",
-            "inLanguage": "fr-FR",
-            "publisher": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" }
-          },
-          {
-            "@type": "Service",
-            "name": "Faire-part Vivant",
-            "serviceType": "Faire-part de mariage numérique sur mesure",
-            "description": "Un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête.",
-            "url": "https://francoisleterrier.fr/faire-part-vivant/",
-            "image": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
-            "areaServed": "France",
-            "provider": {
-              "@type": "Person",
-              "name": "François Leterrier",
-              "url": "https://francoisleterrier.fr",
-              "email": "francois.leterrier.cmw@gmail.com",
-              "telephone": "+33698200208"
-            },
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "EUR",
-              "lowPrice": "290",
-              "highPrice": "790",
-              "offerCount": "3",
-              "offers": [
-                { "@type": "Offer", "name": "Essentiel", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "290", "priceCurrency": "EUR" } },
-                { "@type": "Offer", "name": "Vivant", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "490", "priceCurrency": "EUR" } },
-                { "@type": "Offer", "name": "Signature", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "790", "priceCurrency": "EUR" } }
-              ]
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Faut-il télécharger une application ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, jamais. Vos invités ouvrent un simple lien. S'ils le souhaitent, ils l'ajoutent à leur écran d'accueil en un geste et il s'ouvre comme une app — mais il n'y a rien à installer depuis un store." } },
-              { "@type": "Question", "name": "Le faire-part et les données de mes invités sont-ils protégés ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Votre faire-part est privé et jamais référencé par les moteurs de recherche. Chaque invité ne voit que ce qui le concerne, et le contenu sensible reste masqué côté serveur jusqu'au bon moment." } },
-              { "@type": "Question", "name": "Et si le lieu n'est pas encore connu, ou si tout n'est pas prêt ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucun souci : vous ouvrez les sections au fil du temps. Le lieu — et d'autres surprises — se révèle à la date que vous choisissez, sans rien dévoiler avant l'heure." } },
-              { "@type": "Question", "name": "Est-ce disponible en anglais ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui : français et anglais, avec détection automatique de la langue et bascule manuelle. Idéal pour les invités venus d'ailleurs." } },
-              { "@type": "Question", "name": "Comment fonctionnent la cagnotte et la liste de cadeaux ?", "acceptedAnswer": { "@type": "Answer", "text": "Vous reliez votre cagnotte existante (Leetchi, Lydia, PayPal, RIB…) et/ou proposez une liste de cadeaux où chaque présent ne peut être réservé qu'une seule fois — sans doublon." } },
-              { "@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque faire-part est unique et réalisé sur mesure, avec un accompagnement humain de bout en bout. Les packs démarrent à 290 € ; le tarif final dépend de vos envies — demandez une démo et je vous fais une proposition claire." } },
-              { "@type": "Question", "name": "Dois-je m'y connaître en informatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. Je vous accompagne à chaque étape et l'éditeur est sans code. Vous vous concentrez sur votre histoire ; je m'occupe du reste." } },
-              { "@type": "Question", "name": "Quand le mettre en place et le partager ?", "acceptedAnswer": { "@type": "Answer", "text": "Dès le save-the-date, et jusqu'aux souvenirs d'après la fête. On installe tout au rythme qui vous convient, sans précipitation." } }
-            ]
-          },
-          {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://francoisleterrier.fr/faire-part-vivant/" },
-              { "@type": "ListItem", "position": 2, "name": "Fonctionnalités", "item": "https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html" }
-            ]
-          }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#business",
+      "name": "Faire-part Vivant — François Leterrier",
+      "alternateName": "Faire-part Vivant",
+      "description": "Création de faire-part de mariage numériques, vivants et interactifs, sur mesure et accompagnés de bout en bout. Un site-invitation privé, installable comme une app, du save-the-date aux souvenirs d'après la fête.",
+      "url": "https://francoisleterrier.fr/faire-part-vivant/",
+      "telephone": "+33698200208",
+      "email": "francois.leterrier.cmw@gmail.com",
+      "priceRange": "290€–790€",
+      "currenciesAccepted": "EUR",
+      "slogan": "L'invitation de mariage qui vit.",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/#primaryimage",
+        "url": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
+        "contentUrl": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
+        "width": 1200,
+        "height": 630,
+        "caption": "Faire-part Vivant — faire-part de mariage numérique, installable comme une app."
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/#logo",
+        "url": "https://francoisleterrier.fr/faire-part-vivant/icons/icon-512.png",
+        "contentUrl": "https://francoisleterrier.fr/faire-part-vivant/icons/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Faire-part Vivant"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lavernose-Lacasse",
+        "postalCode": "31410",
+        "addressRegion": "Occitanie",
+        "addressCountry": "FR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 43.4206, "longitude": 1.2519 },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=43.4206,1.2519",
+      "areaServed": [
+        { "@type": "City", "name": "Toulouse" },
+        { "@type": "City", "name": "Muret" },
+        { "@type": "City", "name": "Colomiers" },
+        { "@type": "City", "name": "Blagnac" },
+        { "@type": "City", "name": "Tournefeuille" },
+        { "@type": "City", "name": "Auterive" },
+        { "@type": "City", "name": "Carbonne" },
+        { "@type": "City", "name": "Montauban" },
+        { "@type": "City", "name": "Auch" },
+        { "@type": "City", "name": "Albi" },
+        { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
+        { "@type": "AdministrativeArea", "name": "Sud-Toulousain" },
+        { "@type": "AdministrativeArea", "name": "Ariège" },
+        { "@type": "AdministrativeArea", "name": "Gers" },
+        { "@type": "State", "name": "Occitanie" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "knowsAbout": [
+        "Faire-part de mariage numérique",
+        "Faire-part de mariage interactif",
+        "Invitation de mariage en ligne",
+        "RSVP en ligne",
+        "Site de mariage",
+        "Progressive Web App (PWA)",
+        "Album photo collaboratif",
+        "Cagnotte et liste de cadeaux de mariage",
+        "Plan de table interactif"
+      ],
+      "knowsLanguage": ["fr", "en"],
+      "founder": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#francois" },
+      "makesOffer": [
+        { "@type": "Offer", "name": "Essentiel", "priceSpecification": { "@type": "PriceSpecification", "price": 290, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }, "itemOffered": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#service" } },
+        { "@type": "Offer", "name": "Vivant", "priceSpecification": { "@type": "PriceSpecification", "price": 490, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }, "itemOffered": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#service" } },
+        { "@type": "Offer", "name": "Signature", "priceSpecification": { "@type": "PriceSpecification", "price": 790, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }, "itemOffered": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#service" } }
+      ],
+      "sameAs": [
+        "https://francoisleterrier.fr",
+        "https://francoisleterrier.fr/faire-part-digital.html"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#francois",
+      "name": "François Leterrier",
+      "url": "https://francoisleterrier.fr",
+      "email": "francois.leterrier.cmw@gmail.com",
+      "telephone": "+33698200208",
+      "jobTitle": "Créateur de faire-part de mariage numériques",
+      "worksFor": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" },
+      "knowsAbout": ["Faire-part de mariage numérique", "Progressive Web App", "RSVP en ligne", "Mariage"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Lavernose-Lacasse", "postalCode": "31410", "addressRegion": "Occitanie", "addressCountry": "FR" },
+      "sameAs": ["https://francoisleterrier.fr", "https://francoisleterrier.fr/faire-part-digital.html"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#website",
+      "name": "Faire-part Vivant",
+      "url": "https://francoisleterrier.fr/faire-part-vivant/",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#webpage",
+      "url": "https://francoisleterrier.fr/faire-part-vivant/",
+      "name": "Faire-part de mariage numérique & interactif — Faire-part Vivant",
+      "description": "Faire-part de mariage numérique, vivant et installable comme une app. RSVP, album, cagnotte, sur mesure — accompagné de bout en bout, autour de Toulouse et partout en France.",
+      "isPartOf": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#website" },
+      "about": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" },
+      "primaryImageOfPage": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#primaryimage" },
+      "breadcrumb": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#breadcrumb" },
+      "inLanguage": "fr-FR",
+      "datePublished": "2025-07-11",
+      "dateModified": "2026-08-03",
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".intro"] }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#service",
+      "name": "Faire-part Vivant",
+      "serviceType": "Faire-part de mariage numérique sur mesure",
+      "category": "Faire-part de mariage numérique",
+      "description": "Un site-invitation de mariage privé, installable comme une app, qui accompagne vos invités du save-the-date aux souvenirs d'après la fête : RSVP, plan de table, album photo, cagnotte, révélations à date. Sur mesure et accompagné.",
+      "url": "https://francoisleterrier.fr/faire-part-vivant/",
+      "image": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#primaryimage" },
+      "inLanguage": "fr-FR",
+      "provider": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" },
+      "brand": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#business" },
+      "areaServed": [
+        { "@type": "City", "name": "Toulouse" },
+        { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
+        { "@type": "State", "name": "Occitanie" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": 290,
+        "highPrice": 790,
+        "offerCount": 3,
+        "url": "https://francoisleterrier.fr/faire-part-vivant/",
+        "availability": "https://schema.org/InStock",
+        "offers": [
+          { "@type": "Offer", "name": "Essentiel", "url": "https://francoisleterrier.fr/faire-part-vivant/", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "PriceSpecification", "price": 290, "priceCurrency": "EUR", "valueAddedTaxIncluded": true } },
+          { "@type": "Offer", "name": "Vivant", "url": "https://francoisleterrier.fr/faire-part-vivant/", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "PriceSpecification", "price": 490, "priceCurrency": "EUR", "valueAddedTaxIncluded": true } },
+          { "@type": "Offer", "name": "Signature", "url": "https://francoisleterrier.fr/faire-part-vivant/", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "PriceSpecification", "price": 790, "priceCurrency": "EUR", "valueAddedTaxIncluded": true } }
         ]
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#faq",
+      "isPartOf": { "@id": "https://francoisleterrier.fr/faire-part-vivant/#webpage" },
+      "inLanguage": "fr-FR",
+      "mainEntity": [
+        { "@type": "Question", "name": "Faut-il télécharger une application ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, jamais. Vos invités ouvrent un simple lien. S'ils le souhaitent, ils l'ajoutent à leur écran d'accueil en un geste et il s'ouvre comme une app — mais il n'y a rien à installer depuis un store." } },
+        { "@type": "Question", "name": "Le faire-part et les données de mes invités sont-ils protégés ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Votre faire-part est privé et jamais référencé par les moteurs de recherche. Chaque invité ne voit que ce qui le concerne, et le contenu sensible reste masqué côté serveur jusqu'au bon moment." } },
+        { "@type": "Question", "name": "Et si le lieu n'est pas encore connu, ou si tout n'est pas prêt ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucun souci : vous ouvrez les sections au fil du temps. Le lieu — et d'autres surprises — se révèle à la date que vous choisissez, sans rien dévoiler avant l'heure." } },
+        { "@type": "Question", "name": "Est-ce disponible en anglais ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui : français et anglais, avec détection automatique de la langue et bascule manuelle. Idéal pour les invités venus d'ailleurs." } },
+        { "@type": "Question", "name": "Comment fonctionnent la cagnotte et la liste de cadeaux ?", "acceptedAnswer": { "@type": "Answer", "text": "Vous reliez votre cagnotte existante (Leetchi, Lydia, PayPal, RIB…) et/ou proposez une liste de cadeaux où chaque présent ne peut être réservé qu'une seule fois — sans doublon." } },
+        { "@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque faire-part est unique et réalisé sur mesure, avec un accompagnement humain de bout en bout. Les packs démarrent à 290 € ; le tarif final dépend de vos envies — demandez une démo et je vous fais une proposition claire." } },
+        { "@type": "Question", "name": "Dois-je m'y connaître en informatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. Je vous accompagne à chaque étape et l'éditeur est sans code. Vous vous concentrez sur votre histoire ; je m'occupe du reste." } },
+        { "@type": "Question", "name": "Quand le mettre en place et le partager ?", "acceptedAnswer": { "@type": "Answer", "text": "Dès le save-the-date, et jusqu'aux souvenirs d'après la fête. On installe tout au rythme qui vous convient, sans précipitation." } }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#howto",
+      "name": "Comment créer un faire-part de mariage numérique",
+      "description": "Les étapes pour créer votre faire-part de mariage numérique et interactif avec Faire-part Vivant, sur mesure et accompagné.",
+      "inLanguage": "fr-FR",
+      "totalTime": "P14D",
+      "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": 290 },
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Demander une démo", "text": "Prenez contact et demandez une démonstration gratuite pour découvrir le faire-part vivant et partager la date de votre mariage.", "url": "https://francoisleterrier.fr/faire-part-vivant/#contact" },
+        { "@type": "HowToStep", "position": 2, "name": "Choisir votre pack et raconter votre histoire", "text": "Choisissez le pack adapté (Essentiel, Vivant ou Signature) et partagez vos envies, vos textes et vos photos.", "url": "https://francoisleterrier.fr/faire-part-vivant/#formules" },
+        { "@type": "HowToStep", "position": 3, "name": "Personnalisation sur mesure", "text": "Votre faire-part est conçu sur mesure : sections RSVP, plan de table, album photo, cagnotte, révélations à date, français et anglais.", "url": "https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html" },
+        { "@type": "HowToStep", "position": 4, "name": "Relecture et validation", "text": "Vous relisez, ajustez et validez chaque détail ensemble, sans précipitation.", "url": "https://francoisleterrier.fr/faire-part-vivant/" },
+        { "@type": "HowToStep", "position": 5, "name": "Mise en ligne et partage", "text": "Le faire-part est mis en ligne : vous partagez un simple lien privé à vos invités, qui l'ajoutent à leur écran d'accueil comme une app.", "url": "https://francoisleterrier.fr/faire-part-vivant/" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://francoisleterrier.fr/faire-part-vivant/" },
+        { "@type": "ListItem", "position": 2, "name": "Fonctionnalités", "item": "https://francoisleterrier.fr/faire-part-vivant/fonctionnalites.html" }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#faire-part-vivant",
+      "name": "Faire-part vivant",
+      "description": "Faire-part de mariage numérique et interactif se présentant comme un site-invitation privé, installable comme une application (PWA), qui évolue dans le temps : du save-the-date aux souvenirs d'après la fête (RSVP, album photo, cagnotte, révélations à date).",
+      "inDefinedTermSet": "https://francoisleterrier.fr/faire-part-vivant/"
+    }
+  ]
+}
     </script>
+
+    <style>
+      /* Style minimal du contenu de repli (SEO/IA) visible avant que React ne prenne la main */
+      .seo-fallback { max-width: 720px; margin: 0 auto; padding: 2rem 1.2rem 3rem; color: #333a30; font-family: "Jost", system-ui, sans-serif; font-weight: 300; line-height: 1.6; }
+      .seo-fallback h1, .seo-fallback h2, .seo-fallback h3, .seo-fallback dt { font-family: "Cormorant Garamond", Georgia, serif; color: #3f4e3a; }
+      .seo-fallback h1 { font-size: 2.4rem; }
+      .seo-fallback .intro { font-size: 1.1rem; }
+      .seo-fallback a { color: #ac8c4a; }
+      .seo-fallback table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+      .seo-fallback th, .seo-fallback td { border: 1px solid #e6dfce; padding: .5rem .7rem; text-align: left; }
+      .seo-fallback dt { font-weight: 600; }
+    </style>
   </head>
   <body>
-    <div id="vitrine-root"></div>
+    <div id="vitrine-root">
+      <!-- Contenu statique « answer-first » (SEO + moteurs de réponse IA). Remplacé par l'app React au chargement ; identique à ce que voit l'utilisateur (aucun cloaking). -->
+      <main class="seo-fallback">
+        <h1>Le faire-part qui vit.</h1>
+        <p class="intro"><strong>Faire-part Vivant</strong> crée des <strong>faire-part de mariage numériques</strong>, vivants et interactifs : un site-invitation privé, installable comme une app, qui accompagne vos invités du save-the-date jusqu'aux souvenirs d'après la fête. Sur mesure et accompagné, autour de <strong>Toulouse</strong> et partout en France.</p>
+        <p><a href="#contact">Demander une démo</a> · <a href="fonctionnalites.html">Fonctionnalités</a> · <a href="blog.html">Journal</a></p>
+
+        <h2>Qu'est-ce qu'un faire-part de mariage numérique « vivant » ?</h2>
+        <dl>
+          <dt>Faire-part vivant</dt>
+          <dd>Un <dfn>site-invitation de mariage privé</dfn> qui évolue dans le temps — RSVP en ligne, plan de table, album photo partagé, cagnotte, révélations à date — sans aucune application à installer : vos invités ouvrent un lien et peuvent l'ajouter à leur écran d'accueil comme une app.</dd>
+        </dl>
+
+        <h2>Nos formules (sur mesure, vente en direct, sans abonnement)</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <caption>Packs Faire-part Vivant — tarifs « à partir de »</caption>
+            <thead><tr><th scope="col">Formule</th><th scope="col">À partir de</th><th scope="col">Pour qui</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Essentiel</th><td>290 €</td><td>Un beau faire-part numérique, RSVP et l'essentiel.</td></tr>
+              <tr><th scope="row">Vivant</th><td>490 €</td><td>Formule phare : album, cagnotte, plan de table, révélations à date.</td></tr>
+              <tr><th scope="row">Signature</th><td>790 €</td><td>L'expérience complète, sur mesure, accompagnée de bout en bout.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Questions fréquentes</h2>
+        <h3>Faut-il télécharger une application ?</h3>
+        <p>Non, jamais. Vos invités ouvrent un simple lien et peuvent l'ajouter à leur écran d'accueil ; rien à installer depuis un store.</p>
+        <h3>Combien coûte un faire-part de mariage numérique ?</h3>
+        <p>Chaque faire-part est sur mesure. Les packs démarrent à 290 € (Essentiel), 490 € (Vivant) et 790 € (Signature) ; le tarif final dépend de vos envies.</p>
+        <h3>Est-ce disponible en anglais ?</h3>
+        <p>Oui : français et anglais, avec détection automatique de la langue et bascule manuelle.</p>
+        <h3>Les données de mes invités sont-elles protégées ?</h3>
+        <p>Oui. Votre faire-part est privé et jamais référencé par les moteurs de recherche ; chaque invité ne voit que ce qui le concerne.</p>
+
+        <h2>Zone desservie</h2>
+        <p>Basé à <strong>Lavernose-Lacasse (31410)</strong>, près de Toulouse. J'accompagne les couples sur Toulouse, la Haute-Garonne et le Sud-Toulousain (Muret, Carbonne, Auterive, Colomiers, Blagnac…), en Occitanie, et partout en France à distance. Contact : <a href="tel:+33698200208">06 98 20 02 08</a> · <a href="mailto:francois.leterrier.cmw@gmail.com">francois.leterrier.cmw@gmail.com</a>.</p>
+
+        <p><a href="https://francoisleterrier.fr">Un service de François Leterrier</a> — Community Manager &amp; création de sites, Sud-Toulousain.</p>
+      </main>
+    </div>
     <script type="module" src="/src/vitrine/main.jsx"></script>
   </body>
 </html>

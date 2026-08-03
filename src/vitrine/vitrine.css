@@ -735,6 +735,19 @@ body { counter-reset: sect; }
   }
 }
 
+/* ---------- Tableaux comparatifs + blocs d'article (SEO/GEO) ---------- */
+.vt-table-wrap { overflow-x: auto; margin: 1.6rem 0; -webkit-overflow-scrolling: touch; }
+.vt-table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 0.95rem; }
+.vt-table caption { text-align: left; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 0.7rem; }
+.vt-table th, .vt-table td { border: 1px solid var(--line); padding: 0.65rem 0.85rem; text-align: left; vertical-align: top; }
+.vt-table thead th { background: var(--iv-2); font-weight: 500; color: var(--forest); }
+.vt-table tbody th[scope="row"] { font-weight: 500; color: var(--forest); background: rgba(239, 233, 220, 0.45); }
+.vt-article-more, .vt-article-author { margin-top: 2.2rem; }
+.vt-article-more a, .vt-article-author a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.vt-article-author p { color: var(--ink-soft); }
+.vt-article-cta-sub { margin-top: 0.9rem; font-size: 0.92rem; }
+.vt-article-cta-sub a { color: var(--gold); display: inline-flex; align-items: center; gap: 0.3rem; }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }

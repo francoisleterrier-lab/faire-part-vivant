@@ -1,3 +1,37 @@
+# Faire-part Vivant — robots.txt (le robots.txt qui fait autorité est celui de
+# la racine du domaine ; celui-ci est fourni par cohérence pour les outils qui
+# consultent le chemin du sous-site).
+
 User-agent: *
 Allow: /
+
+# Moteurs de réponse / citation IA (temps réel) — bienvenus
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Crawlers d'entraînement — autorisés (présence dans le corpus = notoriété d'entité)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://francoisleterrier.fr/faire-part-vivant/sitemap.xml
+# Carte IA : https://francoisleterrier.fr/faire-part-vivant/llms.txt
