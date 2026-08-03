@@ -45,6 +45,7 @@ try {
   const { default: Blog } = await vite.ssrLoadModule("/src/vitrine/Blog.jsx");
   const { default: Fonctionnalites } = await vite.ssrLoadModule("/src/vitrine/Fonctionnalites.jsx");
   const { default: LocalMuret } = await vite.ssrLoadModule("/src/vitrine/LocalMuret.jsx");
+  const { default: LocalFrance } = await vite.ssrLoadModule("/src/vitrine/LocalFrance.jsx");
   const { default: APropos } = await vite.ssrLoadModule("/src/vitrine/APropos.jsx");
   const { ARTICLES } = await vite.ssrLoadModule("/src/vitrine/blog.js");
   const h = React.createElement;
@@ -58,6 +59,7 @@ try {
     { file: "blog.html", markup: () => render(h(Blog)) },
     { file: "fonctionnalites.html", markup: () => render(h(Fonctionnalites)) },
     { file: "faire-part-mariage-muret.html", markup: () => render(h(LocalMuret)) },
+    { file: "faire-part-mariage-numerique-france.html", markup: () => render(h(LocalFrance)) },
     { file: "a-propos.html", markup: () => render(h(APropos)) },
     ...ARTICLES.map((a) => ({
       file: `blog-${a.slug}.html`,

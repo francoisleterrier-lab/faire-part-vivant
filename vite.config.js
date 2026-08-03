@@ -58,6 +58,8 @@ export default defineConfig({
         // Pages locales (SEO Toulouse / Muret / Occitanie)
         toulouse: new URL("./faire-part-mariage-toulouse.html", import.meta.url).pathname,
         muret: new URL("./faire-part-mariage-muret.html", import.meta.url).pathname,
+        // Page nationale (SEO France / à distance)
+        france: new URL("./faire-part-mariage-numerique-france.html", import.meta.url).pathname,
         // Page auteur (E-E-A-T)
         apropos: new URL("./a-propos.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
