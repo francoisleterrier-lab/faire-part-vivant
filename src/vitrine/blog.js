@@ -9,6 +9,98 @@
 
 export const ARTICLES = [
   {
+    slug: "texte-faire-part-mariage",
+    date: "2026-08-03",
+    maj: "2026-08-03",
+    lecture: "6 min",
+    categorie: "Guide",
+    titreSeo: "Texte de faire-part de mariage : exemples et modèles 2026 — Faire-part Vivant",
+    h1: "Texte de faire-part de mariage : exemples et formules",
+    desc: "Que écrire sur un faire-part de mariage ? Exemples de textes (classique, moderne, romantique, humoristique), mentions à ne pas oublier et erreurs à éviter.",
+    chapo:
+      "Trouver les bons mots pour annoncer son mariage n'est pas toujours simple. Voici les mentions essentielles, des exemples de textes prêts à adapter selon votre ton, et les erreurs à éviter — pour un faire-part qui vous ressemble.",
+    tldr: [
+      "Un faire-part de mariage annonce l'union et invite : prénoms, date, heure, lieu et moyen de répondre (RSVP).",
+      "Le ton peut être classique, moderne, romantique ou humoristique — l'essentiel est qu'il vous ressemble.",
+      "N'oubliez pas les mentions pratiques : date limite de réponse, dress code éventuel, accès et hébergements.",
+      "Avec un faire-part numérique, le texte peut rester court : les détails vivent dans l'invitation en ligne.",
+    ],
+    sections: [
+      {
+        h2: "Que doit contenir un faire-part de mariage ?",
+        p: [
+          "Avant de soigner le style, assurez-vous que votre faire-part transmet l'essentiel. Un invité doit pouvoir répondre, en un coup d'œil, à trois questions : qui se marie, quand, et où. Voici les mentions à ne pas oublier :",
+        ],
+        points: [
+          "Les prénoms (et parfois noms) des deux mariés.",
+          "La date et l'heure du mariage.",
+          "Le ou les lieux : cérémonie et réception.",
+          "Une formule d'invitation (« ont la joie de vous convier… »).",
+          "Le moyen de répondre (RSVP) et la date limite.",
+          "Les infos pratiques utiles : accès, hébergements, dress code éventuel.",
+        ],
+      },
+      {
+        h2: "Exemple de texte de faire-part classique",
+        p: [
+          "Le style classique reste une valeur sûre, élégant et intemporel. On y mentionne souvent les parents des mariés :",
+          "« Monsieur et Madame Martin, Monsieur et Madame Dubois, ont l'honneur de vous faire part du mariage de leurs enfants Camille et Alexandre, et vous prient d'assister à la cérémonie qui sera célébrée le samedi 12 juin 2027 à 15 h, en l'église de Muret, suivie d'une réception au Domaine de la Garonne. »",
+        ],
+      },
+      {
+        h2: "Exemple de texte moderne et épuré",
+        p: [
+          "Plus direct, le ton moderne va à l'essentiel — parfait pour un faire-part numérique :",
+          "« Camille & Alexandre se marient ! Le 12 juin 2027, à partir de 15 h, au Domaine de la Garonne. On compte sur vous — répondez en un clic sur notre faire-part en ligne. »",
+        ],
+      },
+      {
+        h2: "Exemple de texte romantique et plein d'émotion",
+        p: [
+          "Si vous aimez les mots qui touchent, misez sur l'émotion :",
+          "« Après avoir écrit les premières pages de notre histoire, nous avons décidé d'en signer le plus beau chapitre. Camille et Alexandre s'unissent le 12 juin 2027, et rien ne serait pareil sans vous à nos côtés. »",
+        ],
+      },
+      {
+        h2: "Exemple de texte avec une touche d'humour",
+        p: [
+          "Un ton léger détend et vous ressemble peut-être davantage :",
+          "« Ils ont survécu au montage d'un meuble à deux. Ils peuvent bien se marier. Camille & Alexandre vous invitent à fêter ça le 12 juin 2027 — venez, il y aura à boire, à manger et beaucoup d'amour. »",
+        ],
+      },
+      {
+        h2: "Faut-il un texte différent pour le save-the-date ?",
+        p: [
+          "Oui : le save-the-date, envoyé bien plus tôt, se contente d'annoncer la date pour que vos proches la bloquent. Le texte y est très court : les prénoms, la formule « réservez la date », le jour et la ville — les détails suivront avec le faire-part.",
+          "Pour savoir quand envoyer l'un et l'autre, voyez notre guide sur le moment idéal pour envoyer vos faire-part.",
+        ],
+      },
+      {
+        h2: "Comment intégrer le RSVP et les infos pratiques ?",
+        p: [
+          "C'est là que le numérique simplifie tout. Plutôt que d'alourdir le texte avec l'itinéraire, les horaires détaillés et le carton-réponse, gardez un faire-part court et renvoyez vers votre invitation en ligne.",
+          "Vos invités y confirment leur présence en quelques secondes, indiquent le nombre d'adultes et d'enfants et leurs régimes, et retrouvent le plan d'accès. Le texte du faire-part reste ainsi épuré, et toute la logistique vit dans le faire-part numérique.",
+        ],
+      },
+      {
+        h2: "Les erreurs à éviter dans le texte d'un faire-part",
+        points: [
+          "Oublier une information clé : la date, l'heure ou le lieu de la réception.",
+          "Ne pas indiquer de date limite de réponse — la première cause de relances.",
+          "Surcharger le texte : trop d'informations noient l'essentiel.",
+          "Négliger la relecture : une faute ou une date erronée fait mauvais effet.",
+          "Copier un modèle sans l'adapter : votre faire-part doit sonner juste, comme vous.",
+        ],
+      },
+    ],
+    faq: [
+      ["Que faut-il écrire sur un faire-part de mariage ?", "Les prénoms des mariés, la date, l'heure, le ou les lieux (cérémonie et réception), une formule d'invitation et le moyen de répondre (RSVP) avec une date limite. Le reste — accès, hébergements — peut vivre dans l'invitation en ligne."],
+      ["Doit-on mettre le nom des parents sur le faire-part ?", "C'est une tradition, pas une obligation. Les faire-part classiques mentionnent les parents ; les faire-part modernes s'en passent souvent et mettent les mariés en avant. À vous de choisir selon votre style."],
+      ["Comment annoncer son mariage avec originalité ?", "Jouez sur le ton (humour, émotion, jeu de mots) et sur le format : un faire-part numérique animé, une vidéo, un compte à rebours ou un arbre qui s'illumine à chaque réponse marquent davantage qu'un carton classique."],
+      ["Le texte doit-il être plus court en version numérique ?", "Oui, idéalement. Le faire-part numérique porte le texte d'accroche ; les détails pratiques (accès, horaires, RSVP) sont accessibles en quelques clics, ce qui permet de garder un message clair et élégant."],
+    ],
+  },
+  {
     slug: "quand-envoyer-faire-part-mariage",
     date: "2026-08-03",
     maj: "2026-08-03",

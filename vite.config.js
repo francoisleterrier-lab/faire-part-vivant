@@ -54,8 +54,12 @@ export default defineConfig({
         artPapier: new URL("./blog-faire-part-papier-ou-digital.html", import.meta.url).pathname,
         artRsvp: new URL("./blog-gerer-rsvp-mariage.html", import.meta.url).pathname,
         artTiming: new URL("./blog-quand-envoyer-faire-part-mariage.html", import.meta.url).pathname,
-        // Page locale (SEO Toulouse / Occitanie)
+        artTexte: new URL("./blog-texte-faire-part-mariage.html", import.meta.url).pathname,
+        // Pages locales (SEO Toulouse / Muret / Occitanie)
         toulouse: new URL("./faire-part-mariage-toulouse.html", import.meta.url).pathname,
+        muret: new URL("./faire-part-mariage-muret.html", import.meta.url).pathname,
+        // Page auteur (E-E-A-T)
+        apropos: new URL("./a-propos.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },

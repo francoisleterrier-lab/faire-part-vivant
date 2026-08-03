@@ -98,6 +98,7 @@ export default function Article({ slug }) {
                 <li>{I.check()}<span><a href="fonctionnalites.html#cadeaux">La cagnotte et la liste de cadeaux</a> — un fonds commun qui prend vie.</span></li>
                 <li>{I.check()}<span><a href="fonctionnalites.html#souvenirs">L'album photo partagé</a> — tous les souvenirs au même endroit.</span></li>
                 <li>{I.check()}<span><a href="faire-part-mariage-toulouse.html">Faire-part de mariage numérique à Toulouse</a> — pour un mariage en Occitanie.</span></li>
+                <li>{I.check()}<span><a href="faire-part-mariage-muret.html">Faire-part de mariage numérique à Muret</a> — et dans le Sud-Toulousain.</span></li>
                 <li>{I.check()}<span><a href={OFFRE_URL}>L'offre faire-part digital de François Leterrier</a> — tarifs et détails.</span></li>
               </ul>
             </section>
