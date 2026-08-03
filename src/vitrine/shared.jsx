@@ -257,7 +257,7 @@ export function Contact() {
               {etat === "envoi" ? "Envoi…" : <>Demander une démo {I.arrow()}</>}
             </button>
             {etat === "err" && <span className="vt-contact-note" style={{ color: "#e0b48a" }}>Un souci d'envoi — réessayez, ou écrivez-moi à {EMAIL}.</span>}
-            <span className="vt-contact-note">{WEB3FORMS_KEY ? "Réponse sous 48 h · sans engagement." : "En cliquant, votre messagerie s'ouvre avec le message pré-rempli."}</span>
+            <span className="vt-contact-note">{WEB3FORMS_KEY ? "Devis gratuit · réponse sous 48 h · sans engagement." : "En cliquant, votre messagerie s'ouvre avec le message pré-rempli."}</span>
           </form>
         )}
       </div>
@@ -265,14 +265,37 @@ export function Contact() {
   );
 }
 
+/* ---------- Bouton WhatsApp flottant (capture de leads) ---------- */
+const WA_NUMBER = "33698200208";
+const WA_TEXT = encodeURIComponent(
+  "Bonjour François, je souhaite un faire-part de mariage numérique et un devis. Pouvez-vous m'en dire plus ?"
+);
+export function FloatingWhatsApp() {
+  return (
+    <a
+      className="vt-wa"
+      href={`https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Nous écrire sur WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true">
+        <path d="M16.01 3.2C8.96 3.2 3.22 8.94 3.22 16c0 2.26.6 4.46 1.72 6.4L3.1 28.9l6.66-1.74A12.7 12.7 0 0 0 16 28.8h.01c7.05 0 12.79-5.74 12.79-12.8 0-3.42-1.33-6.63-3.75-9.05A12.7 12.7 0 0 0 16.01 3.2zm0 23.24h-.01c-1.92 0-3.8-.52-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.6 10.6 0 0 1-1.63-5.68c0-5.87 4.78-10.64 10.68-10.64 2.85 0 5.52 1.11 7.53 3.12a10.6 10.6 0 0 1 3.12 7.53c0 5.87-4.78 10.64-10.65 10.64zm5.85-7.97c-.32-.16-1.9-.94-2.19-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.53-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.09 1.3 3.3.16.21 2.25 3.43 5.44 4.81.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.14-.29-.21-.61-.37z"/>
+      </svg>
+      <span className="vt-wa-label">WhatsApp</span>
+    </a>
+  );
+}
+
 /* ---------- Footer ---------- */
 export function Footer() {
   return (
+    <>
     <footer className="vt-footer">
       <div className="vt-wrap vt-footer-in">
         <div>
           <span className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></span>
-          <p className="tag">Un service de <a href={SITE_PRINCIPAL}>François Leterrier</a> — Community Manager &amp; création de sites, Sud-Toulousain.</p>
+          <p className="tag">Un service de <a href={SITE_PRINCIPAL}>François Leterrier</a> — Community Manager &amp; création de sites. Sud-Toulousain &amp; <a href="faire-part-mariage-numerique-france.html">partout en France à distance</a>.</p>
         </div>
         <nav>
           <div>
@@ -281,6 +304,7 @@ export function Footer() {
             <a href="fonctionnalites.html">Fonctionnalités</a>
             <a href="blog.html">Journal</a>
             <a href="a-propos.html">À propos</a>
+            <a href="faire-part-mariage-numerique-france.html">Partout en France</a>
             <a href="index.html#formules">Tarifs</a>
             <a href="index.html#faq">FAQ</a>
           </div>
@@ -298,5 +322,7 @@ export function Footer() {
         <span>Sur mesure · vente en direct · sur devis</span>
       </div>
     </footer>
+    <FloatingWhatsApp />
+    </>
   );
 }
