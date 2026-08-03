@@ -221,3 +221,12 @@ export const PACKS = [
     ],
   },
 ];
+
+/* Avis clients RÉELS et vérifiés (repris du site francoisleterrier.fr, même
+   prestataire). Aucun avis inventé. Carolle S. concerne un faire-part. */
+export const AVIS = [
+  { nom: "Carolle S.", note: 5, texte: "Un immense merci pour ce magnifique faire-part ! Il est vraiment très réussi, élégant et réalisé avec beaucoup de goût. Le résultat est encore plus beau que ce que j'imaginais. Je recommande vivement !", pour: "Faire-part" },
+  { nom: "Virginie P.", note: 5, texte: "François gère le site internet et les réseaux sociaux de notre agence, et le travail est impeccable. Réactif, à l'écoute et toujours de bons conseils. Un vrai partenaire de proximité dans le Sud-Toulousain.", pour: "Site & réseaux" },
+  { nom: "Leane P.", note: 5, texte: "Un travail d'une grande qualité ! Soigné, élégant et parfaitement réalisé. Chaque détail est pensé avec goût, le rendu à la fois moderne et professionnel. Je recommande sans hésiter.", pour: "Création de site" },
+  { nom: "Laetitia C.", note: 5, texte: "François est très professionnel et engagé dans son travail. Il est à l'écoute et a de très bonnes idées. Je recommande vivement !", pour: "Accompagnement" },
+];

@@ -748,6 +748,16 @@ body { counter-reset: sect; }
 .vt-article-cta-sub { margin-top: 0.9rem; font-size: 0.92rem; }
 .vt-article-cta-sub a { color: var(--gold); display: inline-flex; align-items: center; gap: 0.3rem; }
 
+/* ---------- Avis clients (réels, vérifiés) ---------- */
+.vt-avis-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1rem, 2.5vw, 1.6rem); }
+.vt-avis { margin: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.6rem 1.3rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.vt-avis-stars { color: var(--gold); display: flex; gap: 2px; margin-bottom: 0.7rem; }
+.vt-avis blockquote { margin: 0; font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; color: var(--forest); font-style: italic; }
+.vt-avis figcaption { margin-top: 1rem; display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+.vt-avis figcaption .nm { font-weight: 500; color: var(--ink); }
+.vt-avis figcaption .pour { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); flex: none; }
+@media (max-width: 680px) { .vt-avis-grid { grid-template-columns: 1fr; } }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }

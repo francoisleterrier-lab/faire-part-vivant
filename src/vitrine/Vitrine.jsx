@@ -8,7 +8,7 @@ import mockupInvitation from "../assets/mockup-invitation.webp";
 import mockupInstallable from "../assets/mockup-installable.webp";
 import mockupRsvpAlbum from "../assets/mockup-rsvp-album.webp";
 import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO, applyAccent, readAccent, saveAccent, DEFAULT_ACCENT } from "./shared.jsx";
-import { BENEFICES, UNIVERS, ETAPES, FAQS } from "./data.js";
+import { BENEFICES, UNIVERS, ETAPES, FAQS, AVIS } from "./data.js";
 
 /* ============================================================
    Faire-part Vivant — Page d'accueil (vitrine).
@@ -323,6 +323,34 @@ function Engagement() {
   );
 }
 
+const Star = () => (
+  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01L12 2Z" /></svg>
+);
+
+function Avis() {
+  return (
+    <section className="vt-section tint" id="avis">
+      <div className="vt-wrap">
+        <div className="vt-head reveal">
+          <span className="vt-eyebrow">Avis vérifiés · 5/5</span>
+          <div className="vt-flourish" />
+          <h2 className="vt-h2">La confiance de mes clients.</h2>
+          <p>Des avis authentiques sur le travail de François Leterrier — création de sites, réseaux sociaux et faire-part. Faire-part Vivant est un service récent&nbsp;: vous serez parmi les premiers couples, avec toute l'attention que ça mérite.</p>
+        </div>
+        <div className="vt-avis-grid">
+          {AVIS.map((a) => (
+            <figure className="vt-avis reveal" key={a.nom}>
+              <div className="vt-avis-stars" aria-label={`${a.note} sur 5`}>{Array.from({ length: a.note }).map((_, i) => <Star key={i} />)}</div>
+              <blockquote>{a.texte}</blockquote>
+              <figcaption><span className="nm">{a.nom}</span><span className="pour">{a.pour}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Faq() {
   const [open, setOpen] = useState(0);
   return (
@@ -366,6 +394,7 @@ export default function Vitrine() {
         <Demarche />
         <Packs />
         <Engagement />
+        <Avis />
         <Faq />
         <Contact />
       </main>
