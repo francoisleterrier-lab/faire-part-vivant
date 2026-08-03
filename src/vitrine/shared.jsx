@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY, SITE_PRINCIPAL, OFFRE_URL, TEL, TEL_INTL } from "./data.js";
+import { ARTICLES } from "./blog.js";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -92,7 +93,23 @@ export function Nav({ links }) {
     <header className={"vt-nav" + (scrolled ? " scrolled" : "")}>
       <div className="vt-wrap vt-nav-in">
         <div className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></div>
-        <nav className="vt-nav-links">{links.map(([h, t]) => <a key={h + t} href={h}>{t}</a>)}</nav>
+        <nav className="vt-nav-links">
+          {links.map(([h, t]) =>
+            h === "blog.html" ? (
+              <span className="vt-nav-drop" key={h + t}>
+                <a href={h}>{t} <span className="vt-nav-caret" aria-hidden="true">▾</span></a>
+                <div className="vt-nav-menu">
+                  {ARTICLES.map((a) => (
+                    <a key={a.slug} href={`blog-${a.slug}.html`}>{a.h1}</a>
+                  ))}
+                  <a href="blog.html" className="vt-nav-menu-all">Tous les articles {I.arrow()}</a>
+                </div>
+              </span>
+            ) : (
+              <a key={h + t} href={h}>{t}</a>
+            )
+          )}
+        </nav>
         <div className="vt-nav-cta">
           <a className="vt-btn gold" href={DEMO}>Demander une démo</a>
           <button className="vt-burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>{I.burger()}</button>
@@ -100,7 +117,18 @@ export function Nav({ links }) {
       </div>
       {open && (
         <div className="vt-mobile vt-wrap">
-          {links.map(([h, t]) => <a key={h + t} href={h} onClick={() => setOpen(false)}>{t}</a>)}
+          {links.map(([h, t]) =>
+            h === "blog.html" ? (
+              <div key={h + t} className="vt-mobile-group">
+                <a href={h} onClick={() => setOpen(false)}>{t}</a>
+                {ARTICLES.map((a) => (
+                  <a key={a.slug} className="vt-mobile-sub" href={`blog-${a.slug}.html`} onClick={() => setOpen(false)}>{a.h1}</a>
+                ))}
+              </div>
+            ) : (
+              <a key={h + t} href={h} onClick={() => setOpen(false)}>{t}</a>
+            )
+          )}
           <a className="vt-btn gold" href={DEMO} onClick={() => setOpen(false)}>Demander une démo</a>
         </div>
       )}
