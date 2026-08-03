@@ -6,7 +6,8 @@
   "description": "Faire-part Vivant — vitrine commerciale + éditeur de faire-part de mariage numérique",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
+    "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

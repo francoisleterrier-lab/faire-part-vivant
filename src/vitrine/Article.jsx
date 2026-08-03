@@ -51,6 +51,14 @@ export default function Article({ slug }) {
             <p className="vt-article-chapo">{a.chapo}</p>
           </div>
           <div className="vt-wrap vt-article-body">
+            {a.tldr && a.tldr.length > 0 && (
+              <aside className="vt-tldr reveal" aria-label="En bref">
+                <h2>En bref</h2>
+                <ul>
+                  {a.tldr.map((t, i) => <li key={i}>{I.check()}<span>{t}</span></li>)}
+                </ul>
+              </aside>
+            )}
             {a.sections.map((s, i) => (
               <section className="reveal" key={i}>
                 <h2>{s.h2}</h2>
