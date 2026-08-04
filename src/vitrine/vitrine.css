@@ -544,6 +544,18 @@ body::before {
 .vt-lum-core { fill: #fff7df; filter: drop-shadow(0 0 1.5px var(--gold)); animation: vtLumTw 3.2s ease-in-out infinite; }
 @keyframes vtLumTw { 0%,100% { opacity: .72; } 50% { opacity: 1; } }
 .vt-lumiere-compte { margin-top: 1.3rem; color: var(--gold-soft); font-family: var(--serif); font-style: italic; font-size: 1.1rem; }
+/* « Une lumière par invité » — version canvas 3 effets (Cœur / Initiales / Arbre) */
+.vt-lv { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.vt-lv-switch { display: inline-flex; gap: .25rem; padding: .28rem; border-radius: 999px; background: rgba(15,27,22,.5); border: 1px solid rgba(127,154,120,.3); }
+.vt-lv-switch button { font-family: var(--sans); font-size: .8rem; letter-spacing: .02em; color: #cfd9c8; background: transparent; border: 0; border-radius: 999px; padding: .5em 1.05em; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.vt-lv-switch button[aria-checked="true"] { background: linear-gradient(180deg, var(--gold), var(--gold-2)); color: #231a08; font-weight: 500; }
+.vt-lv-switch button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (pointer: coarse) { .vt-lv-switch button { padding: .62em 1.1em; } }
+.vt-lv-stage { position: relative; width: min(400px, 100%); }
+.vt-lv-canvas { width: 100%; aspect-ratio: 1 / 1; display: block; border-radius: 20px; background: #0f1b16; box-shadow: 0 20px 50px -24px rgba(0,0,0,.6), inset 0 0 0 1px rgba(127,154,120,.14); cursor: pointer; }
+.vt-lv-toast { position: absolute; left: 0; right: 0; bottom: 1rem; text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: #fff0cf; text-shadow: 0 0 18px rgba(231,199,138,.5); pointer-events: none; padding: 0 .8rem; min-height: 1.4em; }
+.vt-lv-compte { margin: 0; color: var(--gold-soft); font-family: var(--serif); font-style: italic; font-size: 1.08rem; font-variant-numeric: tabular-nums; }
+.vt-lv-compte b { color: var(--gold-2); font-style: normal; }
 
 /* ---------- Page Fonctionnalités : hero + univers détaillés ---------- */
 .vt-fhero { position: relative; overflow: hidden; padding: clamp(3rem, 7vw, 5rem) 0 clamp(2.2rem, 5vw, 3.2rem); }

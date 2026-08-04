@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY, SITE_PRINCIPAL, OFFRE_URL, TEL, TEL_INTL } from "./data.js";
 import { ARTICLES } from "./blog.js";
+import LumiereVivante from "./LumiereVivante.jsx";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -137,12 +138,7 @@ export function Nav({ links }) {
   );
 }
 
-/* ---------- « Une lumière par invité » (différenciant) ---------- */
-const LUMS = [
-  { x: 50, y: 20 }, { x: 38, y: 30 }, { x: 62, y: 30 }, { x: 30, y: 44 }, { x: 46, y: 40 },
-  { x: 56, y: 46 }, { x: 70, y: 44 }, { x: 24, y: 58 }, { x: 40, y: 56 }, { x: 52, y: 62 },
-  { x: 64, y: 58 }, { x: 76, y: 58 }, { x: 34, y: 70 }, { x: 60, y: 74 }, { x: 46, y: 78 },
-];
+/* ---------- « Une lumière par invité » (différenciant, 3 effets vivants) ---------- */
 export function Lumiere() {
   return (
     <section className="vt-lumiere" id="lumiere">
@@ -151,22 +147,14 @@ export function Lumiere() {
           <span className="vt-eyebrow on-dark">Le détail qui émeut</span>
           <h2>Une lumière par invité.</h2>
           <p>
-            À chaque « oui », une lueur de plus s'allume — un arbre de vie, une constellation qui grandit
-            avec vos invités. Votre faire-part n'attend pas le grand jour pour prendre vie : il s'illumine,
-            réponse après réponse.
+            À chaque « oui », une lueur de plus s'allume et se relie aux autres. Choisissez votre effet —
+            un cœur, vos initiales, ou un arbre de vie qui pousse : votre faire-part n'attend pas le grand
+            jour pour prendre vie, il s'illumine réponse après réponse.
           </p>
           <a className="vt-btn gold lg" href={DEMO}>Demander une démo {I.arrow()}</a>
         </div>
-        <div className="vt-lumiere-tree reveal" aria-hidden="true">
-          <svg viewBox="0 0 100 100" width="320" className="vt-lumiere-svg">
-            {LUMS.map((l, i) => (
-              <g key={i} className="vt-lum" style={{ ["--d"]: i * 0.14 + "s" }}>
-                <circle cx={l.x} cy={l.y} r="1.7" className="vt-lum-halo" />
-                <circle cx={l.x} cy={l.y} r="0.9" className="vt-lum-core" />
-              </g>
-            ))}
-          </svg>
-          <p className="vt-lumiere-compte">15 lumières allumées · 15 « oui » 💛</p>
+        <div className="vt-lumiere-tree reveal">
+          <LumiereVivante />
         </div>
       </div>
     </section>
