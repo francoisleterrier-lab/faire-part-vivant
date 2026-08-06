@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import couplePortrait from "../assets/couple-portrait.jpg";
+import couplePortrait from "../assets/couple-portrait.webp";
 import coupleGolden from "../assets/couple-golden.jpg";
 import detailsAlliances from "../assets/details-alliances.jpg";
 import tableDressee from "../assets/table-dressee.jpg";
@@ -44,7 +44,7 @@ function PhoneMock({ accent, onAccent }) {
         <div className="vt-screen" style={{ "--sc-accent": accent }}>
           <div className="sc-top"><span className="cpl">Émilie &amp; Julien</span><span className="bg"><i /><i /><i /></span></div>
           <span className="sc-live">En direct</span>
-          <div className="sc-media"><img src={couplePortrait} alt="Couple de mariés au coucher du soleil" /></div>
+          <div className="sc-media"><img src={couplePortrait} width="900" height="1348" decoding="async" fetchpriority="high" alt="Couple de mariés au coucher du soleil" /></div>
           <div className="sc-body">
             <p className="sc-eyebrow">Nous nous marions</p>
             <div className="sc-orn"><Ornement /></div>
