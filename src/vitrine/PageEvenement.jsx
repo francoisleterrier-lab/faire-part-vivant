@@ -1,5 +1,13 @@
 import { I, Ornement, useReveal, useStoredAccent, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
+import photoGrossesse from "../assets/naissance-grossesse.webp";
+import photoEnfant from "../assets/bapteme-enfant.webp";
+
+/* Photo d'aperçu dans le mockup, par événement. */
+const PHOTOS = {
+  naissance: { src: photoGrossesse, alt: "Future maman, les mains posées sur son ventre" },
+  bapteme: { src: photoEnfant, alt: "Bébé en tenue de baptême" },
+};
 
 /* ============================================================
    Page événement générique — UN composant, plusieurs événements.
@@ -29,7 +37,7 @@ const AUTRES = [
 
 /* Aperçu animé : mockup téléphone sans photo (gradient), réutilise
    le style .vt-phone/.vt-screen de l'accueil. */
-function EventDevice({ card }) {
+function EventDevice({ card, photo }) {
   if (!card) return null;
   return (
     <div className="vt-phone-wrap vt-evd">
@@ -37,7 +45,9 @@ function EventDevice({ card }) {
         <div className="vt-screen">
           <div className="sc-top"><span className="cpl">{card.soustitre}</span><span className="bg"><i /><i /><i /></span></div>
           <span className="sc-live">{card.live}</span>
-          <div className="sc-media"><div className="fallback" /></div>
+          <div className="sc-media">
+            {photo ? <img src={photo.src} width="700" height="1050" decoding="async" alt={photo.alt} /> : <div className="fallback" />}
+          </div>
           <div className="sc-body">
             <p className="sc-eyebrow">{card.eyebrow}</p>
             <div className="sc-orn"><Ornement /></div>
@@ -108,7 +118,7 @@ export default function PageEvenement({ eventKey }) {
               </ul>
             </div>
             <div className="vt-evt-hero-media reveal">
-              <EventDevice card={e.heroCard} />
+              <EventDevice card={e.heroCard} photo={PHOTOS[eventKey]} />
             </div>
           </div>
         </section>
