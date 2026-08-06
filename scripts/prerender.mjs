@@ -48,6 +48,7 @@ try {
   const { default: LocalFrance } = await vite.ssrLoadModule("/src/vitrine/LocalFrance.jsx");
   const { default: APropos } = await vite.ssrLoadModule("/src/vitrine/APropos.jsx");
   const { default: PageEvenement } = await vite.ssrLoadModule("/src/vitrine/PageEvenement.jsx");
+  const { default: Vitrine } = await vite.ssrLoadModule("/src/vitrine/Vitrine.jsx");
   const { ARTICLES } = await vite.ssrLoadModule("/src/vitrine/blog.js");
   const h = React.createElement;
 
@@ -57,6 +58,7 @@ try {
 
   // dist/<fichier> → markup à injecter dans <div id="vitrine-root">…</div>
   const pages = [
+    { file: "index.html", markup: () => render(h(Vitrine)) },
     { file: "blog.html", markup: () => render(h(Blog)) },
     { file: "fonctionnalites.html", markup: () => render(h(Fonctionnalites)) },
     { file: "faire-part-mariage-muret.html", markup: () => render(h(LocalMuret)) },
