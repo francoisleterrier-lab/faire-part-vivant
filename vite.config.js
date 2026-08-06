@@ -62,6 +62,9 @@ export default defineConfig({
         france: new URL("./faire-part-mariage-numerique-france.html", import.meta.url).pathname,
         // Page auteur (E-E-A-T)
         apropos: new URL("./a-propos.html", import.meta.url).pathname,
+        // Pages événement (gamme multi-événement)
+        naissance: new URL("./faire-part-naissance.html", import.meta.url).pathname,
+        bapteme: new URL("./faire-part-bapteme.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },

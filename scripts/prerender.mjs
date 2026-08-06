@@ -47,6 +47,7 @@ try {
   const { default: LocalMuret } = await vite.ssrLoadModule("/src/vitrine/LocalMuret.jsx");
   const { default: LocalFrance } = await vite.ssrLoadModule("/src/vitrine/LocalFrance.jsx");
   const { default: APropos } = await vite.ssrLoadModule("/src/vitrine/APropos.jsx");
+  const { default: PageEvenement } = await vite.ssrLoadModule("/src/vitrine/PageEvenement.jsx");
   const { ARTICLES } = await vite.ssrLoadModule("/src/vitrine/blog.js");
   const h = React.createElement;
 
@@ -61,6 +62,8 @@ try {
     { file: "faire-part-mariage-muret.html", markup: () => render(h(LocalMuret)) },
     { file: "faire-part-mariage-numerique-france.html", markup: () => render(h(LocalFrance)) },
     { file: "a-propos.html", markup: () => render(h(APropos)) },
+    { file: "faire-part-naissance.html", markup: () => render(h(PageEvenement, { eventKey: "naissance" })) },
+    { file: "faire-part-bapteme.html", markup: () => render(h(PageEvenement, { eventKey: "bapteme" })) },
     ...ARTICLES.map((a) => ({
       file: `blog-${a.slug}.html`,
       markup: () => render(h(Article, { slug: a.slug })),
