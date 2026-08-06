@@ -60,3 +60,8 @@ jobs:
       - name: Déployer
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # File d'attente Pages parfois lente : on laisse le déploiement
+          # aller jusqu'au bout (30 min) au lieu d'abandonner au bout de 10 min.
+          timeout: 1800000
+          error_count: 20
