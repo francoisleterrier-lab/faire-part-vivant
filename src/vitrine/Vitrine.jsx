@@ -8,6 +8,7 @@ import mockupInvitation from "../assets/mockup-invitation.webp";
 import mockupInstallable from "../assets/mockup-installable.webp";
 import mockupRsvpAlbum from "../assets/mockup-rsvp-album.webp";
 import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO, applyAccent, readAccent, saveAccent, DEFAULT_ACCENT } from "./shared.jsx";
+import Evenements from "./Evenements.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS, AVIS } from "./data.js";
 
 /* ============================================================
@@ -386,6 +387,7 @@ export default function Vitrine() {
         <Hero accent={accent} onAccent={chooseAccent} />
         <Bandeau />
         <Benefices />
+        <Evenements />
         <Apercu />
         <Lumiere />
         <PhotoBand />
