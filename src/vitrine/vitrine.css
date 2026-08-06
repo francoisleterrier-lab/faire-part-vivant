@@ -387,9 +387,18 @@ body.evt-bapteme::before {
 
 /* ---------- Bandeau confiance ---------- */
 .vt-trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--iv-2); }
-.vt-trust-in { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 2.2rem 0; text-align: center; }
+.vt-trust-in { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 1.4rem; padding: 1.9rem 0; text-align: center; }
+.vt-stat { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.vt-stat .vt-stat-ic { color: var(--gold); display: inline-flex; }
+.vt-stat .vt-stat-ic svg { width: 22px; height: 22px; }
 .vt-stat .n { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: var(--forest); line-height: 1; }
-.vt-stat .l { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; letter-spacing: 0.03em; }
+.vt-stat .l { font-size: 0.92rem; color: var(--forest); font-family: var(--serif); font-style: italic; margin: 0; line-height: 1.3; }
+
+/* Note moyenne (badge sous le titre des avis) */
+.vt-avis-agg { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.1rem; padding: 0.5rem 1.05rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); box-shadow: var(--shadow-sm); }
+.vt-avis-agg-stars { color: var(--gold); display: inline-flex; gap: 2px; }
+.vt-avis-agg-txt { font-size: 0.95rem; color: var(--forest); }
+.vt-avis-agg-txt b { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
 
 /* ---------- Sections ---------- */
 .vt-section { position: relative; padding: clamp(3.4rem, 8vw, 6.2rem) 0; }
