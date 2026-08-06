@@ -236,7 +236,7 @@ function createEngine(cv, cb) {
       ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(1, R * 0.42), 0, 6.2832); ctx.fill(); }
 
     if (blooms.length) blooms = blooms.filter((b) => now - b.born < 760);
-    for (const b of blooms) { const p = (now - b.born) / 760, r = ease(p) * fit.s * 0.13;
+    for (const b of blooms) { const p = Math.min(1, Math.max(0, (now - b.born) / 760)), r = ease(p) * fit.s * 0.13;
       ctx.strokeStyle = "rgba(255,240,207," + (0.5 * (1 - p)) + ")"; ctx.lineWidth = 2 * (1 - p) + .4;
       ctx.beginPath(); ctx.arc(b.x, b.y, r, 0, 6.2832); ctx.stroke(); }
 
