@@ -75,6 +75,23 @@ export const EVENEMENTS = {
         "Vos proches, qui avaient gardé le lien, découvrent la nouvelle en rouvrant simplement la même page : aucun second message à envoyer. Vous pouvez même échelonner la surprise : annoncer d'abord « il est là / elle est là », puis dévoiler le prénom quelques heures plus tard."
       ]
     },
+    "heroCard": {
+      "live": "En direct",
+      "soustitre": "Faire-part vivant",
+      "eyebrow": "Nous serons bientôt trois",
+      "titre": "Bébé arrive",
+      "date": "Terme prévu · printemps 2026",
+      "compteur": [ { "n": "128", "l": "jours" }, { "n": "06", "l": "h" }, { "n": "42", "l": "min" } ],
+      "secret": "Prénom · encore secret",
+      "cta": "Je partage la joie",
+      "note": "Aperçu — la page évolue toute seule"
+    },
+    "timeline": [
+      { "icon": "heart", "phase": "Pendant la grossesse", "titre": "« Bientôt à 3 »", "texte": "La page annonce l'heureux événement et fait tourner le compte à rebours vers la date prévue. Le prénom, lui, reste bien caché." },
+      { "icon": "spark", "phase": "Les dernières semaines", "titre": "L'attente partagée", "texte": "Vos proches suivent le compte à rebours, découvrent l'échographie et déposent leurs petits mots d'encouragement." },
+      { "icon": "gift", "phase": "Le jour J", "titre": "La révélation", "texte": "La même page se métamorphose toute seule : le prénom, la date et l'heure, le poids et la taille s'affichent, et les toutes premières photos remplissent l'album." },
+      { "icon": "camera", "phase": "Après la naissance", "titre": "Le souvenir vivant", "texte": "L'album continue de se remplir et le livre d'or recueille les messages : un souvenir qui reste, bien après le grand jour." }
+    ],
     "faq": [
       {
         "q": "Mes proches doivent-ils installer une application ?",
@@ -173,6 +190,24 @@ export const EVENEMENTS = {
         "Un exemple de rythme : J-90 l'annonce et la date · J-30 le thème et les couleurs · J-10 le parrain et la marraine à l'honneur · J-1 le mot des parents et le plan d'accès · J+1 l'album partagé et les remerciements. Chaque ouverture est une petite joie qui entretient l'attente et donne envie de revenir sur la page."
       ]
     },
+    "heroCard": {
+      "live": "En direct",
+      "soustitre": "Faire-part vivant",
+      "eyebrow": "Vous êtes invités",
+      "titre": "Un baptême",
+      "date": "Cérémonie · à venir",
+      "compteur": [ { "n": "42", "l": "jours" }, { "n": "12", "l": "h" }, { "n": "30", "l": "min" } ],
+      "secret": "Thème & couleurs · bientôt dévoilés",
+      "cta": "Je confirme ma présence",
+      "note": "Aperçu — la page se dévoile petit à petit"
+    },
+    "timeline": [
+      { "icon": "rsvp", "phase": "J‑90", "titre": "L'annonce & la date", "texte": "L'invitation révèle la date et une jolie annonce. Vos proches notent déjà le grand jour." },
+      { "icon": "spark", "phase": "J‑30", "titre": "Le thème & les couleurs", "texte": "L'univers de la journée se dévoile : thème, couleurs et ambiance de la fête." },
+      { "icon": "heart", "phase": "J‑10", "titre": "Parrain & marraine à l'honneur", "texte": "Les prénoms du parrain et de la marraine apparaissent, avec un mot sur leur rôle." },
+      { "icon": "compass", "phase": "J‑1", "titre": "Le mot des parents & le plan", "texte": "Un dernier message des parents et l'itinéraire GPS pour arriver sereinement." },
+      { "icon": "camera", "phase": "J+1", "titre": "L'album partagé", "texte": "Les photos de tous se réunissent dans l'album, avec les remerciements." }
+    ],
     "faq": [
       {
         "q": "Mes invités doivent-ils installer une application ?",
