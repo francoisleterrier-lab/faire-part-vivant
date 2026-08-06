@@ -154,6 +154,44 @@ body::before {
   }
 }
 
+/* ---------- Fond par événement (photo Pexels, voile crème) ----------
+   Chaque page événement a son atmosphère propre. On remplace le motif
+   botanique par une photo florale douce, posée en calque FIXE (position
+   fixed → couvre le viewport et reste en fond pendant le défilement, sans
+   background-attachment: fixed qui est capricieux sur mobile). Un voile
+   crème épais garantit la lisibilité du texte par-dessus.
+   Naissance : gypsophile (« souffle de bébé »)  ·  photo Pexels #4503816.
+   Baptême   : anémones blanches lumineuses       ·  photo Pexels #12874193. */
+body.evt-naissance::before,
+body.evt-bapteme::before {
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body.evt-naissance::before {
+  background-image:
+    linear-gradient(rgba(244, 240, 231, 0.82), rgba(244, 240, 231, 0.82)),
+    url(../assets/fond-naissance.jpg);
+}
+body.evt-bapteme::before {
+  background-image:
+    linear-gradient(rgba(244, 240, 231, 0.82), rgba(244, 240, 231, 0.82)),
+    url(../assets/fond-bapteme.jpg);
+}
+@media (max-width: 760px) {
+  body.evt-naissance::before {
+    background-image:
+      linear-gradient(rgba(244, 240, 231, 0.84), rgba(244, 240, 231, 0.84)),
+      url(../assets/fond-naissance.jpg);
+  }
+  body.evt-bapteme::before {
+    background-image:
+      linear-gradient(rgba(244, 240, 231, 0.84), rgba(244, 240, 231, 0.84)),
+      url(../assets/fond-bapteme.jpg);
+  }
+}
+
 /* ---------- Aperçu en images (mockups produit) ---------- */
 .vt-shots {
   display: grid; grid-template-columns: repeat(3, 1fr);
