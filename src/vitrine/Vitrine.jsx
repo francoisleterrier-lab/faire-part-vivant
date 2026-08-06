@@ -104,11 +104,21 @@ function Hero({ accent, onAccent }) {
 }
 
 function Bandeau() {
-  const mots = ["Privé & sécurisé", "Installable comme une app", "Français & anglais", "Accompagné, sur mesure"];
+  const items = [
+    { ic: "heart", t: "5,0 ★ · 17 avis vérifiés" },
+    { ic: "shield", t: "Sans abonnement, sans app store" },
+    { ic: "compass", t: "Partout en France · 100 % à distance" },
+    { ic: "spark", t: "Sur-mesure & accompagné" },
+  ];
   return (
     <div className="vt-trust">
       <div className="vt-wrap vt-trust-in reveal">
-        {mots.map((m) => <div className="vt-stat" key={m}><div className="l" style={{ marginTop: 0, fontSize: "0.95rem", color: "var(--forest)", fontFamily: "var(--serif)", fontStyle: "italic" }}>{m}</div></div>)}
+        {items.map((m) => (
+          <div className="vt-stat" key={m.t}>
+            <span className="vt-stat-ic">{I[m.ic]()}</span>
+            <div className="l">{m.t}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -337,6 +347,10 @@ function Avis() {
           <div className="vt-flourish" />
           <h2 className="vt-h2">La confiance de mes clients.</h2>
           <p>Des avis authentiques sur le travail de François Leterrier — création de sites, réseaux sociaux et faire-part. Faire-part Vivant est un service récent&nbsp;: vous serez parmi les premiers couples, avec toute l'attention que ça mérite.</p>
+          <div className="vt-avis-agg" aria-label="Note moyenne 5 sur 5 sur 17 avis">
+            <span className="vt-avis-agg-stars">{Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}</span>
+            <span className="vt-avis-agg-txt"><b>5,0</b> · 17 avis vérifiés</span>
+          </div>
         </div>
         <div className="vt-avis-grid">
           {AVIS.map((a) => (
