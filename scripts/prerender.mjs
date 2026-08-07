@@ -19,7 +19,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve, join } from "node:path";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
@@ -27,6 +27,19 @@ const DIST = join(ROOT, "dist");
 if (!existsSync(DIST)) {
   console.error("prerender: dist/ introuvable — lancez `vite build` d'abord.");
   process.exit(1);
+}
+
+// En SSR, un `import img from "../assets/x.webp"` se résout en URL de DEV
+// (/src/assets/x.webp), absente en production. On réécrit ces URLs vers le
+// fichier haché réellement produit par Vite (assets/x-HASH.webp) pour que les
+// images des composants pré-rendus soient valides sans JavaScript (SEO images).
+const ASSET_FILES = existsSync(join(DIST, "assets")) ? readdirSync(join(DIST, "assets")) : [];
+function hashedAsset(name) {
+  const dot = name.lastIndexOf(".");
+  if (dot < 0) return null;
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`^${esc(name.slice(0, dot))}-[\\w-]+\\.${esc(name.slice(dot + 1))}$`);
+  return ASSET_FILES.find((f) => re.test(f)) || null;
 }
 
 // Serveur Vite en mode SSR (config minimale : uniquement le plugin React,
@@ -85,7 +98,15 @@ try {
       console.warn("prerender: <div id=\"vitrine-root\"> introuvable ou déjà rempli —", file);
       continue;
     }
-    const content = markup();
+    let content = markup();
+    // Réécrit les URLs d'assets dev (/src/assets/x.ext) vers les fichiers hachés,
+    // en reprenant le préfixe (base) des assets déjà référencés dans la page.
+    const prefixMatch = html.match(/(?:href|src)="([^"]*\/)assets\/[^"]+"/);
+    const assetPrefix = prefixMatch ? prefixMatch[1] : "/";
+    content = content.replace(/\/src\/assets\/([\w.-]+)/g, (whole, name) => {
+      const hashed = hashedAsset(name);
+      return hashed ? `${assetPrefix}assets/${hashed}` : whole;
+    });
     writeFileSync(path, html.replace(m[0], `${m[1]}${content}${m[2]}`));
     done++;
     console.log(`prerender: ${file} (+${content.length.toLocaleString("fr-FR")} car. statiques)`);
