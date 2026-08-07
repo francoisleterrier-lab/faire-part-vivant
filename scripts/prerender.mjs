@@ -42,6 +42,12 @@ function hashedAsset(name) {
   return ASSET_FILES.find((f) => re.test(f)) || null;
 }
 
+// Intro élégante au premier chargement (script inline injecté dans <head> : il
+// s'exécute AVANT l'hydratation React, donc le voile couvre la page tout de
+// suite puis se lève. Gardé une seule fois par session ; neutralisé si
+// prefers-reduced-motion. Sans JS, rien ne s'affiche (aucun blocage SEO).
+const INTRO_SCRIPT = `<script>(function(){try{if(sessionStorage.getItem('vt-intro')==='1')return;sessionStorage.setItem('vt-intro','1')}catch(e){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var d=document.createElement('div');d.className='vt-intro';d.setAttribute('aria-hidden','true');d.innerHTML='<div class="vt-intro-in"><span class="vt-intro-orn"></span><span class="vt-intro-mark">Faire-part Vivant</span><span class="vt-intro-sub">par Fran\\u00e7ois Leterrier</span></div>';document.body.appendChild(d);document.documentElement.classList.add('vt-introlock');requestAnimationFrame(function(){d.classList.add('vt-intro-show')});setTimeout(function(){d.classList.add('vt-intro-out');document.documentElement.classList.remove('vt-introlock')},1500);setTimeout(function(){d.remove()},2600)}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go)}else{go()}})();</script>`;
+
 // Serveur Vite en mode SSR (config minimale : uniquement le plugin React,
 // pas de PWA ni de base — on ne charge que des modules, pas de bundle).
 const vite = await createServer({
@@ -107,7 +113,8 @@ try {
       const hashed = hashedAsset(name);
       return hashed ? `${assetPrefix}assets/${hashed}` : whole;
     });
-    writeFileSync(path, html.replace(m[0], `${m[1]}${content}${m[2]}`));
+    const filled = html.replace(m[0], `${m[1]}${content}${m[2]}`);
+    writeFileSync(path, filled.replace("</head>", `${INTRO_SCRIPT}</head>`));
     done++;
     console.log(`prerender: ${file} (+${content.length.toLocaleString("fr-FR")} car. statiques)`);
   }

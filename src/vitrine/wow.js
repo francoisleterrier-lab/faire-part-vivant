@@ -36,6 +36,34 @@ export function initWow() {
     document.querySelectorAll(".vt-evd-cell b").forEach((n) => io.observe(n));
   }
 
+  // 1c) Révélation du titre héros, mot à mot (le H1 reste intact dans le HTML : on
+  //     enrichit côté client seulement, sans toucher au contenu vu par les robots)
+  if (!reduce) {
+    document.querySelectorAll(".vt-evt-hero h1").forEach((hEl) => {
+      if (hEl.dataset.split) return; hEl.dataset.split = "1";
+      const parts = hEl.textContent.split(/(\s+)/);
+      hEl.textContent = ""; let wi = 0;
+      parts.forEach((part) => {
+        if (part === "") return;
+        if (/^\s+$/.test(part)) { hEl.appendChild(document.createTextNode(part)); return; }
+        const s = document.createElement("span");
+        s.className = "vt-word"; s.textContent = part; s.style.setProperty("--wi", wi++);
+        hEl.appendChild(s);
+      });
+    });
+  }
+
+  // 1d) Parallaxe légère sur l'aperçu du héros
+  if (!reduce) {
+    const media = document.querySelector(".vt-evt-hero-media, .vt-hero .vt-phone-wrap");
+    if (media) {
+      let pp = 0;
+      const onScrollP = () => { if (pp) return; pp = raf(() => { media.style.transform = `translate3d(0, ${(window.scrollY * -0.05).toFixed(1)}px, 0)`; pp = 0; }); };
+      window.addEventListener("scroll", onScrollP, { passive: true });
+      onScrollP();
+    }
+  }
+
   if (reduce || !fine) return;
 
   // 2) Tilt 3D + reflet sur les cartes
@@ -84,4 +112,27 @@ export function initWow() {
     });
     hero.addEventListener("pointerleave", () => hero.style.setProperty("--so", "0"));
   });
+
+  // 5) Curseur signature : anneau doré doux qui suit le pointeur (le curseur
+  //    natif reste visible ; l'anneau grandit sur les éléments interactifs)
+  const ring = document.createElement("div");
+  ring.className = "vt-cursor"; ring.setAttribute("aria-hidden", "true");
+  document.body.appendChild(ring);
+  let cx = window.innerWidth / 2, cy = window.innerHeight / 2, rx = cx, ry = cy, shown = false;
+  window.addEventListener("pointermove", (e) => {
+    if (e.pointerType === "touch") return;
+    cx = e.clientX; cy = e.clientY;
+    if (!shown) { shown = true; ring.classList.add("on"); }
+  }, { passive: true });
+  window.addEventListener("pointerdown", () => ring.classList.add("down"));
+  window.addEventListener("pointerup", () => ring.classList.remove("down"));
+  const HOT = "a, button, .vt-btn, summary, input, textarea, [role='button']";
+  document.addEventListener("pointerover", (e) => { if (e.target.closest && e.target.closest(HOT)) ring.classList.add("hot"); });
+  document.addEventListener("pointerout", (e) => { if (e.target.closest && e.target.closest(HOT)) ring.classList.remove("hot"); });
+  const spin = () => {
+    rx += (cx - rx) * 0.2; ry += (cy - ry) * 0.2;
+    ring.style.transform = `translate3d(${rx.toFixed(1)}px, ${ry.toFixed(1)}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(spin);
+  };
+  requestAnimationFrame(spin);
 }
