@@ -1216,3 +1216,34 @@ body { counter-reset: sect; }
   [data-evt="bapteme"] .vt-evt-hero-in,
   [data-evt="fiancailles"] .vt-evt-hero-in { grid-template-columns: 0.95fr 1.05fr; }
 }
+
+/* ============================================================
+   Grille des « applications » incluses (apps.js) — modules
+   réutilisables mappés par événement. L'icône et les survols
+   suivent l'accent de l'événement (var(--gold)) ; compatible
+   mode sombre (tokens) et mobile.
+   ============================================================ */
+.vt-apps {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: 0.85rem; margin-top: 2rem;
+}
+.vt-app {
+  display: flex; gap: 0.85rem; align-items: flex-start;
+  padding: 1rem 1.05rem; background: var(--paper);
+  border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.vt-app:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--gold) 50%, var(--line));
+  box-shadow: var(--shadow);
+}
+.vt-app-ic {
+  flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px;
+  display: grid; place-items: center; color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+}
+.vt-app-ic svg { width: 21px; height: 21px; }
+.vt-app-txt h3 { font-family: var(--serif); font-size: 1.12rem; line-height: 1.15; margin: 0.1rem 0 0.28rem; color: var(--forest); }
+.vt-app-txt p { font-family: var(--sans); font-size: 0.86rem; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+@media (max-width: 560px) { .vt-apps { grid-template-columns: 1fr; } }

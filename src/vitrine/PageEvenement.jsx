@@ -1,5 +1,6 @@
 import { I, useReveal, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
+import { APPS } from "./apps.js";
 import { EventDevice, EVENT_PHOTOS as PHOTOS } from "./eventDevice.jsx";
 
 /* ============================================================
@@ -30,6 +31,27 @@ const AUTRES = [
   { key: "fiancailles", nom: "Fiançailles", href: "faire-part-fiancailles.html" },
   { key: "professionnel", nom: "Événement pro", href: "invitation-professionnelle.html" },
 ];
+
+/* Grille des « applications » incluses — modules réutilisables (apps.js)
+   mappés sur chaque événement (mêmes modules possibles d'un événement à
+   l'autre). L'accent suit le thème de l'événement (var(--gold)). */
+function AppsGrid({ ids }) {
+  const items = (ids || []).map((id) => APPS[id]).filter(Boolean);
+  if (!items.length) return null;
+  return (
+    <div className="vt-apps">
+      {items.map((a, i) => (
+        <article className="vt-app" key={i}>
+          <span className="vt-app-ic">{I[a.ic] ? I[a.ic]() : I.spark()}</span>
+          <div className="vt-app-txt">
+            <h3>{a.nom}</h3>
+            <p>{a.d}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
 
 /* Frise interactive des « révélations à date » (apparition échelonnée). */
 function Timeline({ steps }) {
@@ -93,7 +115,11 @@ export default function PageEvenement({ eventKey }) {
                   <h2>{s.h2}</h2>
                   {(s.p || []).map((par, j) => <p key={j}>{par}</p>)}
                 </div>
-                {s.points && (
+                {/* La section phare montre la grille d'applications (apps.js)
+                    quand l'événement en déclare ; sinon, les points en cartes. */}
+                {s.phare && e.apps && e.apps.length ? (
+                  <AppsGrid ids={e.apps} />
+                ) : s.points ? (
                   <div className="vt-evt-cards">
                     {s.points.map((pt, k) => (
                       <div className="vt-evt-card2" key={k}>
@@ -102,7 +128,7 @@ export default function PageEvenement({ eventKey }) {
                       </div>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
           </div>

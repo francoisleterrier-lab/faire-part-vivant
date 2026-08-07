@@ -19,6 +19,7 @@ export const EVENEMENTS = {
       { "href": "faire-part-naissance-toulouse.html", "label": "Faire-part de naissance à Toulouse" }
     ],
     "paletteHint": "douce et pastel, dominante sauge, blanc cassé et touches de terracotta claire",
+    "apps": ["site", "countdown", "notifications", "themes", "rsvp", "dashboard", "foyers", "lieu", "timeline", "agenda", "album", "livreOr", "jeux", "defis", "cagnotte", "listeCadeaux", "editeur", "diffusion", "prive", "maj"],
     "sections": [
       {
         "h2": "Un faire-part de naissance numérique, c'est quoi ?",
@@ -136,6 +137,7 @@ export const EVENEMENTS = {
       { "href": "faire-part-bapteme-toulouse.html", "label": "Faire-part de baptême à Toulouse" }
     ],
     "paletteHint": "douce et lumineuse, blanc et ivoire avec une touche de bleu ciel ou de doré",
+    "apps": ["site", "countdown", "notifications", "themes", "rsvp", "dashboard", "foyers", "lieu", "timeline", "agenda", "planTable", "album", "livreOr", "cagnotte", "hebergement", "covoiturage", "editeur", "diffusion", "prive", "maj"],
     "sections": [
       {
         "h2": "Un faire-part de baptême numérique, qu'est-ce que c'est ?",
@@ -248,6 +250,7 @@ export const EVENEMENTS = {
     "ctaLabel": "Créons votre faire-part d'anniversaire",
     "serviceName": "Faire-part d'anniversaire numérique",
     "paletteHint": "festive et chaleureuse, dorée et pétillante",
+    "apps": ["site", "countdown", "notifications", "themes", "musique", "rsvp", "dashboard", "lieu", "agenda", "album", "livreOr", "playlist", "jeux", "defis", "diaporama", "cagnotte", "editeur", "diffusion", "prive", "maj"],
     "sections": [
       { "h2": "Un faire-part d'anniversaire numérique, c'est quoi ?", "p": [
         "C'est une invitation en ligne, privée, que vos invités ouvrent d'un simple lien et peuvent installer sur leur téléphone comme une petite application. Rien à imprimer, rien à poster.",
@@ -316,6 +319,7 @@ export const EVENEMENTS = {
     "ctaLabel": "Créons votre faire-part de fiançailles",
     "serviceName": "Faire-part de fiançailles numérique",
     "paletteHint": "romantique et lumineuse, rosée et dorée",
+    "apps": ["site", "countdown", "notifications", "themes", "musique", "rsvp", "dashboard", "lieu", "timeline", "agenda", "album", "livreOr", "playlist", "jeux", "diaporama", "covoiturage", "editeur", "diffusion", "prive", "maj"],
     "sections": [
       { "h2": "Un faire-part de fiançailles numérique, c'est quoi ?", "p": [
         "C'est une page-invitation privée que vous partagez d'un simple lien, par SMS, WhatsApp ou e-mail, et que vos proches installent comme une petite application sur leur téléphone.",
@@ -384,6 +388,7 @@ export const EVENEMENTS = {
     "ctaLabel": "Créons votre invitation pro",
     "serviceName": "Invitation d'événement professionnel numérique",
     "paletteHint": "sobre et élégante, adaptable à votre charte",
+    "apps": ["site", "countdown", "notifications", "themes", "bilingue", "rsvp", "dashboard", "foyers", "lieu", "timeline", "agenda", "planTable", "diaporama", "album", "hebergement", "covoiturage", "editeur", "diffusion", "prive", "maj"],
     "sections": [
       { "h2": "Une invitation d'événement pro numérique, c'est quoi ?", "p": [
         "C'est une page-invitation professionnelle, à votre image, que vous partagez d'un simple lien : e-mail, LinkedIn, SMS. Vos invités l'ouvrent sur ordinateur ou mobile, sans rien installer.",
