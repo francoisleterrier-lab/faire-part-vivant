@@ -20,6 +20,29 @@ export const EVENEMENTS = {
     ],
     "paletteHint": "douce et pastel, dominante sauge, blanc cassé et touches de terracotta claire",
     "apps": ["site", "countdown", "notifications", "themes", "rsvp", "dashboard", "foyers", "lieu", "timeline", "agenda", "album", "livreOr", "jeux", "defis", "cagnotte", "listeCadeaux", "editeur", "diffusion", "prive", "maj"],
+    "jeu": {
+      "jeux": ["sexe", "prenom"],
+      "genderReveal": true,
+      "prenomReel": "capucine",
+      "sexeReel": "fille",
+      "labels": { "fille": "Une fille", "garcon": "Un garçon" },
+      "prenoms": [
+        { "id": "capucine", "label": "Capucine", "parieurs": ["Mamie Jeanne", "Les cousins de Lyon", "Tata Nicole", "Sofia"] },
+        { "id": "louise", "label": "Louise", "parieurs": ["Clara & Sami", "Emma", "Léa & Tom"] },
+        { "id": "jeanne", "label": "Jeanne", "parieurs": ["Papi André", "Hugo & Marie"] },
+        { "id": "gabriel", "label": "Gabriel", "parieurs": ["Tonton Bernard", "Papa & Maman"] },
+        { "id": "marius", "label": "Marius", "parieurs": ["Nathan & Zoé"] }
+      ],
+      "parisSexe": {
+        "fille": ["Mamie Jeanne", "Sofia", "Les cousins de Lyon", "Clara & Sami", "Emma", "Tata Nicole", "Léa & Tom"],
+        "garcon": ["Tonton Bernard", "Papa & Maman", "Hugo & Marie", "Nathan & Zoé"]
+      },
+      "dripAmbiance": true,
+      "reveal": {
+        "fille": { "titre": "C'est une FILLE", "sous": "Bienvenue à toi 🤍" },
+        "garcon": { "titre": "C'est un GARÇON", "sous": "Bienvenue à toi 🤍" }
+      }
+    },
     "sections": [
       {
         "h2": "Un faire-part de naissance numérique, c'est quoi ?",
