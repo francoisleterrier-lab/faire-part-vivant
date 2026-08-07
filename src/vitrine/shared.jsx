@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { MARQUE, SIGNATURE, REGION, EMAIL, PACKS, WEB3FORMS_KEY, SITE_PRINCIPAL, OFFRE_URL, TEL, TEL_INTL } from "./data.js";
 import { ARTICLES } from "./blog.js";
 import LumiereVivante from "./LumiereVivante.jsx";
+import { initWow } from "./wow.js";
 
 /* ============================================================
    UI partagée entre la home et la page Fonctionnalités.
@@ -69,11 +70,12 @@ export const Ornement = (p) => (
 export function useReveal() {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("in")); return; }
+    if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("in")); initWow(); return; }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
     }, { threshold: 0.12 });
     els.forEach((e) => io.observe(e));
+    initWow();
     return () => io.disconnect();
   }, []);
 }
