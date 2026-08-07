@@ -1,4 +1,4 @@
-import { I, useReveal, useStoredAccent, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
+import { I, useReveal, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
 import { LOCAL_EVENEMENTS } from "./localEvenements.js";
 import { EventDevice, EVENT_PHOTOS } from "./eventDevice.jsx";
@@ -21,7 +21,6 @@ const NAV = [
 
 export default function LocalEvenement({ localKey }) {
   useReveal();
-  useStoredAccent();
   const L = LOCAL_EVENEMENTS[localKey];
   if (!L) return null;
   const e = EVENEMENTS[L.event];
@@ -31,7 +30,8 @@ export default function LocalEvenement({ localKey }) {
   return (
     <>
       <Nav links={NAV} />
-      <main>
+      {/* data-evt : couleur signature de l'événement (naissance / baptême) */}
+      <main data-evt={L.event}>
         {/* Héros à deux colonnes : discours local + aperçu animé */}
         <section className="vt-fhero vt-evt-hero" id="top">
           <div className="vt-wrap vt-evt-hero-in">

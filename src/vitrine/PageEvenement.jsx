@@ -1,4 +1,4 @@
-import { I, useReveal, useStoredAccent, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
+import { I, useReveal, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
 import { EventDevice, EVENT_PHOTOS as PHOTOS } from "./eventDevice.jsx";
 
@@ -52,14 +52,14 @@ function Timeline({ steps }) {
 
 export default function PageEvenement({ eventKey }) {
   useReveal();
-  useStoredAccent();
   const e = EVENEMENTS[eventKey];
   if (!e) return null;
   const autres = AUTRES.filter((a) => a.key !== eventKey);
   return (
     <>
       <Nav links={NAV} />
-      <main>
+      {/* data-evt : couleur signature + mise en page propres à l'événement */}
+      <main data-evt={eventKey}>
         {/* Héros à deux colonnes : discours + aperçu animé */}
         <section className="vt-fhero vt-evt-hero" id="top">
           <div className="vt-wrap vt-evt-hero-in">

@@ -1170,3 +1170,49 @@ body { counter-reset: sect; }
 .vt-theme-toggle .moon { display: block; }
 :root[data-theme="dark"] .vt-theme-toggle .sun { display: block; }
 :root[data-theme="dark"] .vt-theme-toggle .moon { display: none; }
+
+/* ============================================================
+   Thème par événement — chaque faire-part a sa couleur signature
+   et sa mise en page. On redéfinit la famille « or » (accent) sur le
+   conteneur [data-evt] : boutons, filets, frise, puces, aperçu, liens
+   et lavis du héros s'accordent. Comme la surcharge porte sur <main>
+   (et non :root), elle prime dans le subtree en clair ET en sombre.
+   ============================================================ */
+[data-evt="naissance"] {
+  --gold: #7e9b78; --gold-2: color-mix(in srgb, #7e9b78 78%, #fff);
+  --gold-soft: color-mix(in srgb, #7e9b78 46%, #fff); --sc-accent: #7e9b78;
+}
+[data-evt="bapteme"] {
+  --gold: #6f97b6; --gold-2: color-mix(in srgb, #6f97b6 78%, #fff);
+  --gold-soft: color-mix(in srgb, #6f97b6 46%, #fff); --sc-accent: #6f97b6;
+}
+[data-evt="anniversaire"] {
+  --gold: #c07f33; --gold-2: color-mix(in srgb, #c07f33 78%, #fff);
+  --gold-soft: color-mix(in srgb, #c07f33 46%, #fff); --sc-accent: #c07f33;
+}
+[data-evt="fiancailles"] {
+  --gold: #b57680; --gold-2: color-mix(in srgb, #b57680 78%, #fff);
+  --gold-soft: color-mix(in srgb, #b57680 46%, #fff); --sc-accent: #b57680;
+}
+[data-evt="professionnel"] {
+  --gold: #56788a; --gold-2: color-mix(in srgb, #56788a 78%, #fff);
+  --gold-soft: color-mix(in srgb, #56788a 46%, #fff); --sc-accent: #56788a;
+}
+/* Lavis coloré du héros, teinté par l'accent de l'événement */
+[data-evt] .vt-evt-hero {
+  background: radial-gradient(120% 82% at 78% 10%, color-mix(in srgb, var(--gold) 15%, transparent), transparent 62%);
+}
+:root[data-theme="dark"] [data-evt] .vt-evt-hero {
+  background: radial-gradient(120% 82% at 78% 10%, color-mix(in srgb, var(--gold) 20%, transparent), transparent 64%);
+}
+/* Variante de composition : certains événements mènent par la photo
+   (aperçu à gauche en desktop, en premier sur mobile) → présentation
+   distincte d'un événement à l'autre, y compris sur mobile.
+   L'ordre s'applique à toutes tailles ; l'inversion des colonnes est
+   réservée au desktop (sinon elle casserait le passage en une colonne). */
+[data-evt="bapteme"] .vt-evt-hero-media,
+[data-evt="fiancailles"] .vt-evt-hero-media { order: -1; }
+@media (min-width: 901px) {
+  [data-evt="bapteme"] .vt-evt-hero-in,
+  [data-evt="fiancailles"] .vt-evt-hero-in { grid-template-columns: 0.95fr 1.05fr; }
+}

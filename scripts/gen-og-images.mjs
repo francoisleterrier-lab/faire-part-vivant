@@ -27,9 +27,9 @@ const BOTANIC = asset("cadre-vegetal-strip.jpg");
 const CARDS = {
   "og-naissance": { photo: "naissance-grossesse.webp", title: "Faire-part\nde naissance", sub: "Numérique & vivant — de la grossesse au prénom révélé", loc: "Sud-Toulousain · partout en France" },
   "og-bapteme": { photo: "bapteme-enfant.webp", title: "Faire-part\nde baptême", sub: "Parrain & marraine, RSVP, plan d'accès, album partagé", loc: "Sud-Toulousain · partout en France" },
-  "og-anniversaire": { photo: "table-dressee.jpg", title: "Faire-part\nd'anniversaire", sub: "Compte à rebours, RSVP, thème qui se révèle à date", loc: "Sud-Toulousain · partout en France" },
-  "og-fiancailles": { photo: "couple-portrait.webp", title: "Faire-part\nde fiançailles", sub: "L'annonce, votre histoire, le RSVP de la fête", loc: "Sud-Toulousain · partout en France" },
-  "og-professionnel": { photo: "cadre-vegetal.webp", title: "Invitation\nprofessionnelle", sub: "Inscriptions, programme, relances — élégant et net", loc: "Occitanie · partout en France" },
+  "og-anniversaire": { photo: "anniversaire-fete.webp", title: "Faire-part\nd'anniversaire", sub: "Compte à rebours, RSVP, thème qui se révèle à date", loc: "Sud-Toulousain · partout en France" },
+  "og-fiancailles": { photo: "fiancailles-couple.webp", title: "Faire-part\nde fiançailles", sub: "L'annonce, votre histoire, le RSVP de la fête", loc: "Sud-Toulousain · partout en France" },
+  "og-professionnel": { photo: "professionnel-soiree.webp", title: "Invitation\nprofessionnelle", sub: "Inscriptions, programme, relances — élégant et net", loc: "Occitanie · partout en France" },
   "og-naissance-toulouse": { photo: "naissance-grossesse.webp", title: "Faire-part de\nnaissance à Toulouse", sub: "Numérique & vivant — créé près de chez vous", loc: "Toulouse · Haute-Garonne" },
   "og-bapteme-toulouse": { photo: "bapteme-enfant.webp", title: "Faire-part de\nbaptême à Toulouse", sub: "Église, réception, RSVP, album — accompagné", loc: "Toulouse · Haute-Garonne" },
 };

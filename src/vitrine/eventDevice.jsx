@@ -1,6 +1,9 @@
 import { I, Ornement } from "./shared.jsx";
 import photoGrossesse from "../assets/naissance-grossesse.webp";
 import photoEnfant from "../assets/bapteme-enfant.webp";
+import photoAnniv from "../assets/anniversaire-fete.webp";
+import photoFiancailles from "../assets/fiancailles-couple.webp";
+import photoPro from "../assets/professionnel-soiree.webp";
 
 /* ============================================================
    Aperçu animé partagé : mockup téléphone d'un faire-part
@@ -14,6 +17,9 @@ import photoEnfant from "../assets/bapteme-enfant.webp";
 export const EVENT_PHOTOS = {
   naissance: { src: photoGrossesse, alt: "Future maman, les mains posées sur son ventre" },
   bapteme: { src: photoEnfant, alt: "Bébé en tenue de baptême" },
+  anniversaire: { src: photoAnniv, alt: "Gâteau d'anniversaire et bougies allumées, ambiance chaleureuse" },
+  fiancailles: { src: photoFiancailles, alt: "Couple de fiancés, bague de fiançailles à la main" },
+  professionnel: { src: photoPro, alt: "Coupes de champagne levées et confettis dorés lors d'une soirée" },
 };
 
 export function EventDevice({ card, photo }) {
