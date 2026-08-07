@@ -33,6 +33,9 @@ const AUTRES = [
   { key: "mariage", nom: "Mariage", href: "index.html" },
   { key: "naissance", nom: "Naissance", href: "faire-part-naissance.html" },
   { key: "bapteme", nom: "Baptême", href: "faire-part-bapteme.html" },
+  { key: "anniversaire", nom: "Anniversaire", href: "faire-part-anniversaire.html" },
+  { key: "fiancailles", nom: "Fiançailles", href: "faire-part-fiancailles.html" },
+  { key: "professionnel", nom: "Événement pro", href: "invitation-professionnelle.html" },
 ];
 
 /* Aperçu animé : mockup téléphone sans photo (gradient), réutilise

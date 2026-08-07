@@ -65,6 +65,9 @@ export default defineConfig({
         // Pages événement (gamme multi-événement)
         naissance: new URL("./faire-part-naissance.html", import.meta.url).pathname,
         bapteme: new URL("./faire-part-bapteme.html", import.meta.url).pathname,
+        anniversaire: new URL("./faire-part-anniversaire.html", import.meta.url).pathname,
+        fiancailles: new URL("./faire-part-fiancailles.html", import.meta.url).pathname,
+        professionnel: new URL("./invitation-professionnelle.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },

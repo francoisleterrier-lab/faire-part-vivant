@@ -230,6 +230,210 @@ export const EVENEMENTS = {
         "r": "Non. Un seul paiement, sans abonnement ni frais cachés. La vente est en direct, l'accompagnement est compris."
       }
     ]
+  },
+  "anniversaire": {
+    "slug": "faire-part-anniversaire",
+    "event": "anniversaire",
+    "h1": "Le faire-part d'anniversaire qui vit",
+    "titleSeo": "Faire-part d'anniversaire numérique | le faire-part qui vit",
+    "metaDesc": "Un faire-part d'anniversaire numérique qui vit : compte à rebours, RSVP en ligne, thème dévoilé à date, album partagé. Un paiement unique dès 290 €, sans abonnement.",
+    "heroEyebrow": "le faire-part qui vit",
+    "heroLede": "Un faire-part d'anniversaire numérique, c'est une page privée à partager d'un simple lien : elle annonce la fête, fait tourner le compte à rebours, recueille les réponses, dévoile le thème au bon moment et réunit ensuite toutes les photos de la soirée.",
+    "ctaLabel": "Créons votre faire-part d'anniversaire",
+    "serviceName": "Faire-part d'anniversaire numérique",
+    "paletteHint": "festive et chaleureuse, dorée et pétillante",
+    "sections": [
+      { "h2": "Un faire-part d'anniversaire numérique, c'est quoi ?", "p": [
+        "C'est une invitation en ligne, privée, que vos invités ouvrent d'un simple lien et peuvent installer sur leur téléphone comme une petite application. Rien à imprimer, rien à poster.",
+        "Surtout, ce n'est pas une image figée : la page vit jusqu'au jour J et même après. Elle annonce la fête, décompte les jours, recueille les réponses, puis se remplit des photos de la soirée. C'est « le faire-part qui vit »."
+      ] },
+      { "h2": "Comment un seul lien fait-il vivre la fête ?", "p": [
+        "Tout tient dans un lien unique, partagé une seule fois, qui accompagne l'événement du début à la fin.",
+        "Avant : la page annonce l'anniversaire, fait tourner le compte à rebours, recueille les présents et peut garder le thème secret pour ménager la surprise. Le jour J : le thème, l'adresse exacte et le programme se dévoilent. Après : l'album se remplit des photos de tous, et le livre d'or recueille les mots de chacun."
+      ] },
+      { "h2": "Que contient votre faire-part vivant ?", "phare": true, "p": [
+        "Chaque page est composée sur mesure à partir des modules pensés pour l'anniversaire. On garde ce qui compte, on écarte le reste."
+      ], "points": [
+        "Hero d'accueil et compte à rebours jusqu'au grand jour",
+        "Le mot de l'hôte (ou la surprise, gardée secrète)",
+        "Les révélations à date : thème, lieu et programme dévoilés au bon moment",
+        "RSVP en ligne avec suivi des présents et des régimes",
+        "Album photo partagé et livre d'or",
+        "Idées cadeaux, cagnotte ou liste",
+        "Infos pratiques avec plan et itinéraire GPS (Waze ou Maps)"
+      ] },
+      { "h2": "Combien coûte un faire-part d'anniversaire numérique ?", "p": [
+        "Le tarif est le même pour tous les événements, réglé en une fois, sans abonnement ni frais cachés. Vous êtes accompagné de A à Z, en direct."
+      ], "points": [
+        "Essentiel — 290 € : l'invitation en ligne, épurée (hero, compte à rebours, infos et plan GPS, RSVP, album ou livre d'or).",
+        "Vivant — 490 €, le plus choisi : tout l'Essentiel, plus les révélations à date, le livre d'or et la cagnotte. La formule pensée pour faire durer la fête.",
+        "Signature — à partir de 790 € : le sur-mesure complet, univers graphique dédié, modules supplémentaires et accompagnement renforcé."
+      ] },
+      { "h2": "Pourquoi pas une story Instagram ou un groupe WhatsApp ?", "p": [
+        "Une story disparaît en 24 h et un groupe se noie sous les messages : impossible d'y retrouver l'adresse, l'heure ou qui vient vraiment. On finit par répéter tout dix fois.",
+        "Le faire-part vivant fait l'inverse : une seule page, toujours à jour, qui suit les réponses toute seule, garde les infos au même endroit et rassemble les souvenirs après la fête. Élégant, privé, et bien plus pratique."
+      ] }
+    ],
+    "revelation": { "h2": "Les « révélations à date » : la surprise dévoilée au bon moment", "p": [
+      "C'est le cœur du faire-part vivant. Vous préparez à l'avance des contenus qui restent cachés, et vous choisissez quand ils s'ouvrent.",
+      "Pour un anniversaire surprise, la page peut n'annoncer qu'« une soirée à ne pas manquer », puis dévoiler le thème quelques jours avant, et l'adresse exacte seulement la veille — de quoi préserver l'effet sans rien gâcher.",
+      "Vos invités, qui avaient gardé le lien, découvrent chaque nouveauté en rouvrant simplement la même page : aucun second message à envoyer, aucune surprise éventée."
+    ] },
+    "heroCard": {
+      "live": "En direct", "soustitre": "Faire-part vivant", "eyebrow": "On fait la fête",
+      "titre": "Les 30 ans de Léa", "date": "Samedi soir · à venir",
+      "compteur": [ { "n": "21", "l": "jours" }, { "n": "08", "l": "h" }, { "n": "15", "l": "min" } ],
+      "secret": "Thème · encore secret", "cta": "Je serai là !", "note": "Aperçu — la page vit jusqu'à la fête"
+    },
+    "timeline": [
+      { "icon": "rsvp", "phase": "À l'envoi", "titre": "L'annonce & le RSVP", "texte": "La page annonce la fête et le compte à rebours démarre. Chacun répond en un geste, vous suivez les présents en direct." },
+      { "icon": "spark", "phase": "Avant le jour J", "titre": "Le thème dévoilé", "texte": "Le thème, le dress-code et les petites surprises se dévoilent au moment que vous choisissez, pour entretenir l'impatience." },
+      { "icon": "compass", "phase": "La veille", "titre": "Adresse & programme", "texte": "L'adresse exacte, l'heure et le déroulé de la soirée apparaissent, avec l'itinéraire GPS pour arriver sans stress." },
+      { "icon": "camera", "phase": "Après la fête", "titre": "L'album partagé", "texte": "Les photos de tous se réunissent dans l'album et le livre d'or recueille les messages : la fête continue de vivre." }
+    ],
+    "faq": [
+      { "q": "Mes invités doivent-ils installer une application ?", "r": "Non. Un lien suffit : la page s'ouvre dans le navigateur. S'ils le souhaitent, ils l'ajoutent à leur écran d'accueil en un geste, comme une appli — sans boutique ni compte." },
+      { "q": "Peut-on garder l'anniversaire surprise ?", "r": "Oui, c'est même l'un des atouts : vous choisissez quoi dévoiler et quand. La page peut rester mystérieuse jusqu'au dernier moment." },
+      { "q": "La page est-elle privée ?", "r": "Oui. Elle n'est visible que par les personnes à qui vous confiez le lien, et n'apparaît pas dans les moteurs de recherche." },
+      { "q": "Ça marche pour tous les âges ?", "r": "Bien sûr : 1 an, 18 ans, 40, 60, 80… On adapte le ton et l'univers à la personne fêtée et à l'ambiance voulue." },
+      { "q": "Y a-t-il un abonnement ?", "r": "Non. Un seul paiement, sans abonnement ni frais cachés. La vente est en direct, l'accompagnement est compris." }
+    ]
+  },
+  "fiancailles": {
+    "slug": "faire-part-fiancailles",
+    "event": "fiancailles",
+    "h1": "Le faire-part de fiançailles qui vit",
+    "titleSeo": "Faire-part de fiançailles numérique | le faire-part qui vit",
+    "metaDesc": "Un faire-part de fiançailles numérique qui vit : annonce, compte à rebours, RSVP, votre histoire dévoilée à date, album partagé. Un paiement unique dès 290 €, sans abonnement.",
+    "heroEyebrow": "le faire-part qui vit",
+    "heroLede": "Un faire-part de fiançailles numérique, c'est une page privée à partager d'un simple lien : elle annonce la nouvelle, raconte votre histoire, décompte les jours jusqu'à la fête et réunit les réponses et les photos de tous.",
+    "ctaLabel": "Créons votre faire-part de fiançailles",
+    "serviceName": "Faire-part de fiançailles numérique",
+    "paletteHint": "romantique et lumineuse, rosée et dorée",
+    "sections": [
+      { "h2": "Un faire-part de fiançailles numérique, c'est quoi ?", "p": [
+        "C'est une page-invitation privée que vous partagez d'un simple lien, par SMS, WhatsApp ou e-mail, et que vos proches installent comme une petite application sur leur téléphone.",
+        "Contrairement à un simple message, cette page vit : elle annonce vos fiançailles, raconte votre rencontre, recueille les réponses pour la fête et se remplit ensuite des photos du jour. C'est « le faire-part qui vit »."
+      ] },
+      { "h2": "Comment un seul lien accompagne-t-il vos fiançailles ?", "p": [
+        "Un lien unique, partagé une fois, qui traverse tous les temps de l'annonce.",
+        "D'abord, l'annonce et votre histoire : votre rencontre, la demande, quelques photos. Puis, à l'approche de la fête, le lieu, l'heure et le programme se dévoilent et chacun répond en ligne. Enfin, l'album se remplit des souvenirs partagés — un joli prélude à votre futur mariage."
+      ] },
+      { "h2": "Que contient votre faire-part vivant ?", "phare": true, "p": [
+        "Chaque page est composée sur mesure à partir des modules pensés pour les fiançailles. On garde ce qui compte, on écarte le reste."
+      ], "points": [
+        "Hero d'accueil et compte à rebours jusqu'à la fête",
+        "Votre histoire : la rencontre, la demande, vos photos",
+        "Les révélations à date : le lieu et le programme dévoilés au bon moment",
+        "RSVP en ligne avec suivi des présents",
+        "Album photo partagé et livre d'or",
+        "Cagnotte ou liste (lune de miel, futur mariage…)",
+        "Infos pratiques avec plan et itinéraire GPS (Waze ou Maps)"
+      ] },
+      { "h2": "Combien coûte un faire-part de fiançailles numérique ?", "p": [
+        "La même grille pour tous les événements, réglée en une fois, sans abonnement. Accompagnement compris, en direct."
+      ], "points": [
+        "Essentiel — 290 € : l'annonce en ligne, les infos et le plan GPS, le compte à rebours et le RSVP.",
+        "Vivant — 490 €, notre formule phare : tout l'Essentiel, plus votre histoire, les révélations à date, l'album partagé, le livre d'or et la cagnotte.",
+        "Signature — à partir de 790 € : création entièrement personnalisée, univers graphique dédié et accompagnement rapproché."
+      ] },
+      { "h2": "Pourquoi pas un simple post ou un carton ?", "p": [
+        "Un post se perd dans le fil et un carton ne recueille pas les réponses : vous finissez par relancer tout le monde à la main. Et l'histoire de votre rencontre mérite mieux qu'une légende.",
+        "Le faire-part vivant fait l'inverse : une page élégante et privée qui raconte, qui suit les présents toute seule, et qui garde les souvenirs. Et comme il pose déjà votre univers de couple, il fait une transition naturelle vers le faire-part de mariage."
+      ] }
+    ],
+    "revelation": { "h2": "Les « révélations à date » : votre histoire dévoilée peu à peu", "p": [
+      "C'est le cœur du faire-part vivant. Plutôt que de tout dire d'un coup, la page s'ouvre en plusieurs temps, à des dates que nous choisissons ensemble.",
+      "À l'annonce, on partage la nouvelle et une première photo. Quelques semaines avant la fête, l'histoire de la demande se dévoile, puis le lieu et le programme. La veille, un dernier mot et le plan d'accès. Et le lendemain, l'album réunit les photos de tous.",
+      "Chaque ouverture est une petite joie qui entretient l'attente et donne envie de revenir sur la page — un avant-goût parfait de votre mariage."
+    ] },
+    "heroCard": {
+      "live": "En direct", "soustitre": "Faire-part vivant", "eyebrow": "Nous nous fiançons",
+      "titre": "Camille & Alex", "date": "Fiançailles · à venir",
+      "compteur": [ { "n": "34", "l": "jours" }, { "n": "10", "l": "h" }, { "n": "05", "l": "min" } ],
+      "secret": "Le lieu · bientôt révélé", "cta": "Je viens fêter ça", "note": "Aperçu — la page se dévoile petit à petit"
+    },
+    "timeline": [
+      { "icon": "heart", "phase": "L'annonce", "titre": "La grande nouvelle", "texte": "La page annonce vos fiançailles et partage une première photo. Le compte à rebours vers la fête démarre." },
+      { "icon": "spark", "phase": "Avant la fête", "titre": "Votre histoire", "texte": "La rencontre, la demande, vos souvenirs se dévoilent — de quoi émouvoir vos proches avant de vous retrouver." },
+      { "icon": "compass", "phase": "La veille", "titre": "Lieu & programme", "texte": "Le lieu exact, l'heure et le déroulé apparaissent, avec l'itinéraire GPS et un dernier mot de votre part." },
+      { "icon": "camera", "phase": "Après", "titre": "L'album partagé", "texte": "Les photos de tous se réunissent dans l'album : un joli prélude, déjà, à votre futur mariage." }
+    ],
+    "faq": [
+      { "q": "Mes proches doivent-ils installer une application ?", "r": "Non. Un lien suffit ; la page s'ouvre dans le navigateur et peut s'ajouter à l'écran d'accueil comme une appli, sans boutique ni compte." },
+      { "q": "La page est-elle privée ?", "r": "Oui. Seules les personnes à qui vous confiez le lien y ont accès, et elle n'apparaît pas dans les moteurs de recherche." },
+      { "q": "Pourra-t-on l'utiliser pour le mariage ensuite ?", "r": "L'esprit et l'univers se prolongent naturellement : beaucoup de couples enchaînent avec un faire-part de mariage vivant, dans la même veine." },
+      { "q": "Peut-on garder un souvenir papier ?", "r": "Bien sûr : un QR code sur un joli carton imprimé renvoie vers la page vivante. Le meilleur des deux mondes." },
+      { "q": "Y a-t-il un abonnement ?", "r": "Non. Un seul paiement, sans abonnement ni frais cachés." }
+    ]
+  },
+  "professionnel": {
+    "slug": "invitation-professionnelle",
+    "event": "professionnel",
+    "h1": "L'invitation d'événement pro qui vit",
+    "titleSeo": "Invitation d'événement professionnel | le faire-part qui vit",
+    "metaDesc": "Une invitation d'événement professionnel numérique qui vit : RSVP en ligne, programme, badge, plan d'accès, relances automatiques. Un paiement unique dès 290 €, sans abonnement.",
+    "heroEyebrow": "l'invitation qui vit",
+    "heroLede": "Une invitation d'événement professionnel numérique, c'est une page soignée à partager d'un simple lien : elle présente l'événement, recueille les inscriptions, dévoile le programme au bon moment, guide vos invités le jour J et centralise tout, sans effort.",
+    "ctaLabel": "Créons votre invitation pro",
+    "serviceName": "Invitation d'événement professionnel numérique",
+    "paletteHint": "sobre et élégante, adaptable à votre charte",
+    "sections": [
+      { "h2": "Une invitation d'événement pro numérique, c'est quoi ?", "p": [
+        "C'est une page-invitation professionnelle, à votre image, que vous partagez d'un simple lien : e-mail, LinkedIn, SMS. Vos invités l'ouvrent sur ordinateur ou mobile, sans rien installer.",
+        "Inauguration, lancement de produit, soirée d'entreprise, séminaire ou porte ouverte : la page vit du save-the-date jusqu'au bilan. Elle informe, recueille les inscriptions et centralise tout au même endroit. C'est « l'invitation qui vit »."
+      ] },
+      { "h2": "Comment gérer vos inscriptions sans tableur ?", "p": [
+        "Chaque invité répond en ligne en un geste ; vous suivez les présents, les régimes et les accompagnants en temps réel, sans relancer personne à la main.",
+        "Avant : save-the-date, teasing et compte à rebours. Peu avant : le programme détaillé, les intervenants et le plan d'accès se dévoilent. Le jour J : QR code d'accès, informations pratiques et actualités en direct. Après : remerciements, photos et replay — un événement qui laisse une trace."
+      ] },
+      { "h2": "Que contient votre invitation vivante ?", "phare": true, "p": [
+        "Chaque page est composée sur mesure à partir des modules pensés pour l'événementiel professionnel. On garde ce qui compte, on écarte le reste."
+      ], "points": [
+        "Page d'accueil à votre charte et compte à rebours",
+        "Présentation de l'événement, intervenants et programme",
+        "Les révélations à date : programme, invités et surprises dévoilés au bon moment",
+        "Inscription en ligne avec suivi des présents (et badge / QR code)",
+        "Plan d'accès, parking et itinéraire GPS",
+        "Relances et rappels automatiques",
+        "Album, remerciements et bilan après l'événement"
+      ] },
+      { "h2": "Combien coûte une invitation d'événement pro ?", "p": [
+        "La même grille, réglée en une fois, sans abonnement ni frais cachés. Devis et accompagnement en direct ; sur volume ou besoins spécifiques, on établit un sur-mesure."
+      ], "points": [
+        "Essentiel — 290 € : la page de l'événement, les infos et le plan, le compte à rebours et l'inscription en ligne.",
+        "Vivant — 490 €, le plus choisi : tout l'Essentiel, plus les révélations à date, le programme détaillé, les relances et l'album/bilan.",
+        "Signature — à partir de 790 € : intégration complète à votre charte, modules spécifiques (billetterie, badge, replay) et accompagnement dédié."
+      ] },
+      { "h2": "Pourquoi pas un e-mail ou un formulaire classique ?", "p": [
+        "Un e-mail se perd, un formulaire ne fait que collecter : ni rappel, ni programme à jour, ni expérience à la hauteur de votre marque. Et le suivi finit sur un tableur.",
+        "L'invitation vivante fait l'inverse : une page soignée, à votre charte, qui relance toute seule, tient le programme à jour et valorise votre image du premier clic au bilan. Professionnelle, mesurable, mémorable."
+      ] }
+    ],
+    "revelation": { "h2": "Les « révélations à date » : un programme qui se dévoile", "p": [
+      "C'est le cœur de l'invitation vivante. Plutôt que de tout annoncer d'un coup, la page s'ouvre par étapes, aux dates que nous planifions ensemble.",
+      "Un exemple : J-30 le save-the-date et l'inscription · J-15 le programme et les intervenants · J-5 le plan d'accès et les infos pratiques · Jour J le QR code et les actualités en direct · J+2 les remerciements, les photos et le replay.",
+      "Chaque ouverture relance l'attention de vos invités et soutient le taux de présence — sans que vous ayez à renvoyer quoi que ce soit."
+    ] },
+    "heroCard": {
+      "live": "En direct", "soustitre": "Invitation vivante", "eyebrow": "Vous êtes convié",
+      "titre": "Notre inauguration", "date": "Lieu · à venir",
+      "compteur": [ { "n": "12", "l": "jours" }, { "n": "04", "l": "h" }, { "n": "30", "l": "min" } ],
+      "secret": "Programme · bientôt dévoilé", "cta": "Je confirme ma venue", "note": "Aperçu — à votre charte graphique"
+    },
+    "timeline": [
+      { "icon": "rsvp", "phase": "J-30", "titre": "Save-the-date & inscription", "texte": "L'événement est annoncé, l'inscription ouvre et le compte à rebours démarre. Vous suivez les présents en direct." },
+      { "icon": "sliders", "phase": "J-15", "titre": "Programme & intervenants", "texte": "Le déroulé, les temps forts et les intervenants se dévoilent — de quoi convaincre les indécis." },
+      { "icon": "compass", "phase": "J-5", "titre": "Accès & infos pratiques", "texte": "Plan d'accès, parking, itinéraire GPS et consignes apparaissent, avec des rappels automatiques." },
+      { "icon": "camera", "phase": "Après", "titre": "Remerciements & bilan", "texte": "Photos, remerciements et replay prolongent l'événement et nourrissent votre communication." }
+    ],
+    "faq": [
+      { "q": "Mes invités doivent-ils créer un compte ?", "r": "Non. Un lien suffit ; la page s'ouvre dans le navigateur, sur mobile ou ordinateur, sans installation ni compte." },
+      { "q": "Peut-on la mettre à notre charte graphique ?", "r": "Oui. Couleurs, logo, typographies : la page s'intègre à votre identité de marque, sobre et professionnelle." },
+      { "q": "Peut-on suivre et exporter les inscriptions ?", "r": "Oui. Vous suivez les présents en temps réel, avec relances automatiques ; les données peuvent être exportées pour vos équipes." },
+      { "q": "Gérez-vous les gros volumes ou plusieurs sessions ?", "r": "Oui. Selon vos besoins (billetterie, badges, sessions multiples, replay), on établit un sur-mesure en formule Signature." },
+      { "q": "Y a-t-il un abonnement ?", "r": "Non. Un paiement unique, sans abonnement ni frais cachés. Devis clair et accompagnement en direct." }
+    ]
   }
 };
 
@@ -262,23 +466,23 @@ export const HUB = {
     {
       "event": "anniversaire",
       "titre": "Faire-part d'anniversaire",
-      "teaser": "Pour un anniversaire à fêter en grand : compte à rebours, RSVP et surprises à dévoiler. Bientôt disponible.",
-      "href": "#",
-      "statut": "bientot"
+      "teaser": "Pour un anniversaire à fêter en grand : compte à rebours, RSVP, thème dévoilé à date et album partagé de la soirée.",
+      "href": "faire-part-anniversaire.html",
+      "statut": "live"
     },
     {
       "event": "fiancailles",
       "titre": "Faire-part de fiançailles",
-      "teaser": "Annoncez vos fiançailles avec une page qui grandit jusqu'à la demande et au-delà. Bientôt disponible.",
-      "href": "#",
-      "statut": "bientot"
+      "teaser": "Annoncez vos fiançailles avec une page qui raconte votre histoire, recueille les réponses et prépare déjà le mariage.",
+      "href": "faire-part-fiancailles.html",
+      "statut": "live"
     },
     {
       "event": "professionnel",
       "titre": "Invitation événement pro",
-      "teaser": "Inauguration, lancement ou soirée d'entreprise : une invitation soignée avec RSVP et infos pratiques. Bientôt disponible.",
-      "href": "#",
-      "statut": "bientot"
+      "teaser": "Inauguration, lancement ou soirée d'entreprise : une page à votre charte avec inscriptions, programme et relances.",
+      "href": "invitation-professionnelle.html",
+      "statut": "live"
     }
   ]
 };
