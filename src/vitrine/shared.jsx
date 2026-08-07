@@ -80,6 +80,39 @@ export function useReveal() {
   }, []);
 }
 
+/* ---------- Bascule clair / sombre ----------
+   Le thème est fixé très tôt par un script inline (voir prerender.mjs) sur
+   <html data-theme>, donc aucun clignotement. Ce bouton se contente de lire
+   l'état courant, de l'inverser et de le mémoriser (localStorage). L'icône
+   affichée représente l'action à venir (lune = passer en sombre). */
+const THEME_KEY = "vt-theme";
+function readTheme() {
+  if (typeof document === "undefined") return "light";
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+export function ThemeToggle({ className = "" }) {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => { setTheme(readTheme()); }, []);
+  const toggle = () => {
+    const next = readTheme() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem(THEME_KEY, next); } catch { /* stockage indispo */ }
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", next === "dark" ? "#151b15" : "#f4f0e7");
+    setTheme(next);
+  };
+  const dark = theme === "dark";
+  return (
+    <button type="button" className={"vt-theme-toggle" + (className ? " " + className : "")}
+      onClick={toggle} aria-pressed={dark}
+      aria-label={dark ? "Activer le mode clair" : "Activer le mode sombre"}
+      title={dark ? "Mode clair" : "Mode sombre"}>
+      <svg className="sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg className="moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+  );
+}
+
 /* ---------- Nav ---------- */
 export function Nav({ links }) {
   const [scrolled, setScrolled] = useState(false);
@@ -114,6 +147,7 @@ export function Nav({ links }) {
           )}
         </nav>
         <div className="vt-nav-cta">
+          <ThemeToggle />
           <a className="vt-btn gold" href={DEMO}>Demander une démo</a>
           <button className="vt-burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>{I.burger()}</button>
         </div>

@@ -48,6 +48,13 @@ function hashedAsset(name) {
 // prefers-reduced-motion. Sans JS, rien ne s'affiche (aucun blocage SEO).
 const INTRO_SCRIPT = `<script>(function(){try{if(sessionStorage.getItem('vt-intro')==='1')return;sessionStorage.setItem('vt-intro','1')}catch(e){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var d=document.createElement('div');d.className='vt-intro';d.setAttribute('aria-hidden','true');d.innerHTML='<div class="vt-intro-in"><span class="vt-intro-orn"></span><span class="vt-intro-mark">Faire-part Vivant</span><span class="vt-intro-sub">par Fran\\u00e7ois Leterrier</span></div>';document.body.appendChild(d);document.documentElement.classList.add('vt-introlock');requestAnimationFrame(function(){d.classList.add('vt-intro-show')});setTimeout(function(){d.classList.add('vt-intro-out');document.documentElement.classList.remove('vt-introlock')},1500);setTimeout(function(){d.remove()},2600)}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go)}else{go()}})();</script>`;
 
+// Mode clair/sombre sans clignotement : script inline exécuté dans <head> AVANT
+// la peinture du <body>. Lit la préférence mémorisée (vt-theme), sinon suit le
+// système (prefers-color-scheme). Fixe data-theme sur <html> et accorde la
+// couleur de la barre d'adresse (theme-color). Marqueur vt-theme-init pour
+// l'injection idempotente. Sans JS : aucun attribut → design clair par défaut.
+const THEME_SCRIPT = `<script>/*vt-theme-init*/(function(){try{var t=localStorage.getItem('vt-theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;if(t==='dark'){var m=document.querySelector('meta[name=\\"theme-color\\"]');if(m)m.setAttribute('content','#151b15')}}catch(e){}})();</script>`;
+
 // Serveur Vite en mode SSR (config minimale : uniquement le plugin React,
 // pas de PWA ni de base — on ne charge que des modules, pas de bundle).
 const vite = await createServer({
@@ -117,11 +124,25 @@ try {
       return hashed ? `${assetPrefix}assets/${hashed}` : whole;
     });
     const filled = html.replace(m[0], `${m[1]}${content}${m[2]}`);
-    writeFileSync(path, filled.replace("</head>", `${INTRO_SCRIPT}</head>`));
+    writeFileSync(path, filled.replace("</head>", `${THEME_SCRIPT}${INTRO_SCRIPT}</head>`));
     done++;
     console.log(`prerender: ${file} (+${content.length.toLocaleString("fr-FR")} car. statiques)`);
   }
   console.log(`prerender: ${done} page(s) rendue(s) pour le SEO.`);
+
+  // Filet de sécurité : toute page vitrine (id="vitrine-root") qui n'aurait pas
+  // reçu le script de thème ci-dessus (hors liste de pré-rendu) le reçoit ici,
+  // pour que le mode sombre soit cohérent et sans clignotement sur TOUT le site.
+  let themed = 0;
+  for (const file of readdirSync(DIST)) {
+    if (!file.endsWith(".html")) continue;
+    const path = join(DIST, file);
+    const html = readFileSync(path, "utf8");
+    if (!html.includes('id="vitrine-root"') || html.includes("vt-theme-init")) continue;
+    writeFileSync(path, html.replace("</head>", `${THEME_SCRIPT}</head>`));
+    themed++;
+  }
+  if (themed) console.log(`prerender: thème injecté sur ${themed} page(s) supplémentaire(s).`);
 } finally {
   await vite.close();
 }
