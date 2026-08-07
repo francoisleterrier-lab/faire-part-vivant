@@ -85,6 +85,9 @@ try {
     { file: "a-propos.html", markup: () => render(h(APropos)) },
     { file: "faire-part-naissance.html", markup: () => render(h(PageEvenement, { eventKey: "naissance" })) },
     { file: "faire-part-bapteme.html", markup: () => render(h(PageEvenement, { eventKey: "bapteme" })) },
+    { file: "faire-part-anniversaire.html", markup: () => render(h(PageEvenement, { eventKey: "anniversaire" })) },
+    { file: "faire-part-fiancailles.html", markup: () => render(h(PageEvenement, { eventKey: "fiancailles" })) },
+    { file: "invitation-professionnelle.html", markup: () => render(h(PageEvenement, { eventKey: "professionnel" })) },
     ...ARTICLES.map((a) => ({
       file: `blog-${a.slug}.html`,
       markup: () => render(h(Article, { slug: a.slug })),

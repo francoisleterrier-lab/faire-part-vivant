@@ -325,6 +325,9 @@ export function Footer() {
             <a href="faire-part-mariage-numerique-france.html">Partout en France</a>
             <a href="faire-part-naissance.html">Faire-part naissance</a>
             <a href="faire-part-bapteme.html">Faire-part baptême</a>
+            <a href="faire-part-anniversaire.html">Faire-part anniversaire</a>
+            <a href="faire-part-fiancailles.html">Faire-part fiançailles</a>
+            <a href="invitation-professionnelle.html">Invitation pro</a>
             <a href="index.html#formules">Tarifs</a>
             <a href="index.html#faq">FAQ</a>
           </div>
