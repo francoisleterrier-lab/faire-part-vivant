@@ -1096,3 +1096,77 @@ body { counter-reset: sect; }
 .vt-aa-tag { position: absolute; bottom: 1rem; z-index: 4; font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; padding: .28rem .7rem; border-radius: 999px; background: rgba(255,255,255,.82); color: var(--ink); box-shadow: var(--shadow-sm); }
 .vt-aa-tag.left { left: 1rem; } .vt-aa-tag.right { right: 1rem; color: var(--gold); }
 @media (max-width: 640px) { .vt-aa { aspect-ratio: 3 / 4; } .vt-aa-card { width: 86%; } }
+
+/* ============================================================
+   Mode sombre élégant — activé par [data-theme="dark"] sur <html>
+   (bascule manuelle, persistée ; sinon prefers-color-scheme).
+   On redéfinit les tokens ; --forest devient clair (surtout du texte),
+   donc on force un fond sombre sur les sections qui l'utilisaient en fond.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --iv: #151b15;
+  --iv-2: #1c241b;
+  --paper: #212a20;
+  --ink: #eef1e9;
+  --ink-soft: #c1c9b9;
+  --muted: #8f998a;
+  --sage: #9dbb99;
+  --sage-deep: #b3ccae;
+  --forest: #e8ede2;
+  --gold: #cdaa63;
+  --gold-2: #dabf83;
+  --gold-soft: #ecd8a4;
+  --line: #333d30;
+  --shadow: 0 34px 70px -38px rgba(0, 0, 0, 0.66);
+  --shadow-sm: 0 16px 34px -24px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+/* Fond botanique fortement assombri */
+:root[data-theme="dark"] body::before {
+  background-color: var(--iv);
+  background-image: linear-gradient(rgba(14, 19, 14, 0.74), rgba(14, 19, 14, 0.74)), url(../assets/cadre-vegetal-strip.jpg);
+}
+@media (max-width: 760px) {
+  :root[data-theme="dark"] body::before {
+    background-image: linear-gradient(rgba(14, 19, 14, 0.76), rgba(14, 19, 14, 0.76)), url(../assets/cadre-vegetal-strip.jpg);
+  }
+}
+/* Sections qui utilisaient --forest comme FOND → fond sombre explicite */
+:root[data-theme="dark"] .vt-btn { background: #2c3728; color: #eef1e9; }
+:root[data-theme="dark"] .vt-btn.gold { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #1b160e; }
+:root[data-theme="dark"] .vt-compare .new,
+:root[data-theme="dark"] .vt-plan.feat { background: linear-gradient(165deg, #26301f, #10150e); }
+:root[data-theme="dark"] .vt-bespoke { background: radial-gradient(130% 150% at 100% 0%, #2b3620, #10150e); }
+:root[data-theme="dark"] .vt-band { background-color: #10150e; }
+:root[data-theme="dark"] .vt-cta { background-color: #10150e; }
+:root[data-theme="dark"] .vt-footer { background: #10150e; color: #b9c4b0; }
+:root[data-theme="dark"] .vt-lumiere { background: radial-gradient(120% 90% at 20% 0%, #1c261a, #10150e); }
+:root[data-theme="dark"] .vt-contact { background: radial-gradient(120% 120% at 80% 0%, #24301c, #10150e); }
+/* Nav translucide sombre */
+:root[data-theme="dark"] .vt-nav { background: rgba(20, 26, 20, 0.82); }
+/* Formulaire de contact */
+:root[data-theme="dark"] .vt-contact-form { background: #1a211a; }
+:root[data-theme="dark"] .vt-contact-form input,
+:root[data-theme="dark"] .vt-contact-form textarea { background: #10150e; color: var(--ink); border-color: #333d30; }
+/* Comparateur avant/après en version sombre */
+:root[data-theme="dark"] .vt-aa-after { background: radial-gradient(120% 100% at 28% 18%, #26301d, #171d15); }
+:root[data-theme="dark"] .vt-aa-before { background: linear-gradient(160deg, #2a2f2a, #20241f); filter: grayscale(.7) contrast(.95) brightness(.85); }
+:root[data-theme="dark"] .vt-aa-tag, :root[data-theme="dark"] .vt-aa-grip { background: #212a20; color: var(--ink); }
+:root[data-theme="dark"] .vt-aa-handle { background: rgba(255,255,255,.5); }
+/* Petits éléments blancs en dur */
+:root[data-theme="dark"] .vt-cagp-presets .chip,
+:root[data-theme="dark"] .vt-cagp-bar .ms { background: #212a20; }
+/* Voile d'intro reste sombre (déjà forêt) ; badge note moyenne, etc. via --paper OK */
+
+/* Bouton bascule de thème */
+.vt-theme-toggle {
+  display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: transparent; border: 1px solid var(--line); color: var(--forest); cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.vt-theme-toggle:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-1px); }
+/* L'icône montre l'action à venir : lune en clair (→ sombre), soleil en sombre (→ clair). */
+.vt-theme-toggle .sun { display: none; }
+.vt-theme-toggle .moon { display: block; }
+:root[data-theme="dark"] .vt-theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .vt-theme-toggle .moon { display: none; }
