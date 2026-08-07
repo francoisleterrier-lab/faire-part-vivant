@@ -11,11 +11,14 @@ import { dirname, resolve, join } from "node:path";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = "https://francoisleterrier.fr/faire-part-vivant";
+const PUBLISHED = "2026-08-07";
+const MODIFIED = "2026-08-07";
 
 const page = (key, L) => {
   const e = EVENEMENTS[L.event];
   const file = `${L.slug}.html`;
   const url = `${BASE}/${file}`;
+  const ogImg = `${BASE}/og-${key}.jpg`;
   const eventUrl = e ? `${BASE}/${e.slug}.html` : `${BASE}/`;
   const faqLd = L.faq.map((f) => ({
     "@type": "Question", name: f.q,
@@ -30,8 +33,16 @@ const page = (key, L) => {
       about: { "@id": `${url}#service` },
       breadcrumb: { "@id": `${url}#breadcrumb` },
       inLanguage: "fr-FR",
-      primaryImageOfPage: { "@id": `${BASE}/#primaryimage` },
+      primaryImageOfPage: { "@id": `${url}#primaryimage` },
+      datePublished: PUBLISHED,
+      dateModified: MODIFIED,
       speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".intro"] },
+    },
+    {
+      "@type": "ImageObject",
+      "@id": `${url}#primaryimage`,
+      url: ogImg, contentUrl: ogImg, width: 1200, height: 630,
+      caption: L.h1,
     },
     {
       "@type": "Service",
@@ -77,12 +88,13 @@ const page = (key, L) => {
     <meta property="og:url" content="${url}" />
     <meta property="og:title" content="${esc(L.h1)}" />
     <meta property="og:description" content="${esc(L.metaDesc)}" />
-    <meta property="og:image" content="${BASE}/og.jpg" />
+    <meta property="og:image" content="${ogImg}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${esc(L.h1)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(L.h1)}" />
-    <meta name="twitter:image" content="${BASE}/og.jpg" />
+    <meta name="twitter:image" content="${ogImg}" />
 
     <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-600.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/jost-400.woff2" crossorigin />
