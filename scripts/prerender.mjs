@@ -74,6 +74,7 @@ try {
   const { default: LocalFrance } = await vite.ssrLoadModule("/src/vitrine/LocalFrance.jsx");
   const { default: APropos } = await vite.ssrLoadModule("/src/vitrine/APropos.jsx");
   const { default: PageEvenement } = await vite.ssrLoadModule("/src/vitrine/PageEvenement.jsx");
+  const { default: LocalEvenement } = await vite.ssrLoadModule("/src/vitrine/LocalEvenement.jsx");
   const { default: Vitrine } = await vite.ssrLoadModule("/src/vitrine/Vitrine.jsx");
   const { ARTICLES } = await vite.ssrLoadModule("/src/vitrine/blog.js");
   const h = React.createElement;
@@ -95,6 +96,8 @@ try {
     { file: "faire-part-anniversaire.html", markup: () => render(h(PageEvenement, { eventKey: "anniversaire" })) },
     { file: "faire-part-fiancailles.html", markup: () => render(h(PageEvenement, { eventKey: "fiancailles" })) },
     { file: "invitation-professionnelle.html", markup: () => render(h(PageEvenement, { eventKey: "professionnel" })) },
+    { file: "faire-part-naissance-toulouse.html", markup: () => render(h(LocalEvenement, { localKey: "naissance-toulouse" })) },
+    { file: "faire-part-bapteme-toulouse.html", markup: () => render(h(LocalEvenement, { localKey: "bapteme-toulouse" })) },
     ...ARTICLES.map((a) => ({
       file: `blog-${a.slug}.html`,
       markup: () => render(h(Article, { slug: a.slug })),

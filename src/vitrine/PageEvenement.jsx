@@ -1,13 +1,6 @@
-import { I, Ornement, useReveal, useStoredAccent, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
+import { I, useReveal, useStoredAccent, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
-import photoGrossesse from "../assets/naissance-grossesse.webp";
-import photoEnfant from "../assets/bapteme-enfant.webp";
-
-/* Photo d'aperçu dans le mockup, par événement. */
-const PHOTOS = {
-  naissance: { src: photoGrossesse, alt: "Future maman, les mains posées sur son ventre" },
-  bapteme: { src: photoEnfant, alt: "Bébé en tenue de baptême" },
-};
+import { EventDevice, EVENT_PHOTOS as PHOTOS } from "./eventDevice.jsx";
 
 /* ============================================================
    Page événement générique — UN composant, plusieurs événements.
@@ -37,41 +30,6 @@ const AUTRES = [
   { key: "fiancailles", nom: "Fiançailles", href: "faire-part-fiancailles.html" },
   { key: "professionnel", nom: "Événement pro", href: "invitation-professionnelle.html" },
 ];
-
-/* Aperçu animé : mockup téléphone sans photo (gradient), réutilise
-   le style .vt-phone/.vt-screen de l'accueil. */
-function EventDevice({ card, photo }) {
-  if (!card) return null;
-  return (
-    <div className="vt-phone-wrap vt-evd">
-      <div className="vt-phone">
-        <div className="vt-screen">
-          <div className="sc-top"><span className="cpl">{card.soustitre}</span><span className="bg"><i /><i /><i /></span></div>
-          <span className="sc-live">{card.live}</span>
-          <div className="sc-media">
-            {photo ? <img src={photo.src} width="700" height="1050" decoding="async" alt={photo.alt} /> : <div className="fallback" />}
-          </div>
-          <div className="sc-body">
-            <p className="sc-eyebrow">{card.eyebrow}</p>
-            <div className="sc-orn"><Ornement /></div>
-            <h3 className="sc-couple">{card.titre}</h3>
-            <p className="sc-date">{card.date}</p>
-            {card.compteur && (
-              <div className="vt-evd-count">
-                {card.compteur.map((c, i) => (
-                  <div className="vt-evd-cell" key={i}><b>{c.n}</b><span>{c.l}</span></div>
-                ))}
-              </div>
-            )}
-            {card.secret && <p className="vt-evd-secret">{I.spark()}<span>{card.secret}</span></p>}
-            <span className="sc-btn">{card.cta}</span>
-          </div>
-        </div>
-      </div>
-      {card.note && <span className="vt-evd-note">{card.note}</span>}
-    </div>
-  );
-}
 
 /* Frise interactive des « révélations à date » (apparition échelonnée). */
 function Timeline({ steps }) {
@@ -206,6 +164,17 @@ export default function PageEvenement({ eventKey }) {
                 <a key={a.key} className="vt-btn ghost" href={a.href}>Faire-part {a.nom.toLowerCase()} {I.arrow()}</a>
               ))}
             </div>
+            {e.localLinks && e.localLinks.length > 0 && (
+              <div className="reveal" style={{ maxWidth: "760px", margin: "1.8rem auto 0", textAlign: "center" }}>
+                <p style={{ color: "var(--ink-soft)" }}>
+                  Près de chez vous&nbsp;:{" "}
+                  {e.localLinks.map((l, i) => (
+                    <span key={l.href}>{i > 0 ? " · " : ""}<a href={l.href}>{l.label}</a></span>
+                  ))}
+                  .
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
