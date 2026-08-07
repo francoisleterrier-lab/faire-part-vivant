@@ -71,6 +71,11 @@ function Local() {
             {ZONES.join(", ")} — ainsi qu'en Ariège, dans le Gers et le Tarn, et partout en France à distance.
             Le tarif reste le même où que vous soyez&nbsp;: chaque faire-part est créé sur mesure.
           </p>
+          <p style={{ color: "var(--ink-soft)", marginTop: "1rem" }}>
+            Un autre événement à Toulouse&nbsp;? Voir aussi le{" "}
+            <a href="faire-part-naissance-toulouse.html">faire-part de naissance à Toulouse</a> et le{" "}
+            <a href="faire-part-bapteme-toulouse.html">faire-part de baptême à Toulouse</a>.
+          </p>
         </div>
       </div>
     </section>

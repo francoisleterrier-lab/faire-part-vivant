@@ -68,6 +68,9 @@ export default defineConfig({
         anniversaire: new URL("./faire-part-anniversaire.html", import.meta.url).pathname,
         fiancailles: new URL("./faire-part-fiancailles.html", import.meta.url).pathname,
         professionnel: new URL("./invitation-professionnelle.html", import.meta.url).pathname,
+        // Longue traîne : événement × ville (contenu local différencié)
+        "naissance-toulouse": new URL("./faire-part-naissance-toulouse.html", import.meta.url).pathname,
+        "bapteme-toulouse": new URL("./faire-part-bapteme-toulouse.html", import.meta.url).pathname,
         // Éditeur self-service + rendu public des invitations
         product: new URL("./product.html", import.meta.url).pathname,
       },

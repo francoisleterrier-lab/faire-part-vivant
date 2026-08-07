@@ -15,6 +15,9 @@ export const EVENEMENTS = {
     "heroLede": "Un faire-part de naissance numérique, c'est une seule page privée à partager une seule fois : pendant la grossesse elle annonce votre « Bientôt à 3 » et fait tourner le compte à rebours, puis, le jour venu, elle se transforme toute seule pour révéler le prénom, la date, le poids et les premières photos.",
     "ctaLabel": "Créons votre faire-part vivant",
     "serviceName": "Faire-part de naissance numérique",
+    "localLinks": [
+      { "href": "faire-part-naissance-toulouse.html", "label": "Faire-part de naissance à Toulouse" }
+    ],
     "paletteHint": "douce et pastel, dominante sauge, blanc cassé et touches de terracotta claire",
     "sections": [
       {
@@ -129,6 +132,9 @@ export const EVENEMENTS = {
     "heroLede": "Un faire-part de baptême numérique, c'est une page privée à installer comme une application, que vous partagez d'un simple lien : elle annonce la date, recueille les réponses pour la cérémonie et le repas, réunit les photos du jour et se dévoile petit à petit jusqu'au grand moment.",
     "ctaLabel": "Demander mon faire-part de baptême",
     "serviceName": "Faire-part de baptême numérique",
+    "localLinks": [
+      { "href": "faire-part-bapteme-toulouse.html", "label": "Faire-part de baptême à Toulouse" }
+    ],
     "paletteHint": "douce et lumineuse, blanc et ivoire avec une touche de bleu ciel ou de doré",
     "sections": [
       {
