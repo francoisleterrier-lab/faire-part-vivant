@@ -2,6 +2,7 @@ import { I, useReveal, Nav, Footer, Contact, Packs, DEMO } from "./shared.jsx";
 import { EVENEMENTS } from "./evenements.js";
 import { APPS } from "./apps.js";
 import { EventDevice, EVENT_PHOTOS as PHOTOS } from "./eventDevice.jsx";
+import JeuDesParis from "./JeuDesParis.jsx";
 
 /* ============================================================
    Page événement générique — UN composant, plusieurs événements.
@@ -153,6 +154,9 @@ export default function PageEvenement({ eventKey }) {
             </div>
           </section>
         )}
+
+        {/* Jeu des paris (uniquement si l'événement en déclare un — naissance) */}
+        {e.jeu && <JeuDesParis jeu={e.jeu} />}
 
         <Packs />
 
