@@ -9,6 +9,7 @@ import mockupInstallable from "../assets/mockup-installable.webp";
 import mockupRsvpAlbum from "../assets/mockup-rsvp-album.webp";
 import { I, Ornement, useReveal, Nav, Footer, Contact, Lumiere, Packs, DEMO, applyAccent, readAccent, saveAccent, DEFAULT_ACCENT } from "./shared.jsx";
 import Evenements from "./Evenements.jsx";
+import AvantApres from "./AvantApres.jsx";
 import { BENEFICES, UNIVERS, ETAPES, FAQS, AVIS } from "./data.js";
 
 /* ============================================================
@@ -408,6 +409,7 @@ export default function Vitrine() {
         <UniversApercu />
         <Highlights />
         <Demarche />
+        <AvantApres />
         <Packs />
         <Engagement />
         <Avis />
