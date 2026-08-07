@@ -8,11 +8,20 @@ import { dirname, resolve, join } from "node:path";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = "https://francoisleterrier.fr/faire-part-vivant";
-const KEYS = ["anniversaire", "fiancailles", "professionnel"];
+const KEYS = ["naissance", "bapteme", "anniversaire", "fiancailles", "professionnel"];
+
+// Dates de fraîcheur (signaux SEO). datePublished = mise en ligne ; dateModified
+// = dernière révision. Tenu à jour à la main (rendu déterministe, pas de Date.now).
+const PUBLISHED = {
+  naissance: "2026-08-06", bapteme: "2026-08-06",
+  anniversaire: "2026-08-07", fiancailles: "2026-08-07", professionnel: "2026-08-07",
+};
+const MODIFIED = "2026-08-07";
 
 const page = (e) => {
   const file = `${e.slug}.html`;
   const url = `${BASE}/${file}`;
+  const ogImg = `${BASE}/og-${e.event}.jpg`;
   const faqLd = e.faq.map((f) => ({
     "@type": "Question", name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.r },
@@ -26,8 +35,16 @@ const page = (e) => {
       about: { "@id": `${url}#service` },
       breadcrumb: { "@id": `${url}#breadcrumb` },
       inLanguage: "fr-FR",
-      primaryImageOfPage: { "@id": `${BASE}/#primaryimage` },
+      primaryImageOfPage: { "@id": `${url}#primaryimage` },
+      datePublished: PUBLISHED[e.event] || MODIFIED,
+      dateModified: MODIFIED,
       speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".intro"] },
+    },
+    {
+      "@type": "ImageObject",
+      "@id": `${url}#primaryimage`,
+      url: ogImg, contentUrl: ogImg, width: 1200, height: 630,
+      caption: e.h1,
     },
     {
       "@type": "Service",
@@ -71,12 +88,13 @@ const page = (e) => {
     <meta property="og:url" content="${url}" />
     <meta property="og:title" content="${esc(e.h1)}" />
     <meta property="og:description" content="${esc(e.metaDesc)}" />
-    <meta property="og:image" content="${BASE}/og.jpg" />
+    <meta property="og:image" content="${ogImg}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${esc(e.h1)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(e.h1)}" />
-    <meta name="twitter:image" content="${BASE}/og.jpg" />
+    <meta name="twitter:image" content="${ogImg}" />
 
     <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-600.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/jost-400.woff2" crossorigin />
