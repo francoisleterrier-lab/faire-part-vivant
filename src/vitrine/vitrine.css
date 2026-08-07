@@ -1008,3 +1008,40 @@ body { counter-reset: sect; }
   .vt-contact::before { animation: vtAurora 16s linear infinite; }
 }
 @keyframes vtAurora { to { --vt-aurora: 360deg; } }
+
+/* ============ Effets signature (curseur, intro, titre mot à mot) ============ */
+
+/* Curseur signature (anneau doux ; le curseur natif reste visible) */
+.vt-cursor {
+  position: fixed; top: 0; left: 0; width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid rgba(172, 140, 74, .6); background: transparent; pointer-events: none;
+  z-index: 400; opacity: 0; will-change: transform;
+  transition: opacity .3s ease, width .25s ease, height .25s ease, background .25s ease, border-color .25s ease;
+}
+.vt-cursor.on { opacity: 1; }
+.vt-cursor.hot { width: 52px; height: 52px; background: rgba(172, 140, 74, .1); border-color: rgba(172, 140, 74, .85); }
+.vt-cursor.down { width: 22px; height: 22px; background: rgba(172, 140, 74, .18); }
+@media (hover: none), (pointer: coarse) { .vt-cursor { display: none !important; } }
+
+/* Intro au premier chargement */
+.vt-introlock { overflow: hidden; }
+.vt-intro {
+  position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+  background: radial-gradient(120% 120% at 50% 30%, #47583f, var(--forest));
+  transition: transform .9s cubic-bezier(.7, 0, .2, 1), opacity .5s ease .35s;
+}
+.vt-intro-in { text-align: center; color: #f4f2ea; opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+.vt-intro-show .vt-intro-in { opacity: 1; transform: none; }
+.vt-intro-orn { display: block; width: 46px; height: 1px; margin: 0 auto 1.2rem; background: linear-gradient(90deg, transparent, var(--gold-soft), transparent); }
+.vt-intro-mark { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 6vw, 3.4rem); letter-spacing: .01em; }
+.vt-intro-sub { display: block; margin-top: .6rem; font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold-soft); }
+.vt-intro-out { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+
+/* Titre héros révélé mot à mot */
+.vt-word { display: inline-block; opacity: 0; transform: translateY(.55em) rotate(1.5deg); animation: vtWordIn .7s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--wi, 0) * 55ms + .12s); }
+@keyframes vtWordIn { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .vt-intro { display: none; }
+  .vt-word { opacity: 1; transform: none; animation: none; }
+}
