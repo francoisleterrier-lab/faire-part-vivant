@@ -78,9 +78,9 @@ function Hero({ accent, onAccent }) {
           <span className="vt-eyebrow">Sites de mariage sur-mesure · Sud-Toulousain</span>
           <div className="vt-flourish" />
           {/* Retour à la ligne géré en CSS (spans en display:block), pas par un
-              <br> : le texte réel reste « Le faire-part qui vit. » (espace inclus). */}
+              <br> : le texte réel reste « Le faire-part de mariage qui vit. ». */}
           <h1 className="vt-display">
-            <span className="vt-h1-line">Le faire-part</span>{" "}
+            <span className="vt-h1-line">Le faire-part de mariage</span>{" "}
             <span className="vt-h1-line">qui <span className="vt-amp">vit</span>.</span>
           </h1>
           <p className="vt-lead">

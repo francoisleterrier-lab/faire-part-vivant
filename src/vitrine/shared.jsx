@@ -74,7 +74,12 @@ export function useReveal() {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
     }, { threshold: 0.12 });
-    els.forEach((e) => io.observe(e));
+    const vh = window.innerHeight || 0;
+    els.forEach((e) => {
+      // Above-the-fold : révélé d'emblée (évite un LCP en opacity:0 après le remount client).
+      if (e.getBoundingClientRect().top < vh * 0.9) e.classList.add("in");
+      else io.observe(e);
+    });
     initWow();
     return () => io.disconnect();
   }, []);
@@ -347,7 +352,8 @@ export function Footer() {
       <div className="vt-wrap vt-footer-in">
         <div>
           <span className="vt-logo"><a href="index.html" className="nm">{MARQUE}</a><a href={SITE_PRINCIPAL} className="by">{SIGNATURE}</a></span>
-          <p className="tag">Un service de <a href={SITE_PRINCIPAL}>François Leterrier</a> — Community Manager &amp; création de sites. Sud-Toulousain &amp; <a href="faire-part-mariage-numerique-france.html">partout en France à distance</a>.</p>
+          <p className="tag">Un service de <a href={SITE_PRINCIPAL}>François Leterrier</a> — Community Manager &amp; création de sites.<br />
+          <span className="vt-nap">Basé à Lavernose-Lacasse (31410), Sud-Toulousain</span> · <a href={`tel:${TEL_INTL}`}>{TEL}</a> · Toulouse, Muret &amp; <a href="faire-part-mariage-numerique-france.html">partout en France à distance</a>.</p>
         </div>
         <nav>
           <div>
@@ -356,6 +362,8 @@ export function Footer() {
             <a href="fonctionnalites.html">Fonctionnalités</a>
             <a href="blog.html">Journal</a>
             <a href="a-propos.html">À propos</a>
+            <a href="faire-part-mariage-toulouse.html">Faire-part mariage Toulouse</a>
+            <a href="faire-part-mariage-muret.html">Faire-part mariage Muret</a>
             <a href="faire-part-mariage-numerique-france.html">Partout en France</a>
             <a href="faire-part-naissance.html">Faire-part naissance</a>
             <a href="faire-part-bapteme.html">Faire-part baptême</a>

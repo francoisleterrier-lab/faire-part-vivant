@@ -19,7 +19,7 @@ export const LOCAL_EVENEMENTS = {
     h1: "Faire-part de naissance numérique à Toulouse",
     titleSeo: "Faire-part de naissance numérique à Toulouse | Faire-part Vivant",
     metaDesc:
-      "Faire-part de naissance numérique et vivant pour les familles de Toulouse : de « bientôt à 3 » à la révélation du prénom, avec album partagé. Créé près de chez vous, dans le Sud-Toulousain. Sur mesure, sans abonnement.",
+      "Faire-part de naissance numérique à Toulouse : de « bientôt à 3 » à la révélation du prénom, album partagé. Créé près de chez vous, sans abonnement.",
     heroLede:
       "Un faire-part de naissance numérique pour les familles toulousaines : pendant la grossesse il annonce l'heureux événement et fait tourner le compte à rebours, puis, le jour venu, il révèle tout seul le prénom, la date, le poids et les premières photos — un lien unique à partager, sans application à installer.",
     ctaLabel: "Créons votre faire-part",
@@ -58,6 +58,7 @@ export const LOCAL_EVENEMENTS = {
       },
     ],
     crossVille: { href: "faire-part-mariage-toulouse.html", label: "faire-part de mariage à Toulouse" },
+    crossEvent: { href: "faire-part-bapteme-toulouse.html", label: "faire-part de baptême à Toulouse" },
   },
 
   "bapteme-toulouse": {
@@ -68,7 +69,7 @@ export const LOCAL_EVENEMENTS = {
     h1: "Faire-part de baptême numérique à Toulouse",
     titleSeo: "Faire-part de baptême numérique à Toulouse | Faire-part Vivant",
     metaDesc:
-      "Faire-part de baptême numérique et vivant pour Toulouse et l'Occitanie : parrain et marraine à l'honneur, plan d'accès à l'église, RSVP et album partagé. Créé près de chez vous, sur mesure, sans abonnement.",
+      "Faire-part de baptême numérique à Toulouse : parrain et marraine à l'honneur, plan d'accès, RSVP, album partagé. Créé près de chez vous, sans abonnement.",
     heroLede:
       "Un faire-part de baptême numérique pour les familles de Toulouse : il présente l'enfant, met parrain et marraine à l'honneur, réunit le plan d'accès à l'église et à la réception, recueille les réponses des invités et garde les photos du grand jour — un lien unique, sans application à installer.",
     ctaLabel: "Créons votre faire-part",
@@ -107,5 +108,6 @@ export const LOCAL_EVENEMENTS = {
       },
     ],
     crossVille: { href: "faire-part-mariage-toulouse.html", label: "faire-part de mariage à Toulouse" },
+    crossEvent: { href: "faire-part-naissance-toulouse.html", label: "faire-part de naissance à Toulouse" },
   },
 };

@@ -46,6 +46,26 @@ Le tarif final dépend des envies de chaque couple ; le devis est personnalisé.
 
 **Quand le mettre en place et le partager ?** Dès le save-the-date, et jusqu'aux souvenirs d'après la fête.
 
+## Autres occasions couvertes (même produit, même prix)
+Le faire-part vivant existe pour six occasions, chacune avec sa page dédiée :
+- Mariage — https://francoisleterrier.fr/faire-part-vivant/
+- Naissance (grossesse → prénom révélé le jour J) — https://francoisleterrier.fr/faire-part-vivant/faire-part-naissance.html
+- Baptême (parrain & marraine, RSVP, album) — https://francoisleterrier.fr/faire-part-vivant/faire-part-bapteme.html
+- Anniversaire (compte à rebours, RSVP, thème révélé à date) — https://francoisleterrier.fr/faire-part-vivant/faire-part-anniversaire.html
+- Fiançailles (annonce, votre histoire, RSVP) — https://francoisleterrier.fr/faire-part-vivant/faire-part-fiancailles.html
+- Événement professionnel (inscriptions, programme, relances) — https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html
+Toutes aux mêmes tarifs (290 / 490 / 790 €), sans abonnement.
+
+## Les 8 univers de fonctionnalités (27 modules activables à la carte)
+1. Le faire-part vivant : site-invitation privé installable (PWA), notifications, compte à rebours, thèmes, français/anglais, bande-son.
+2. RSVP & tableau de bord : réponse en ligne (adultes/enfants/régime), suivi temps réel, comptage juste par foyer.
+3. Le jour J : lieu révélé + itinéraire GPS, timeline qui se dévoile, ajout à l'agenda, plan de table interactif, diaporama live.
+4. Participation & souvenirs : album photo collaboratif, livre d'or vidéo, playlist collaborative, défis photo, jeux & quiz.
+5. Logistique : covoiturage, hébergements & infos pratiques.
+6. Cadeaux : cagnotte (Leetchi/Lydia/PayPal/RIB), liste de cadeaux avec réservation unique.
+7. Pour les organisateurs : éditeur sans code, diffusion WhatsApp/SMS/e-mail, notifications à la demande.
+8. Confiance : accès privé jamais indexé, mises à jour instantanées, léger et rapide sans app store.
+
 ## Zone desservie
 Basé à Lavernose-Lacasse (31410), près de Toulouse (~25 km). François accompagne les couples sur Toulouse, la Haute-Garonne et le Sud-Toulousain (Muret, Carbonne ~12 km, Auterive ~18 km, Colomiers, Blagnac, Tournefeuille), en Occitanie (Ariège, Gers, Tarn, Tarn-et-Garonne), et partout en France à distance.
 

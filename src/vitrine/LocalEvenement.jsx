@@ -86,6 +86,7 @@ export default function LocalEvenement({ localKey }) {
                 {L.zones.join(", ")} — ainsi que dans toute la Haute-Garonne et le Sud-Toulousain,
                 et partout en France à distance. Vous préparez un mariage&nbsp;?{" "}
                 <a href={L.crossVille.href}>Voir la page {L.crossVille.label}</a>.
+                {L.crossEvent && <> Autre occasion à {L.ville}&nbsp;: <a href={L.crossEvent.href}>{L.crossEvent.label}</a>.</>}
               </p>
             </div>
           </div>
@@ -106,7 +107,7 @@ export default function LocalEvenement({ localKey }) {
                 {L.faq.map((f, i) => (
                   <details className="vt-acc-item" key={i} open={i === 0}>
                     <summary className="vt-acc-q"><span>{f.q}</span><span className="vt-acc-ic">{I.plus()}</span></summary>
-                    <div className="vt-acc-a"><p>{f.r}</p></div>
+                    <div className="vt-acc-a"><p className="faq-answer">{f.r}</p></div>
                   </details>
                 ))}
               </div>

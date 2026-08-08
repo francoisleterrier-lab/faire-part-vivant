@@ -31,7 +31,7 @@ export function EventDevice({ card, photo }) {
           <div className="sc-top"><span className="cpl">{card.soustitre}</span><span className="bg"><i /><i /><i /></span></div>
           <span className="sc-live">{card.live}</span>
           <div className="sc-media">
-            {photo ? <img src={photo.src} width="700" height="1050" decoding="async" alt={photo.alt} /> : <div className="fallback" />}
+            {photo ? <img src={photo.src} width="700" height="1050" decoding="async" fetchpriority="high" alt={photo.alt} /> : <div className="fallback" />}
           </div>
           <div className="sc-body">
             <p className="sc-eyebrow">{card.eyebrow}</p>

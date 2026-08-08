@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f4f0e7" />
+    <meta name="theme-color" content="#f4f0e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12201a" media="(prefers-color-scheme: dark)" />
     <title>Invitation d'événement professionnel | le faire-part qui vit</title>
-    <meta name="description" content="Une invitation d'événement professionnel numérique qui vit : RSVP en ligne, programme, badge, plan d'accès, relances automatiques. Un paiement unique dès 290 €, sans abonnement." />
+    <meta name="description" content="Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €." />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html" />
+    <link rel="alternate" hreflang="fr-FR" href="https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html" />
+    <link rel="alternate" hreflang="x-default" href="https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html" />
+    <link rel="alternate" type="text/plain" title="Carte IA (llms.txt)" href="llms.txt" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Faire-part Vivant · François Leterrier" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:url" content="https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html" />
     <meta property="og:title" content="L'invitation d'événement pro qui vit" />
-    <meta property="og:description" content="Une invitation d'événement professionnel numérique qui vit : RSVP en ligne, programme, badge, plan d'accès, relances automatiques. Un paiement unique dès 290 €, sans abonnement." />
+    <meta property="og:description" content="Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €." />
     <meta property="og:image" content="https://francoisleterrier.fr/faire-part-vivant/og-professionnel.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="L'invitation d'événement pro qui vit" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="L'invitation d'événement pro qui vit" />
+    <meta name="twitter:description" content="Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €." />
     <meta name="twitter:image" content="https://francoisleterrier.fr/faire-part-vivant/og-professionnel.jpg" />
 
     <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-600.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/jost-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jost-300.woff2" crossorigin />
     <link rel="stylesheet" href="fonts.css" />
 
     <!-- Ahrefs Web Analytics (sans cookie, RGPD-friendly) -->
@@ -35,11 +41,49 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": [
+        "ProfessionalService",
+        "Organization"
+      ],
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/#business",
+      "name": "Faire-part Vivant — François Leterrier",
+      "url": "https://francoisleterrier.fr/faire-part-vivant/",
+      "image": "https://francoisleterrier.fr/faire-part-vivant/og.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/#logo",
+        "url": "https://francoisleterrier.fr/faire-part-vivant/icons/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "telephone": "+33698200208",
+      "email": "francois.leterrier.cmw@gmail.com",
+      "priceRange": "290€–790€",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sud-Toulousain"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Haute-Garonne"
+        },
+        {
+          "@type": "State",
+          "name": "Occitanie"
+        },
+        {
+          "@type": "Country",
+          "name": "France"
+        }
+      ]
+    },
+    {
       "@type": "WebPage",
       "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#webpage",
       "url": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html",
       "name": "Invitation d'événement professionnel | le faire-part qui vit",
-      "description": "Une invitation d'événement professionnel numérique qui vit : RSVP en ligne, programme, badge, plan d'accès, relances automatiques. Un paiement unique dès 290 €, sans abonnement.",
+      "description": "Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €.",
       "isPartOf": {
         "@id": "https://francoisleterrier.fr/faire-part-vivant/#website"
       },
@@ -54,12 +98,13 @@
         "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#primaryimage"
       },
       "datePublished": "2026-08-07",
-      "dateModified": "2026-08-07",
+      "dateModified": "2026-08-08",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
           "h1",
-          ".intro"
+          ".intro",
+          ".faq-answer"
         ]
       }
     },
@@ -77,8 +122,17 @@
       "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#service",
       "name": "Invitation d'événement professionnel numérique",
       "serviceType": "Faire-part numérique sur mesure",
+      "category": "Faire-part numérique",
+      "description": "Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €.",
+      "inLanguage": "fr-FR",
       "provider": {
         "@id": "https://francoisleterrier.fr/faire-part-vivant/#business"
+      },
+      "brand": {
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/#business"
+      },
+      "image": {
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#primaryimage"
       },
       "areaServed": [
         {
@@ -101,15 +155,21 @@
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "EUR",
-        "lowPrice": "290",
-        "highPrice": "790",
-        "offerCount": "3"
+        "lowPrice": 290,
+        "highPrice": 790,
+        "offerCount": 3,
+        "availability": "https://schema.org/InStock",
+        "url": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html"
       },
       "url": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html"
     },
     {
       "@type": "FAQPage",
       "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#faq",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#webpage"
+      },
       "mainEntity": [
         {
           "@type": "Question",
@@ -170,6 +230,13 @@
           "item": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html"
         }
       ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://francoisleterrier.fr/faire-part-vivant/invitation-professionnelle.html#term",
+      "name": "Invitation d'événement professionnel numérique",
+      "description": "Invitation d'événement professionnel numérique : inscriptions (RSVP), programme, badge, plan d'accès, relances. Un paiement unique dès 290 €.",
+      "inDefinedTermSet": "https://francoisleterrier.fr/faire-part-vivant/"
     }
   ]
 }

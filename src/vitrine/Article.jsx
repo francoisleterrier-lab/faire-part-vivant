@@ -38,7 +38,9 @@ export default function Article({ slug }) {
       </>
     );
   }
-  const autres = ARTICLES.filter((x) => x.slug !== slug).slice(0, 2);
+  const autres = (a.related && a.related.length)
+    ? a.related.map((s) => getArticle(s)).filter(Boolean)
+    : ARTICLES.filter((x) => x.slug !== slug).slice(0, 2);
   return (
     <>
       <Nav links={NAV} />

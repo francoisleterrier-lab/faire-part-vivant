@@ -32,6 +32,21 @@ User-agent: Applebot
 Allow: /
 User-agent: CCBot
 Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: Google-CloudVertexBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://francoisleterrier.fr/faire-part-vivant/sitemap.xml
-# Carte IA : https://francoisleterrier.fr/faire-part-vivant/llms.txt
+# Carte pour les IA (contenu structuré lisible par les LLM) :
+LLM: https://francoisleterrier.fr/faire-part-vivant/llms.txt

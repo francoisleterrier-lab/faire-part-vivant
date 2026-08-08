@@ -10,6 +10,7 @@
 export const ARTICLES = [
   {
     slug: "texte-faire-part-mariage",
+    related: ["quand-envoyer-faire-part-mariage", "guide-faire-part-mariage-numerique"],
     date: "2026-08-03",
     maj: "2026-08-03",
     lecture: "6 min",
@@ -102,6 +103,7 @@ export const ARTICLES = [
   },
   {
     slug: "quand-envoyer-faire-part-mariage",
+    related: ["texte-faire-part-mariage", "gerer-rsvp-mariage"],
     date: "2026-08-03",
     maj: "2026-08-03",
     lecture: "6 min",
@@ -195,6 +197,7 @@ export const ARTICLES = [
   },
   {
     slug: "guide-faire-part-mariage-numerique",
+    related: ["faire-part-papier-ou-digital", "texte-faire-part-mariage"],
     date: "2026-07-13",
     maj: "2026-08-03",
     lecture: "6 min",
@@ -299,6 +302,7 @@ export const ARTICLES = [
   },
   {
     slug: "faire-part-papier-ou-digital",
+    related: ["guide-faire-part-mariage-numerique", "gerer-rsvp-mariage"],
     date: "2026-07-13",
     maj: "2026-08-03",
     lecture: "4 min",
@@ -371,6 +375,7 @@ export const ARTICLES = [
   },
   {
     slug: "gerer-rsvp-mariage",
+    related: ["quand-envoyer-faire-part-mariage", "guide-faire-part-mariage-numerique"],
     date: "2026-07-13",
     maj: "2026-08-03",
     lecture: "4 min",
