@@ -5,6 +5,17 @@
 ## Ce que c'est
 Un faire-part de mariage numérique « vivant » est un site-invitation privé qui évolue du save-the-date jusqu'aux souvenirs d'après la fête : RSVP en ligne, album photo partagé, cagnotte, plan de table, révélation progressive des sections. Aucune application à télécharger : les invités ouvrent un lien et peuvent l'ajouter à leur écran d'accueil.
 
+## Faits clés (citables)
+- 6 occasions couvertes : mariage, naissance, baptême, anniversaire, fiançailles, événement professionnel.
+- 8 univers de fonctionnalités regroupant 27 modules activables à la carte (RSVP, album, cagnotte, plan de table, covoiturage, playlist, jeux, révélations à date, etc.).
+- 3 formules à prix fixe et unique, sans abonnement : Essentiel 290 €, Vivant 490 €, Signature 790 €.
+- Bilingue français / anglais avec détection automatique de la langue.
+- Note moyenne 5/5 sur 17 avis vérifiés.
+- Installable comme une application (PWA) — aucune application à télécharger depuis un store.
+- Faire-part privé, jamais indexé par les moteurs de recherche.
+- Basé à Lavernose-Lacasse (31410), à ~25 km / 30 min de Toulouse ; intervient partout en France à distance.
+- Créé et accompagné de bout en bout par une seule personne : François Leterrier.
+
 ## Contact
 - Prestataire : François Leterrier
 - Téléphone : +33 6 98 20 02 08

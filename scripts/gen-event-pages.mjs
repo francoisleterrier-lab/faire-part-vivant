@@ -16,7 +16,7 @@ const PUBLISHED = {
   naissance: "2026-08-06", bapteme: "2026-08-06",
   anniversaire: "2026-08-07", fiancailles: "2026-08-07", professionnel: "2026-08-07",
 };
-const MODIFIED = "2026-08-07";
+const MODIFIED = "2026-08-08";
 
 const page = (e) => {
   const file = `${e.slug}.html`;
@@ -28,6 +28,23 @@ const page = (e) => {
   }));
   const graph = [
     {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": `${BASE}/#business`,
+      name: "Faire-part Vivant — François Leterrier",
+      url: `${BASE}/`,
+      image: `${BASE}/og.jpg`,
+      logo: { "@type": "ImageObject", "@id": `${BASE}/#logo`, url: `${BASE}/icons/icon-512.png`, width: 512, height: 512 },
+      telephone: "+33698200208",
+      email: "francois.leterrier.cmw@gmail.com",
+      priceRange: "290€–790€",
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Sud-Toulousain" },
+        { "@type": "AdministrativeArea", name: "Haute-Garonne" },
+        { "@type": "State", name: "Occitanie" },
+        { "@type": "Country", name: "France" },
+      ],
+    },
+    {
       "@type": "WebPage",
       "@id": `${url}#webpage`, url,
       name: e.titleSeo, description: e.metaDesc,
@@ -38,7 +55,7 @@ const page = (e) => {
       primaryImageOfPage: { "@id": `${url}#primaryimage` },
       datePublished: PUBLISHED[e.event] || MODIFIED,
       dateModified: MODIFIED,
-      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".intro"] },
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".intro", ".faq-answer"] },
     },
     {
       "@type": "ImageObject",
@@ -50,17 +67,22 @@ const page = (e) => {
       "@type": "Service",
       "@id": `${url}#service`,
       name: e.serviceName, serviceType: "Faire-part numérique sur mesure",
+      category: "Faire-part numérique",
+      description: e.metaDesc,
+      inLanguage: "fr-FR",
       provider: { "@id": `${BASE}/#business` },
+      brand: { "@id": `${BASE}/#business` },
+      image: { "@id": `${url}#primaryimage` },
       areaServed: [
         { "@type": "AdministrativeArea", name: "Sud-Toulousain" },
         { "@type": "AdministrativeArea", name: "Haute-Garonne" },
         { "@type": "State", name: "Occitanie" },
         { "@type": "Country", name: "France" },
       ],
-      offers: { "@type": "AggregateOffer", priceCurrency: "EUR", lowPrice: "290", highPrice: "790", offerCount: "3" },
+      offers: { "@type": "AggregateOffer", priceCurrency: "EUR", lowPrice: 290, highPrice: 790, offerCount: 3, availability: "https://schema.org/InStock", url },
       url,
     },
-    { "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: faqLd },
+    { "@type": "FAQPage", "@id": `${url}#faq`, inLanguage: "fr-FR", isPartOf: { "@id": `${url}#webpage` }, mainEntity: faqLd },
     {
       "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`,
       itemListElement: [
@@ -68,6 +90,7 @@ const page = (e) => {
         { "@type": "ListItem", position: 2, name: e.serviceName, item: url },
       ],
     },
+    { "@type": "DefinedTerm", "@id": `${url}#term`, name: e.serviceName, description: e.metaDesc, inDefinedTermSet: `${BASE}/` },
   ];
   const ld = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2);
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
@@ -76,11 +99,15 @@ const page = (e) => {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f4f0e7" />
+    <meta name="theme-color" content="#f4f0e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12201a" media="(prefers-color-scheme: dark)" />
     <title>${esc(e.titleSeo)}</title>
     <meta name="description" content="${esc(e.metaDesc)}" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="${url}" />
+    <link rel="alternate" hreflang="fr-FR" href="${url}" />
+    <link rel="alternate" hreflang="x-default" href="${url}" />
+    <link rel="alternate" type="text/plain" title="Carte IA (llms.txt)" href="llms.txt" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Faire-part Vivant · François Leterrier" />
@@ -94,10 +121,12 @@ const page = (e) => {
     <meta property="og:image:alt" content="${esc(e.h1)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(e.h1)}" />
+    <meta name="twitter:description" content="${esc(e.metaDesc)}" />
     <meta name="twitter:image" content="${ogImg}" />
 
     <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-600.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/jost-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jost-300.woff2" crossorigin />
     <link rel="stylesheet" href="fonts.css" />
 
     <!-- Ahrefs Web Analytics (sans cookie, RGPD-friendly) -->

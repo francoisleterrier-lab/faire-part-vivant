@@ -173,7 +173,7 @@ export default function PageEvenement({ eventKey }) {
                 {e.faq.map((f, i) => (
                   <details className="vt-acc-item" key={i} open={i === 0}>
                     <summary className="vt-acc-q"><span>{f.q}</span><span className="vt-acc-ic">{I.plus()}</span></summary>
-                    <div className="vt-acc-a"><p>{f.r}</p></div>
+                    <div className="vt-acc-a"><p className="faq-answer">{f.r}</p></div>
                   </details>
                 ))}
               </div>
