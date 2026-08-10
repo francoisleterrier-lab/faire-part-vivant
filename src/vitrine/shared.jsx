@@ -386,6 +386,14 @@ export function Footer() {
         <span>© {"2026"} {MARQUE} · François Leterrier — Community Manager &amp; création de sites · Sud-Toulousain</span>
         <span>Sur mesure · vente en direct · sur devis</span>
       </div>
+      {/* Signature « Site réalisé par François Leterrier » (badge maison) */}
+      <div className="vt-footer-credit">
+        <a href="https://francoisleterrier.fr" target="_blank" rel="noopener"
+          style={{ display: "inline-flex", alignItems: "center", gap: "8px", font: "600 13px system-ui, sans-serif", textDecoration: "none", color: "#e7e2f0", background: "#0d0a1c", border: "1px solid rgba(143,230,240,.3)", padding: "8px 15px", borderRadius: "22px" }}>
+          <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "linear-gradient(90deg,#28c8dd,#e05bc8)" }} />
+          Site réalisé par&nbsp;<b style={{ color: "#8fe6f0", fontWeight: 700 }}>François Leterrier</b>
+        </a>
+      </div>
     </footer>
     <FloatingWhatsApp />
     </>

@@ -564,6 +564,9 @@ body.evt-bapteme::before {
 .vt-footer nav a { display: block; padding: 0.3rem 0; color: #cfd9c8; font-size: 0.92rem; }
 .vt-footer nav a:hover { color: #fff; }
 .vt-footer-bottom { border-top: 1px solid rgba(255,255,255,0.14); margin-top: 2.4rem; padding-top: 1.4rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem; font-size: 0.82rem; color: #9db09a; }
+.vt-footer-credit { display: flex; justify-content: center; margin-top: 1.4rem; }
+.vt-footer-credit a { transition: border-color 0.18s ease, transform 0.18s ease; }
+.vt-footer-credit a:hover { transform: translateY(-1px); border-color: rgba(143,230,240,.6) !important; }
 
 /* ---------- Aperçu des univers (home) ---------- */
 .vt-univers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
